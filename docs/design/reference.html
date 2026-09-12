@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>OpenHFX · Mobile design reference</title>
+  <link rel="stylesheet" href="reference.css">
+  <script src="reference.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#screens">Skip to mobile screens</a>
+  <header class="board-header">
+    <div class="brand"><span class="brand-symbol" aria-hidden="true">h</span>OpenHFX<span class="board-tag">Design reference 1.0</span></div>
+    <a href="../DESIGN_SPEC.md">Read the specification</a>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="intro-title">
+      <div><p class="intro-label">A clearer way to care for your city.</p><h1 id="intro-title">A local problem.<br>A shared response.</h1></div>
+      <div class="intro-note"><p>Two mobile experiences. One issue thread. A map that connects what people see to the teams doing the work.</p><p class="small">Interactive design study. Fictional cases, schematic geography, and simulated updates. No real dispatch, GPS, or LLM connection.</p></div>
+    </section>
+    <section class="demo-controls" aria-label="Simulated response controls">
+      <div><span class="demo-label">Demo scenario</span><strong id="scenario-label">Two organizations have accepted the issue.</strong></div>
+      <div class="control-actions"><button id="advance" class="button primary" type="button">Teams mark en route</button><button id="reset" class="button secondary" type="button">Reset</button><button id="connection" class="button text-button" type="button" aria-pressed="false">Show offline state</button></div>
+      <p id="demo-announcement" class="sr-only" aria-live="polite"></p>
+    </section>
+    <div class="screen-grid" id="screens">
+      <section class="screen-study" id="map-screen" aria-labelledby="map-caption">
+        <div class="screen-caption"><span class="role-label">Public</span><h2 id="map-caption">See what needs attention.</h2><p>The map creates context. The sheet gives you a next step.</p></div>
+        <div class="phone map-phone">
+          <header class="app-header"><a class="app-brand" href="#map-screen"><span class="mini-symbol" aria-hidden="true">h</span>OpenHFX</a><span class="sample-tag">Demo</span></header>
+          <div class="map-container"><div class="illustrated-map" data-map="large" aria-hidden="true"></div>
+            <div class="map-search"><span data-icon="search"></span><span>Halifax peninsula</span><span class="small">Area</span></div>
+            <div class="map-filters" role="group" aria-label="Demo map category"><button class="filter active" data-filter="all" aria-pressed="true" type="button">All issues</button><button class="filter" data-filter="trees" aria-pressed="false" type="button"><span data-icon="tree"></span>Trees</button><button class="filter" data-filter="access" aria-pressed="false" type="button"><span data-icon="access"></span>Access</button></div>
+            <button class="map-marker selected" id="main-marker" type="button" aria-label="Branch blocking the walkway. Open shared issue." data-category="trees"><span data-icon="tree"></span></button>
+            <button class="map-marker marker-secondary" type="button" aria-label="View demo access issue" data-category="access"><span data-icon="access"></span></button>
+            <span class="map-cluster" aria-label="Three illustrative issues">3</span>
+            <div class="map-place-label">Harbour path</div>
+            <div class="map-live"><span class="connection-dot"></span><span data-connection>Demo updates</span></div>
+            <span class="map-credit">Illustrative map · not for navigation</span>
+          </div>
+          <section class="map-sheet" aria-label="Selected issue preview"><span class="handle" aria-hidden="true"></span>
+            <div class="row-between"><span class="meta">Near the waterfront</span><button class="text-link" type="button" id="show-list">View list</button></div>
+            <div id="map-selection"><div class="status-line"><span class="status-chip" data-issue-status>Assigned</span><span class="meta">HFX-0142</span></div><h3 data-issue-title>Branch blocking<br>the walkway</h3><p class="meta" data-public-next>Two organizations are coordinating a response.</p><a class="inline-link" href="#shared-screen">View shared response <span data-icon="chevron"></span></a></div>
+            <div id="map-list" hidden><p class="list-heading">Nearby demo issues</p><button class="issue-list-row" type="button" data-open-main data-list-category="trees">Branch blocking the walkway <span>Assigned</span></button><p class="issue-list-row" data-list-category="access">Obstructed curb access <span>Reported</span></p></div>
+            <a class="button primary full" href="#report-screen"><span data-icon="plus"></span>Report a problem</a>
+          </section>
+          <nav class="app-nav" aria-label="Public reference navigation"><a class="selected" href="#map-screen" aria-current="page"><span data-icon="map"></span>Nearby</a><a href="#report-screen"><span data-icon="plus"></span>Report</a><a href="#shared-screen"><span data-icon="bookmark"></span>Following</a></nav>
+        </div>
+        <p class="design-note">One focused map sheet. No competing dashboards. Map and list offer the same issue.</p>
+      </section>
+      <section class="screen-study" id="report-screen" aria-labelledby="report-caption">
+        <div class="screen-caption"><span class="role-label">Public</span><h2 id="report-caption">Start with what you see.</h2><p>A short form, your own words, and an editable suggestion.</p></div>
+        <div class="phone form-phone">
+          <header class="app-header"><a class="icon-link" href="#map-screen" aria-label="Back to nearby map"><span data-icon="back"></span></a><strong>New report</strong><span class="sample-tag">Demo</span></header>
+          <form class="phone-scroll report-form" id="report-form">
+            <div class="step-heading"><span>Describe</span><span class="step-track" aria-label="Step 1 of 3"><i class="active"></i><i></i><i></i></span><span class="meta">1 of 3</span></div>
+            <h3>What’s happening?</h3><p class="body-copy">A few details help the right team understand the problem.</p>
+            <label for="description">Describe the problem</label><textarea id="description" name="description" minlength="20" maxlength="2000" required>A large branch is blocking the walkway. People using wheelchairs cannot get past.</textarea>
+            <div class="row-between field-help"><span>Use your own words.</span><span id="char-count">89 / 2,000</span></div>
+            <label>Photos <span class="optional">Optional</span></label><button class="upload-tile" type="button" id="photo-button"><span class="upload-icon" data-icon="camera"></span><span><strong id="photo-label">Add a demo photo</strong><span class="meta">Up to 3 photos · 10 MB each</span></span><span data-icon="plus"></span></button>
+            <label for="place">Where is it?</label><div class="location-field"><span data-icon="pin"></span><input id="place" value="Harbour path, Halifax" required maxlength="120" aria-describedby="place-help"></div><p class="field-help" id="place-help">Illustrative location. Confirm a real pin in the app.</p>
+            <div class="suggestion-panel" id="suggestion-panel"><span data-icon="check"></span><div><strong>Your words stay yours.</strong><p>You’ll review the category and suggested team before sending.</p></div></div>
+            <div id="review-fields" hidden><label for="suggested-title">Suggested title · editable</label><input id="suggested-title" value="Branch blocking the walkway" minlength="8" maxlength="100"><p class="field-help">Fixture suggestion: Trees · Harbour Parks. No model is connected to this reference.</p></div>
+            <button class="button primary full" type="submit" id="report-action">Review demo report<span data-icon="chevron"></span></button>
+            <p class="form-result" id="report-result" role="status"></p>
+          </form>
+          <nav class="app-nav" aria-label="Reporting reference navigation"><a href="#map-screen"><span data-icon="map"></span>Nearby</a><a class="selected" href="#report-screen" aria-current="page"><span data-icon="plus"></span>Report</a><a href="#shared-screen"><span data-icon="bookmark"></span>Following</a></nav>
+        </div>
+        <p class="design-note">Progressive disclosure. Visible labels. Evidence helps, but a photo is never mandatory.</p>
+      </section>
+      <section class="screen-study" id="authority-screen" aria-labelledby="authority-caption">
+        <div class="screen-caption"><span class="role-label authority-label">Authority</span><h2 id="authority-caption">A coordinated response.</h2><p>Separate responsibilities, shared context, clear ownership.</p></div>
+        <div class="phone authority-phone">
+          <header class="app-header"><span class="org-lockup"><span class="org-icon" data-icon="tree"></span><span>Harbour Parks<small>Coordinator · demo account</small></span></span><span class="sample-tag">Demo</span></header>
+          <div class="phone-scroll authority-content">
+            <div class="row-between"><span class="meta">HFX-0142</span><span class="status-chip" data-issue-status>Assigned</span></div><h3 data-issue-title>Branch blocking<br>the walkway</h3><p class="location-copy"><span data-icon="pin"></span>Harbour path</p>
+            <div class="section-tabs"><span>Overview</span><strong>Response</strong><span>Evidence <b id="authority-evidence-count">2</b></span></div>
+            <div class="response-heading"><h4>Who’s working on it</h4><span class="meta">2 organizations</span></div>
+            <article class="assignment-card lead-card"><div class="row-between"><div class="organization-name"><span class="org-avatar">HP</span><strong>Harbour Parks</strong></div><span class="lead-label">Lead</span></div><p class="assignment-purpose">Inspect and clear the branch</p><div class="team-row"><span data-icon="people"></span><span>Canopy 2</span><span class="team-status" id="parks-status">Assigned</span></div><div class="progress-track" aria-hidden="true" id="parks-track"><i class="active"></i><i></i><i></i><i></i></div><p class="meta last-report" id="parks-reported">Accepted in this demo</p></article>
+            <article class="assignment-card"><div class="organization-name"><span class="org-avatar streets">SR</span><strong>Street Response</strong></div><p class="assignment-purpose">Restore accessible passage</p><div class="team-row"><span data-icon="people"></span><span>Access 1</span><span class="team-status" id="streets-status">Assigned</span></div><p class="meta last-report" id="streets-reported">Accepted in this demo</p></article>
+            <div class="coordination-note"><span data-icon="info"></span><p id="resolution-rule">Both assignments must be complete before this issue can be resolved.</p></div>
+            <button class="button primary full" id="authority-action" type="button">Advance demo progress<span data-icon="chevron"></span></button><p class="field-help">Simulates recorded team updates. No real tracking.</p>
+          </div>
+          <nav class="app-nav" aria-label="Authority reference navigation"><a class="selected" href="#authority-screen" aria-current="page"><span data-icon="inbox"></span>Inbox</a><a href="#authority-screen"><span data-icon="people"></span>My work</a><a href="#shared-screen"><span data-icon="bell"></span>Updates</a></nav>
+        </div>
+        <p class="design-note">Work progress has timestamps and owners. An assignment pin never implies a worker’s GPS location.</p>
+      </section>
+      <section class="screen-study" id="shared-screen" aria-labelledby="shared-caption">
+        <div class="screen-caption"><span class="role-label">Public</span><h2 id="shared-caption">Progress people can follow.</h2><p>Published actions, useful evidence, and a visible next step.</p></div>
+        <div class="phone shared-phone">
+          <header class="app-header"><a class="icon-link" href="#map-screen" aria-label="Back to nearby map"><span data-icon="back"></span></a><strong>Issue details</strong><button id="follow-button" class="follow-button" type="button" aria-pressed="true"><span data-icon="bookmark"></span>Following</button></header>
+          <div class="phone-scroll shared-content"><div class="row-between"><span class="meta">Trees · HFX-0142</span><span class="sample-tag">Demo</span></div><h3 data-issue-title>Branch blocking<br>the walkway</h3><p class="location-copy"><span data-icon="pin"></span>Harbour path</p>
+            <div class="mini-map"><div class="illustrated-map" data-map="small" aria-hidden="true"></div><span class="mini-map-pin" aria-hidden="true" data-icon="tree"></span><span class="mini-map-caption">Illustrative location</span></div>
+            <div class="shared-status"><span class="status-chip" data-issue-status>Assigned</span><span class="meta" id="public-team-summary">2 organizations involved</span></div>
+            <div class="next-step"><span class="next-step-icon" data-icon="people"></span><div><span class="meta">What happens next</span><p id="next-step-text">Harbour Parks and Street Response are coordinating the site visit.</p></div></div>
+            <div class="row-between timeline-heading"><h4>Response timeline</h4><span class="meta">Public updates</span></div><ol class="timeline" id="public-timeline"><li><span class="timeline-dot"></span><div><strong>Response teams assigned</strong><p>Harbour Parks is coordinating with Street Response.</p><span class="meta">Demo event · 10:12</span></div></li><li><span class="timeline-dot evidence-dot"></span><div><strong>More detail from a neighbour</strong><p>“The remaining path is too narrow for a wheelchair.”</p><span class="meta">Demo evidence · 10:08</span></div></li></ol>
+          </div>
+          <div class="evidence-footer"><button class="button secondary full" id="evidence-button" type="button"><span data-icon="plus"></span>Add demo evidence</button></div>
+          <nav class="app-nav" aria-label="Shared issue reference navigation"><a href="#map-screen"><span data-icon="map"></span>Nearby</a><a href="#report-screen"><span data-icon="plus"></span>Report</a><a class="selected" href="#shared-screen" aria-current="page"><span data-icon="bookmark"></span>Following</a></nav>
+        </div>
+        <p class="design-note">Show the next action before the history. Public updates describe work without exposing staff notes.</p>
+      </section>
+    </div>
+    <section class="design-footer" aria-label="Design principles"><div><span class="swatch harbour"></span><strong>Harbour blue</strong><p>A calm, recognizable action color.</p></div><div><span class="swatch water"></span><strong>Geography first</strong><p>Water, parks, streets, and legible markers.</p></div><div><span class="swatch paper"></span><strong>Room to act</strong><p>48 px controls and quiet, readable surfaces.</p></div><div><span class="swatch ochre"></span><strong>Honest progress</strong><p>Recorded actions, never invented certainty.</p></div></section>
+    <footer class="board-footer">OpenHFX · Shared design baseline · September 2026 <span>Reference only. No data leaves this page.</span></footer>
+  </main>
+</body>
+</html>
