@@ -1,6 +1,23 @@
 # Local prototype verification
 
-Date: 2026-09-12. Branch: `feat/llm-engine`. This file records application evidence, not the older HTML design reference.
+Date: 2026-09-12. Map integration target: `main`; earlier evidence below describes `feat/llm-engine`. This file records application evidence, not the older HTML design reference.
+
+## Selective map integration
+
+The useful renderer code from `feat/public-map` (`6c75558`) was integrated into the persisted application at `29a1203`. The standalone map branch's second schema/fixture, disconnected actions, duplicate shell, and older app configuration were omitted. See [MAP_INTEGRATION](MAP_INTEGRATION.md) for the contract and retained functionality.
+
+Observed checks on the integrated tree:
+
+- Strict typecheck, 91 tests across six files, and the production build passed. Map regression coverage checks public-coordinate projection even from staff records, approximate flags, reviewed urgent priority, stable IDs/status refresh, empty filters, and persisted backend bounding-box searches.
+- The production-server smoke passed on isolated port 3001 in demo mode: HFX-0145, six independent identities, two organizations, contributions, permissions, guarded resolution, and extractive summary. No paid provider call was made during map verification.
+- Browser checks loaded actual OpenFreeMap tiles and same-origin MapLibre workers. Verified category filtering, map/list switching, explicit area query/reset, selected issue link, compact detail, and map resize at 360, 390, 430, and 1440 CSS pixels without horizontal page overflow. The map legend stays above the issue panel; desktop list growth scrolls within its panel.
+- A report created from a separate resident session appeared through polling in the trees-filtered discovery view (two to three rows). Bounds before/after were identical: `-63.605759298195906,44.636536268193026,-63.56024070180396,44.66106113937889`. A separate worker session changed the seeded issue from assigned to in progress; the public row updated and its selected map link remained visible.
+- A sensitive-location report displayed an approximate-area label in discovery and compact detail. The source-projection tests confirm exact coordinates/private fields cannot enter its GeoJSON.
+- On the 390px report form, a map tap changed draft coordinates, direct coordinate entry worked, and denied geolocation left a usable manual path. Blocking tile-provider requests produced the fallback; coordinate editing still worked and Retry map recovered after requests were restored.
+- Browser testing caught and fixed the branch's obsolete missing-image event handler for cluster counts using MapLibre's current resolver, a negative first-frame animation interval that produced invalid opacity, and a mobile panel overlap hiding the legend. Remaining provider-style warnings concern nullable road/boundary filter properties; they did not prevent rendering. Physical-phone, screen-reader, and full accessibility testing remain open.
+- Final retest after those fixes: `npm run verify` passed again (91 tests, strict types, production build); the rebuilt production server passed smoke as HFX-0147. The production browser loaded real tiles, retained the selected issue link through a 390px resize, and had no runtime errors or horizontal overflow in that check.
+
+The browser behavior above was exercised during integration using the isolated local store `.data/map-integration-verification`; records are fictional. Earlier placeholder/no-map statements below are historical. Geocoding, hosted identity/storage, subscriptions, and municipal integration remain outside this change.
 
 ## Anthropic follow-up
 
@@ -45,7 +62,7 @@ The coordinator browser accepted HFX-0147, assigned Canopy 2, saved an on-site m
 
 ## Remaining integration and QA boundaries
 
-- Real map, tiles, geocoding, attribution, and map camera/update behavior belong to the map teammate; see MAP_INTEGRATION.
+- Real map/tiles, attribution, and map camera/update behavior are now integrated as recorded above; geocoding remains unimplemented. See MAP_INTEGRATION.
 - Anthropic text-and-image integration is verified above; other providers remain unimplemented. See ENGINE.
 - Hosted identity/storage/database policies and durable background jobs require deployment work. Local SQLite stores one transactional domain snapshot and is not a multi-instance backend.
 - No physical-phone, screen-reader, keyboard-visible mobile OS, production load, or broad accessibility certification is claimed. The single real-provider latency above is not a benchmark or guarantee. Snapshot polling is functional, but the three-second interval is not a measured service-level guarantee.

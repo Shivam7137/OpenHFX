@@ -4,7 +4,7 @@ Baseline: 1.0 | 2026-09-12 | Owner: quality/integration lead
 
 This is a dependency-ordered delivery backlog, not a claim of implemented features. Each package is a small integration checkpoint. Follow [TEAM](TEAM.md), [DESIGN_SPEC](DESIGN_SPEC.md), and [SYSTEM_CONTRACTS](SYSTEM_CONTRACTS.md).
 
-Current branch progress is recorded separately in [application verification](VERIFICATION.md). The original backlog below remains the full product target, including the real map that the user explicitly excluded from the current app/engine branch. Do not interpret its pending map, hosted-auth, subscription, or provider items as connected functionality. The current prototype uses three-second snapshot polling, local SQLite, and fictional loopback demo accounts; exact setup and integration boundaries are in [IMPLEMENTATION](IMPLEMENTATION.md).
+Current progress is recorded separately in [application verification](VERIFICATION.md). The original backlog below remains the full product target. MapLibre and the optional Anthropic adapter are now connected; hosted-auth and subscriptions remain future work. The current prototype uses three-second snapshot polling, local SQLite, and fictional loopback demo accounts; exact setup and integration boundaries are in [IMPLEMENTATION](IMPLEMENTATION.md) and [MAP_INTEGRATION](MAP_INTEGRATION.md).
 
 ## Build order
 

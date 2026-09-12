@@ -13,7 +13,10 @@ import {
 import { usePoll } from "@/components/api";
 import { useSession, SignInRequired } from "@/components/shell";
 import { EmptyState, ErrorNotice, IssueRow, SyncStatus } from "@/components/ui";
-import { MapPlaceholder } from "@/features/map/MapPlaceholder";
+import { MapView } from "@/features/map/MapView";
+import type { BoundingBox } from "@/features/map/geo";
+import type { CameraTarget } from "@/features/map/MapCanvas";
+import styles from "./IssueBrowser.module.css";
 
 export function IssueBrowser({ authority = false }: { authority?: boolean }) {
   const { session } = useSession();
@@ -22,12 +25,15 @@ export function IssueBrowser({ authority = false }: { authority?: boolean }) {
   const [scope, setScope] = useState("relevant");
   const [showMap, setShowMap] = useState(!authority);
   const [selected, setSelected] = useState<string | null>(null);
+  const [bounds, setBounds] = useState<BoundingBox | null>(null);
+  const [searchBounds, setSearchBounds] = useState<BoundingBox | null>(null);
+  const [cameraTarget, setCameraTarget] = useState<CameraTarget>(null);
   const canRead = !authority || session?.user?.role === "coordinator";
   const poll = usePoll<ListEnvelope<IssueSummary>>(
     canRead
       ? authority
         ? `/authority/inbox?scope=${scope}`
-        : "/issues"
+        : `/issues${searchBounds ? `?bbox=${searchBounds.join(',')}` : ''}`
       : null,
   );
   const organizations = usePoll<ListEnvelope<Organization>>(
@@ -122,13 +128,16 @@ export function IssueBrowser({ authority = false }: { authority?: boolean }) {
           ))}
         </div>
       </div>
-      <div className={`browse-layout ${showMap ? "" : "list-only"}`}>
+      <div className={`browse-layout ${showMap ? styles.mapLayout : "list-only"}`}>
         {showMap && (
           <div className="browse-map">
-            <MapPlaceholder
+            <MapView
               issues={items}
-              selectedIssueId={selected}
+              selectedIssueId={items.some(issue => issue.id === selected) ? selected : null}
               onSelect={setSelected}
+              onBoundsChange={setBounds}
+              cameraTarget={cameraTarget}
+              authority={authority}
             />
           </div>
         )}
@@ -149,6 +158,10 @@ export function IssueBrowser({ authority = false }: { authority?: boolean }) {
               {showMap ? "List" : "Map"}
             </button>
           </div>
+          {!authority && <div className={styles.areaControls}>
+            {showMap && bounds && <button type="button" className="text-button" onClick={() => { setSearchBounds(bounds); setSelected(null); }}>Search this area</button>}
+            {searchBounds && <button type="button" className="text-button" onClick={() => setSearchBounds(null)}>Show all areas</button>}
+          </div>}
           <SyncStatus {...poll} />
           <ErrorNotice message={poll.error} retry={poll.refresh} />
           {!poll.data && !poll.error && (
@@ -164,7 +177,12 @@ export function IssueBrowser({ authority = false }: { authority?: boolean }) {
               a.id === selected ? -1 : b.id === selected ? 1 : 0,
             )
             .map((issue) => (
-              <IssueRow key={issue.id} issue={issue} authority={authority} />
+              <div key={issue.id} className={selected === issue.id && showMap ? styles.selected : ''}>
+                <IssueRow issue={issue} authority={authority} />
+                {showMap && <button type="button" className={`text-button ${styles.showOnMap}`} aria-label={`Show ${issue.title} on map`} onClick={() => {
+                  setSelected(issue.id); setCameraTarget({ issueId: issue.id, nonce: Date.now() });
+                }}><MapPinned size={16} />Show on map</button>}
+              </div>
             ))}
           {!authority && (
             <div className="panel-footer">

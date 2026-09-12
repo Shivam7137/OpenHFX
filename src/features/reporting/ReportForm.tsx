@@ -17,7 +17,7 @@ import {
 import { useDraft, usePoll, mutate, errorMessage } from "@/components/api";
 import { useSession } from "@/components/shell";
 import { ErrorNotice, Notice, Time } from "@/components/ui";
-import { MapPlaceholder } from "@/features/map/MapPlaceholder";
+import { MapView } from "@/features/map/MapView";
 import { PhotoUpload } from "./PhotoUpload";
 import { emptyDraft, preparationLocation } from "./draft";
 export function ReportForm() {
@@ -311,7 +311,7 @@ export function ReportForm() {
             <p className="muted">
               Confirm the location and add a place people will recognize.
             </p>
-            <MapPlaceholder
+            <MapView
               issues={[]}
               location={{
                 latitude: draft.latitude,

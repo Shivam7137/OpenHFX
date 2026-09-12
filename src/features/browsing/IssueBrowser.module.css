@@ -1,0 +1,7 @@
+.areaControls {display:flex;flex-wrap:wrap;gap:8px 20px;padding:0 20px}
+.areaControls:empty {display:none}
+.selected {background:var(--harbour-soft);box-shadow:inset 3px 0 var(--harbour)}
+.showOnMap {margin:0 20px 12px;min-height:48px;display:flex;align-items:center;gap:8px}
+.mapLayout {height: min(720px, calc(100dvh - 280px));min-height:520px}
+.mapLayout :global(.issue-panel) {overflow-y:auto}
+@media(max-width:767px){.mapLayout{height:auto;min-height:0}.mapLayout :global(.issue-panel){margin-top:0;border-radius:0;box-shadow:none;overflow:visible}.mapLayout :global(.browse-map){height:320px}.mapLayout :global(.browse-map)>section{height:320px}}

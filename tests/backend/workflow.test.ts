@@ -25,6 +25,19 @@ const report = (extras = {}) => ({ draftId: randomUUID(), originalDescription: '
 const issuePath = `/authority/issues/${DEMO_IDS.issue}`;
 
 describe('identity, persistence and public boundaries', () => {
+  it('searches map bounds using sanitized public locations and includes fresh persisted reports', async () => {
+    const cookie = await login('resident');
+    const created = await call('/issues', 'POST', report({ sensitiveLocation: true }), cookie);
+    expect(created.status).toBe(201);
+    const { id, publicLocation: point } = created.json.data;
+    const box = [point.longitude - 0.000001, point.latitude - 0.000001, point.longitude + 0.000001, point.latitude + 0.000001].join(',');
+    const result = await call(`/issues?bbox=${box}`);
+    expect(result.status).toBe(200);
+    expect(result.json.items.map((issue: { id: string }) => issue.id)).toContain(id);
+    expect(result.json.items.find((issue: { id: string }) => issue.id === id)).not.toHaveProperty('exactLocation');
+    expect((await call('/issues?bbox=-63.9,44.7,-63.8,44.8')).json.items.map((issue: { id: string }) => issue.id)).not.toContain(id);
+    expect((await call('/issues?bbox=-63,45,-64,44')).status).toBe(400);
+  });
   it('resolves provisioned identities with HttpOnly cookies and rejects remote entry/CSRF', async () => {
     const info = await call('/session'); expect(info.json.data.accounts).toHaveLength(8);
     const remote = await handler(new Request('https://example.org/api/v1/session', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ accountId: store.read().users[0].id }) }));

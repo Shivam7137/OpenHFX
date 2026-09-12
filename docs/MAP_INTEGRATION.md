@@ -1,19 +1,26 @@
-# Map teammate handoff
+# Connected map integration
 
-The application owns persisted reports, authority assignments, evidence, and updates. Replace only `src/features/map/MapPlaceholder.tsx` (and its module stylesheet) to connect the geographic UI. The current component is explicitly labeled as a placeholder and does not pretend its schematic drawing is a real map.
+The MapLibre renderer from `feat/public-map` is integrated through `src/features/map/MapView.tsx`. Discovery, report location selection, and public/authority issue details use this component with the existing `IssueSummary` and `Location` contracts.
+
+Retained from the map branch: MapLibre 6.9.0, cluster expansion/counts, category glyphs, lifecycle colors, reviewed urgent badges, selection rings, reduced-motion controls, configurable basemap/attribution, and the matching worker-copy script. The branch's alternate issue schema, bundled fixtures/source, disconnected sheet/actions, duplicate shell/styles, and older scaffolding were not imported.
+
+The application keeps its routes, permissions, polling, single seed, Anthropic adapter, shared UI/tokens, pinned dependencies, Node 24 requirement, and verification commands.
 
 ```typescript
-interface MapPlaceholderProps {
+interface MapViewProps {
   issues: IssueSummary[];
   selectedIssueId?: string | null;
   onSelect?: (id: string) => void;
   location?: { latitude: number; longitude: number };
   onLocationChange?: (location: { latitude: number; longitude: number }) => void;
   compact?: boolean;
+  onBoundsChange?: (bounds: readonly [number, number, number, number]) => void;
+  cameraTarget?: { issueId: string; nonce: number } | null;
+  authority?: boolean;
 }
 ```
 
-Types are exported from `src/contracts/index.ts`. Preserve the named component export initially so the teammate's change can land independently of report/authority routes. Renaming it to MapView can be one coordinated follow-up.
+Types are exported from `src/contracts/index.ts`. All three consumers use the shared `MapView` export.
 
 - Render issue markers from `publicLocation`, never a private field. Public `locationPrecision=approximate` must stay visibly approximate.
 - `onSelect` changes the selected issue ID; it does not create an issue or change status.
@@ -23,6 +30,12 @@ Types are exported from `src/contracts/index.ts`. Preserve the named component e
 - Use `[longitude, latitude]` when converting the shared location object to GeoJSON.
 - Preserve map attribution, list alternative, keyboard access, safe-area spacing, and bounds/filter behavior from DESIGN_SPEC.
 - A worker assignment's issue location is not a worker GPS position. Do not fabricate a moving vehicle marker or ETA.
-- Tile/style provider and any public browser key must be configured by the map team. No map dependency or credential has been selected on this branch.
+- `NEXT_PUBLIC_MAP_STYLE_URL` defaults to `https://tiles.openfreemap.org/styles/positron`. Default attribution credits OpenFreeMap and OpenStreetMap contributors; a custom style may provide `NEXT_PUBLIC_MAP_ATTRIBUTION`. These are public build-time settings, never private credentials. Browser tile requests do not send report text or attachments.
 
-The placeholder includes an explicit browser-location button and coordinate fields to keep the reporting workflow usable until the real picker is integrated. Reuse their role in the form even if their visual presentation changes.
+The browser reads persisted `/api/v1/issues` through the existing three-second polling hook. Category/text filters affect map and list. “Search this area” explicitly applies `west,south,east,north` map bounds to the backend query; “Show all areas” removes the bound. The existing limit is 200 records per response. “Show on map” explicitly recenters; marker selection links to the existing issue response. Clusters expand on tap.
+
+The report picker supports map taps, coordinate fields, and one explicit device-location request. It changes only the draft and preserves the existing confirmation and Halifax-area validation. Compact details plot public coordinates even for authorized staff; approximate locations have a halo and explanation. A halo is an area indicator, not a measured accuracy radius.
+
+The renderer loads only in the browser, resizes with its container, and disposes its map, observers, listeners, and animations. Loading/tile failure preserves the issue list and coordinate inputs and offers retry. A source-free testing style is rejected as a basemap.
+
+`npm run dev` and `npm run build` copy the pinned MapLibre worker and shared bundle into ignored `public/maplibre/`; serve those generated assets with the production build. Geocoding, hosted authentication/storage, municipal dispatch, and worker GPS remain outside this integration. See `VERIFICATION.md` for evidence and QA boundaries.

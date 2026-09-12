@@ -29,7 +29,7 @@ Load only additional instructions relevant to the current command.
 
 Provider follow-up: Anthropic is now an implemented server-side adapter. Read `docs/ENGINE.md`; the original unset-provider baseline below is superseded for this adapter. Never read secrets into tool output, commit `.env.local`, or run paid live checks without user authorization. Keep offline tests independent of real keys.
 
-The `feat/llm-engine` branch implements a local Next.js prototype. Read `docs/IMPLEMENTATION.md` for its exact API and deliberate overrides of the hosted architecture. Shared types are in `src/contracts/index.ts`; the single fixture is in `src/server/app/seed.ts`. Run typecheck, tests, build, and the running-server smoke workflow before claiming integrated completion. Preserve the map replacement boundary and unset provider. SQLite/demo identity are not production authentication or hosted infrastructure.
+The application implements a local Next.js prototype with the public-map work selectively integrated. Read `docs/IMPLEMENTATION.md` for its exact API and deliberate overrides of the hosted architecture, and `docs/MAP_INTEGRATION.md` for the shared `MapView` boundary. Shared types are in `src/contracts/index.ts`; the single fixture is in `src/server/app/seed.ts`. Run typecheck, tests, build, and the running-server smoke workflow before claiming integrated completion. Preserve explicit provider selection. SQLite/demo identity are not production authentication or hosted infrastructure.
 
 <!-- BEGIN:nextjs-agent-rules -->
 

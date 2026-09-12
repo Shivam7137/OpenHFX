@@ -9,3 +9,5 @@ coverage/
 *.tsbuildinfo
 playwright-report/
 test-results/
+public/maplibre/
+.playwright-mcp/

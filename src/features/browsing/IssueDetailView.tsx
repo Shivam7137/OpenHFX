@@ -16,7 +16,7 @@ import {
   Time,
   EmptyState,
 } from "@/components/ui";
-import { MapPlaceholder } from "@/features/map/MapPlaceholder";
+import { MapView } from "@/features/map/MapView";
 import { EvidenceComposer } from "@/features/reporting/EvidenceComposer";
 import { Coordination } from "@/features/coordination/Coordination";
 
@@ -123,7 +123,7 @@ export function IssueDetailView({
           )}
           <div className="detail-grid">
             <div className="detail-main">
-              <MapPlaceholder
+              <MapView
                 compact
                 issues={[issue]}
                 selectedIssueId={issue.id}

@@ -84,6 +84,7 @@ Record decision, reason, affected docs/contracts, owner, and migration impact. B
 | D11 | User approved full local prototype, excluding real map/provider connection | D10 is superseded for `feat/llm-engine`; map handoff stays isolated |
 | D12 | SQLite and loopback-only demo sessions for local build | Hosted Supabase/auth remain unconnected; do not expose demo identity publicly |
 | D13 | Three-second snapshot polling in local build | No claim of connected subscriptions; display sync/error states |
+| D14 | User approved Anthropic, then selective map integration | D11's exclusions are superseded; keep the existing API, seed, shared UI and app workflows. MapLibre uses public issue projections and OpenFreeMap by default. |
 
 ## Teammate handoff
 

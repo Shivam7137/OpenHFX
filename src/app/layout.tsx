@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "@fontsource-variable/public-sans";
+import "maplibre-gl/dist/maplibre-gl.css";
 import "@/styles/globals.css";
 import { Shell } from "@/components/shell";
 export const metadata: Metadata = {

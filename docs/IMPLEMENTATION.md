@@ -1,24 +1,24 @@
 # Engine and application implementation brief
 
-Branch: `feat/llm-engine`. User authorized the complete public and authority prototype, excluding the real map and LLM-provider connection. This brief refines the baseline for the current build.
+The original `feat/llm-engine` implementation provided the complete public and authority prototype. The user subsequently authorized Anthropic and selective integration of `feat/public-map` into `main`. This brief refines the baseline for the current build.
 
-Provider follow-up (2026-09-12): the user selected Anthropic / `claude-sonnet-4-6`. The server adapter is now implemented behind the existing provider interface; this supersedes the original no-connection boundary for Anthropic only. The real map remains excluded. See [ENGINE](ENGINE.md) for private configuration and [VERIFICATION](VERIFICATION.md) for actual live-test status.
+Provider follow-up (2026-09-12): the user selected Anthropic / `claude-sonnet-4-6`. The server adapter is implemented behind the existing provider interface. The map follow-up connects MapLibre to the same persisted issue records and report workflow; see [MAP_INTEGRATION](MAP_INTEGRATION.md). See [ENGINE](ENGINE.md) for private configuration and [VERIFICATION](VERIFICATION.md) for observed checks.
 
 ## Decisions for this branch
 
 - One Next.js app with shared TypeScript types at `src/contracts/index.ts`.
-- `src/server/engine/` is a reusable provider-neutral module; provider/model stay unset. Explicit demo suggestions and an unconfigured failure state both work.
+- `src/server/engine/` is a reusable provider-neutral module; a provider requires explicit configuration. Demo suggestions and an unconfigured failure state both work.
 - Persist prototype records and sessions in local SQLite through Node 24's built-in driver. Supabase deployment integration remains a future adapter; do not claim it is connected.
 - Local demo accounts use server-issued HttpOnly sessions with roles/organizations resolved from seeded records. Demo identity entry is clearly labeled and restricted to loopback usage. No public authority registration.
 - Real photo uploads are validated and re-encoded with sharp to remove metadata, with private storage and owner checks.
 - Real persisted updates are refreshed across sessions by bounded 3-second polling, with last-sync/offline state; no simulated live backend.
-- A single `MapPlaceholder` component accepts issue/location/selection props. The map team replaces this component without changing report records or routes. It does not claim real geographic interaction.
+- A single `MapView` component accepts issue/location/selection props. The integrated MapLibre renderer uses public coordinates, preserves camera on polling, and supports a draft location picker and compact issue context. Map/list share filters and persisted records.
 - Work assignments, team milestones, staff/public notes, evidence, follows, notifications, reopening, and guarded resolution use shared issue records.
 - Report creation supports the fictional directory's Halifax area only (latitude 44.5–44.85, longitude -63.85–-63.4). Outside locations receive an explicit validation error; no worldwide triage service is implied.
 
 ## Work ownership
 
-1. Controller: root build/config/types, map placeholder, integration docs, tests and browser verification.
+1. Controller: root build/config/types, shared map integration, integration docs, tests and browser verification.
 2. Engine agent: only `src/server/engine/**`, `tests/engine/**`. Implement provider interface, schemas, routing/candidates, preparation lifecycle runner, deadlines/retries, deterministic explicit demo provider, privacy-safe extractive progress summaries, and tests.
 3. Backend agent: only `src/server/app/**`, `src/app/api/**`, `tests/backend/**`. Implement SQLite workflow, role/session permissions, attachments, HTTP handlers, persistence, and endpoint tests.
 4. Frontend agent: only `src/app` outside `api`, `src/components/**`, `src/features/**` outside `map`, and UI styles. Build all mobile screens using the shared contracts and HTTP interface below.
@@ -73,7 +73,7 @@ PrepareReport only receives public candidate issues and the fixed directory. Can
 - [x] Backend tests cover role boundaries, durable data, independent organization assignments, conflicts/idempotency, uploads, public/private visibility, and final resolution.
 - [x] Full build and typecheck pass.
 - [x] Six independent HTTP sessions demonstrate report -> authority assignment -> worker progress -> public update -> evidence -> resolution.
-- [x] Focused phone-width browser journeys exercised; map placeholder and demo suggestions clearly identified. Physical-phone/full accessibility checks remain open.
+- [x] Focused phone-width browser journeys exercised, including the connected map and explicit demo suggestions. Physical-phone/full accessibility checks remain open.
 - [x] Integration documentation gives exact setup commands and the map/provider replacement boundaries.
 
 See [VERIFICATION](VERIFICATION.md) for observed evidence and unverified boundaries.
