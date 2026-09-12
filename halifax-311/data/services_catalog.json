@@ -1,0 +1,1160 @@
+{
+  "source": "https://www.halifax.ca/home/online-services",
+  "scraped": "2026-09-12",
+  "count": 92,
+  "services": [
+    {
+      "service_id": "2161",
+      "slug": "wedding-anniversary-message",
+      "name": "Anniversary message from the mayor",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/city-hall/mayor-andy-fillmore/requests/wedding-anniversary-message",
+      "summary": "Ask the mayor to send an anniversary message to couples celebrating a 50th, 55th, 60th, 65th, 70th, or 75th anniversary.",
+      "categories": [
+        "Contact & Request",
+        "Mayor & Council"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "11001",
+      "slug": "how-get-a-vendors-licence",
+      "name": "Apply for a Vendor's License",
+      "type": "Online Service",
+      "url": "https://www.halifax.ca/business/licences/how-get-a-vendors-licence",
+      "summary": "Apply for a Vendor's License",
+      "categories": [
+        "Apply & Register",
+        "Permits & Licenses"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "1461",
+      "slug": "311",
+      "name": "Ask a question to 311",
+      "type": "Service Information",
+      "url": "https://www.halifax.ca/home/311",
+      "summary": "Have a general question? Send 311 a message and receive and answer by email.",
+      "categories": [
+        "Contact & Request",
+        "File a Report"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "1292779",
+      "slug": "barrier-maintenance",
+      "name": "Barrier Maintenance",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/barrier-maintenance",
+      "summary": "Requests for maintenance of guiderails, retaining walls, fences, or railings.",
+      "categories": [
+        "File a Report",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "9141",
+      "slug": "open-air-burning",
+      "name": "Before You Burn",
+      "type": "Online Service",
+      "url": "https://www.halifax.ca/safety-security/fire-emergency/fire-prevention-safety/open-air-burning",
+      "summary": "Check Before You Burn for up-to-date information regarding burning restrictions in the Halifax region.",
+      "categories": [
+        "Find, Maps, and Open Data",
+        "Permits & Licenses"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "12191",
+      "slug": "birthday-message-mayor",
+      "name": "Birthday message from the mayor",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/city-hall/mayor-andy-fillmore/requests/birthday-message-mayor",
+      "summary": "Ask the mayor to send a birthday message to someone turning 80, 90, or 100 (also available every year after 100).",
+      "categories": [
+        "Contact & Request",
+        "Mayor & Council"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1292821",
+      "slug": "bizpal",
+      "name": "BizPal",
+      "type": "Online Service",
+      "url": "https://www.halifax.ca/home/online-services/bizpal",
+      "summary": "Create a customized list of necessary permits and licenses from the municipal, provincial, and federal governments for your business.",
+      "categories": [
+        "Apply & Register"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "14351",
+      "slug": "outdoor-weddings",
+      "name": "Book a park or facility (wedding)",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/parks-recreation/facility-rentals-bookings-field-conditions/bookings-rentals/outdoor-weddings",
+      "summary": "Book one of the municipality’s beautiful venues for your wedding. Indoor and outdoor options available.",
+      "categories": [
+        "Apply & Register",
+        "Parks & Recreation"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1193626",
+      "slug": "relatedadditional-permits",
+      "name": "Building Related/Additional Permits",
+      "type": "Online Service",
+      "url": "https://www.halifax.ca/home-property/building-development-permits/relatedadditional-permits",
+      "summary": "Apply for building related/additional permits - demolition, blasting, grade alteration, and lot grading.",
+      "categories": [
+        "Permits & Licenses"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "1292815",
+      "slug": "cemeteries",
+      "name": "Cemeteries",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/cemeteries",
+      "summary": "Report on damaged headstones, fallen over headstones, grave depressions, or general cemetery inquiries. HRM Owned cemeteries only.",
+      "categories": [
+        "File a Report",
+        "Parks & Recreation"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "15861",
+      "slug": "grants",
+      "name": "Civic Event Grants",
+      "type": "Service Information",
+      "url": "https://www.halifax.ca/parks-recreation/events/grants",
+      "summary": "Find out how to apply for a Civic Event grant application.",
+      "categories": [
+        "Apply & Register",
+        "Contact & Request"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "1192244",
+      "slug": "commercial-mixed-use-building-permits",
+      "name": "Commercial Building Permits",
+      "type": "Online Service",
+      "url": "https://www.halifax.ca/home-property/building-development-permits/commercial-mixed-use-building-permits",
+      "summary": "Apply to make changes to existing buildings, new buildings, signs & application to occupy.",
+      "categories": [
+        "Permits & Licenses"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "1292814",
+      "slug": "community-clean-adopt-a-highway",
+      "name": "Community Clean Up / Adopt A Highway",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/community-clean-adopt-a-highway",
+      "summary": "Schedule pick up from Community Clean Up programs. Please ensure you have registered for the program prior to contacting HRM",
+      "categories": [
+        "Contact & Request",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "97",
+      "slug": "districts-councillors",
+      "name": "Contact your councillor",
+      "type": "Service Information",
+      "url": "https://www.halifax.ca/city-hall/districts-councillors",
+      "summary": "Contact the mayor or your councillor.",
+      "categories": [
+        "Contact & Request",
+        "Mayor & Council"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "1292777",
+      "slug": "crosswalks",
+      "name": "Crosswalks",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/crosswalks",
+      "summary": "Requests for new crosswalks, crosswalk repairs, or crosswalk painting.",
+      "categories": [
+        "File a Report",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1292782",
+      "slug": "curb-andor-gutter-maintenance",
+      "name": "Curb and/or Gutter Maintenance",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/curb-andor-gutter-maintenance",
+      "summary": "Requests for repairs on curbs or gutters",
+      "categories": [
+        "File a Report",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1292816",
+      "slug": "data-analytics",
+      "name": "Data Analytics",
+      "type": "Online Service",
+      "url": "https://www.halifax.ca/home/online-services/data-analytics",
+      "summary": "Interactive dashboards that help visualize data, trends and patterns to inform decisions that affect the municipality.",
+      "categories": [
+        "Find, Maps, and Open Data"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "1292813",
+      "slug": "deceased-animals",
+      "name": "Deceased Animals",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/deceased-animals",
+      "summary": "Report issues on deceased animals or marine life on HRM Property, including parks, playgrounds, and fields.",
+      "categories": [
+        "File a Report",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1292812",
+      "slug": "drainage-infrastructure-maintenance-or-repair",
+      "name": "Drainage Infrastructure Maintenance or Repair",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/drainage-infrastructure-maintenance-or-repair",
+      "summary": "Report issues related to repair or maintenance of drainage assets (where flooding is not currently happening). Examples include culverts, ditch, street drains, catch basins, other.",
+      "categories": [
+        "File a Report",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1292811",
+      "slug": "drainage-infrastructure-request",
+      "name": "Drainage Infrastructure Request",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/drainage-infrastructure-request",
+      "summary": "Request for new drainage infrastructure (e.g. new catch basin, culvert, street drain).",
+      "categories": [
+        "Contact & Request"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1292810",
+      "slug": "election-signs",
+      "name": "Election Signs",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/election-signs",
+      "summary": "Report concerns on the size of election signs, signs in prohibited areas, signs on a travel way, path, or other concerns.",
+      "categories": [
+        "Contact & Request"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1292818",
+      "slug": "explorehrm",
+      "name": "ExploreHRM",
+      "type": "Online Service",
+      "url": "https://www.halifax.ca/home/online-services/explorehrm",
+      "summary": "Maps - a user-friendly interactive map of the Halifax Regional Municipality. Find addresses, streets, bus stops, property information and more.",
+      "categories": [
+        "Find, Maps, and Open Data"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "13511",
+      "slug": "district-look",
+      "name": "Find your district",
+      "type": "Online Service",
+      "url": "https://www.halifax.ca/city-hall/districts-councillors/district-look",
+      "summary": "Find your electoral district map, review district maps, and find your councillor by entering your street address.",
+      "categories": [
+        "Find, Maps, and Open Data",
+        "Mayor & Council"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "1292809",
+      "slug": "flooding-requests",
+      "name": "Flooding Requests",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/flooding-requests",
+      "summary": "Report active incidents of flooding; catch basins, water running into the street, culverts and ditches.",
+      "categories": [
+        "File a Report",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1292808",
+      "slug": "graffiti-removal",
+      "name": "Graffiti Removal",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/graffiti-removal",
+      "summary": "Requests to have graffiti removed.",
+      "categories": [
+        "File a Report",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1292807",
+      "slug": "grass",
+      "name": "Grass",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/grass",
+      "summary": "Requests to cut grass in parks, playgrounds, athletic fields, cemeteries and in the boulevard.",
+      "categories": [
+        "Contact & Request",
+        "Parks & Recreation"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1292822",
+      "slug": "halifax-police-crime-map",
+      "name": "Halifax Police crime map",
+      "type": "Online Service",
+      "url": "https://www.halifax.ca/home/online-services/halifax-police-crime-map",
+      "summary": "View online maps to see timely information about crime within the municipality.",
+      "categories": [
+        "Find, Maps, and Open Data"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "967281",
+      "slug": "hfxalert",
+      "name": "hfxALERT - mass notification system",
+      "type": "Online Service",
+      "url": "https://www.halifax.ca/safety-security/emergency-management/hfxalert",
+      "summary": "hfxALERT is the our mass notification system, keeping residents informed about emergencies and operations updates, including the winter parking ban.",
+      "categories": [
+        "Apply & Register"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "1292826",
+      "slug": "hfxalert-submit-feedback",
+      "name": "hfxALERT - submit feedback",
+      "type": null,
+      "url": "https://www.halifax.ca/home/online-services/hfxalert-submit-feedback",
+      "summary": "hfxALERT is the municipal mass notification system keeping residents informed about urgent and non-urgent situations.",
+      "categories": [
+        "Contact & Request"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "1192154",
+      "slug": "house-home-permits",
+      "name": "House and Home Permits",
+      "type": "Online Service",
+      "url": "https://www.halifax.ca/home-property/building-development-permits/house-home-permits",
+      "summary": "Permits for home improvements, new home construction, developing your property.",
+      "categories": [
+        "Permits & Licenses"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "1297994",
+      "slug": "hrfe-incident-feed",
+      "name": "HRFE incident feed",
+      "type": "Online Service",
+      "url": "https://www.halifax.ca/safety-security/fire-emergency/hrfe-incident-feed",
+      "summary": "View recent information about HRFE fire calls and incidents in one place.",
+      "categories": [
+        "Find, Maps, and Open Data"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1292806",
+      "slug": "illegally-parked-vehicle",
+      "name": "Illegally Parked Vehicle",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/illegally-parked-vehicle",
+      "summary": "Report illegally parked vehicles.",
+      "categories": [
+        "File a Report",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "13001",
+      "slug": "invitations-mayor-attend-public-events",
+      "name": "Invite the mayor (Public Event)",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/city-hall/mayor-andy-fillmore/requests/invitations-mayor-attend-public-events",
+      "summary": "Invite the mayor to attend your special event.",
+      "categories": [
+        "Contact & Request",
+        "Mayor & Council"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1292805",
+      "slug": "landscaping",
+      "name": "Landscaping",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/landscaping",
+      "summary": "Requests for pruning and maintenance of foliage, vegetation, shrubs, flower beds, hanging baskets. Examples include weeds in shrub beds, rodent holes, etc.",
+      "categories": [
+        "Contact & Request",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1292804",
+      "slug": "lights-parks-playground-fields",
+      "name": "Lights - Parks, Playground, Fields",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/lights-parks-playground-fields",
+      "summary": "Lighting requests for HRM owned sports fields, sports courts, ball diamonds, all-weather fields and courts. Includes HRM owned parks, playgrounds, cemeteries, open spaces and walkways.",
+      "categories": [
+        "Parks & Recreation"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1292817",
+      "slug": "mapping-applications",
+      "name": "Mapping Applications",
+      "type": "Online Service",
+      "url": "https://www.halifax.ca/home/online-services/mapping-applications",
+      "summary": "Maps and Mapping Applications that answer questions about municipal services.",
+      "categories": [
+        "Find, Maps, and Open Data"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "12171",
+      "slug": "military-retirement-congratulatory-form",
+      "name": "Military Retirement Congratulations",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/city-hall/mayor-andy-fillmore/requests/military-retirement-congratulatory-form",
+      "summary": "Ask the mayor to send a congratulatory message to someone retiring from the military.",
+      "categories": [
+        "Contact & Request",
+        "Mayor & Council"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1292803",
+      "slug": "new-litter-bin-park-request",
+      "name": "New Litter Bin in Park Request",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/new-litter-bin-park-request",
+      "summary": "New Litter Bin in Park Request",
+      "categories": [
+        "Contact & Request",
+        "Parks & Recreation"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1292802",
+      "slug": "new-litter-bin-row-request",
+      "name": "New Litter Bin in ROW Request",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/new-litter-bin-row-request",
+      "summary": "Request for new litterbins in the right-of-way.",
+      "categories": [
+        "Contact & Request"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1292801",
+      "slug": "new-sidewalk-request",
+      "name": "New Sidewalk Request",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/new-sidewalk-request",
+      "summary": "Request for new sidewalks.",
+      "categories": [
+        "Contact & Request"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1292800",
+      "slug": "new-traffic-signal-request",
+      "name": "New Traffic Signal Request",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/new-traffic-signal-request",
+      "summary": "Request new traffic signals.",
+      "categories": [],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1292799",
+      "slug": "non-row-signage",
+      "name": "Non-ROW Signage",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/non-row-signage",
+      "summary": "Request for a new sign in a park (sign maintenance, complaints about signs in a park -including election signs).",
+      "categories": [
+        "Contact & Request",
+        "Parks & Recreation"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "14561",
+      "slug": "nova-scotia-highway-directional-signage",
+      "name": "Nova Scotia Directional Signage",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/business/licences/nova-scotia-highway-directional-signage",
+      "summary": "Apply for Nova Scotia Directional Signage",
+      "categories": [
+        "Apply & Register",
+        "Permits & Licenses"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "1292798",
+      "slug": "obstructions",
+      "name": "Obstructions",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/obstructions",
+      "summary": "Report anything impeding the flow of traffic or pedestrians such as MVA debris (including fluids from the vehicle), garbage bags, temporary signs, shopping carts.",
+      "categories": [
+        "File a Report",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1292819",
+      "slug": "open-data",
+      "name": "Open data",
+      "type": "Online Service",
+      "url": "https://www.halifax.ca/home/open-data/open-data",
+      "summary": "Data available to the public for download to improve citizen engagement, transparency and accountability to municipal residents.",
+      "categories": [
+        "Find, Maps, and Open Data"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "1292797",
+      "slug": "parking-permits",
+      "name": "Parking Permits",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/parking-permits",
+      "summary": "Inquire about parking permits (inquiry/complaint).",
+      "categories": [
+        "Permits & Licenses",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1298856",
+      "slug": "parking-ticket-photo-request",
+      "name": "Parking Ticket Photo Request",
+      "type": "Online Service",
+      "url": "https://www.halifax.ca/home/online-services/parking-ticket-photo-request",
+      "summary": "Inquire about getting a photo of when your ticket was issued. This is not to be used for FOIPOP requests, Disclosure requests, or if your ticket has already been paid.",
+      "categories": [
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1292796",
+      "slug": "parks-infrastructure-requests",
+      "name": "Parks Infrastructure Requests",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/parks-infrastructure-requests",
+      "summary": "Inquiries on, or request for a new park, playground, greenspace, or infrastructure.",
+      "categories": [
+        "Contact & Request",
+        "Parks & Recreation"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1292795",
+      "slug": "parks-inquiries",
+      "name": "Parks Inquiries",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/parks-inquiries",
+      "summary": "Parks related inquiries, including complaints & compliments, hours of operation, policy inquiries, lost items in parks.",
+      "categories": [
+        "Contact & Request",
+        "Parks & Recreation"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1292794",
+      "slug": "pavement-markings",
+      "name": "Pavement Markings",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/pavement-markings",
+      "summary": "Request for new pavement markings or repainting of existing markings.",
+      "categories": [
+        "Contact & Request",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1203785",
+      "slug": "parking-tickets",
+      "name": "Pay parking tickets online",
+      "type": "Online Service",
+      "url": "https://www.halifax.ca/transportation/parking/parking-tickets",
+      "summary": "Pay your parking ticket easily and securely online.",
+      "categories": [
+        "Payments"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "1891",
+      "slug": "online-banking",
+      "name": "Pay property taxes online",
+      "type": "Service Information",
+      "url": "https://www.halifax.ca/home-property/municipal-payments/online-banking",
+      "summary": "Set up online property tax payments via your financial institution.",
+      "categories": [
+        "Payments"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "1246447",
+      "slug": "planning-subdivision-applications",
+      "name": "Planning & Subdivision Applications",
+      "type": "Online Service",
+      "url": "https://www.halifax.ca/business/planning-development/planning-subdivision-applications",
+      "summary": "Request changes to your land use, modify your registered heritage property, apply for a subdivision approval or zoning confirmation letter, etc; Apply for Variance - permission to adjust requirements (such as lot coverage, size of yard or setbacks) beyond what the Land Use By-law allows; Apply for a Subdivision - Create new property boundaries or propose an alteration to your current property boundaries.",
+      "categories": [
+        "Permits & Licenses"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "1292793",
+      "slug": "problem-plants-insects-invasive-species",
+      "name": "Problem Plants, Insects, or Invasive Species",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/problem-plants-insects-invasive-species",
+      "summary": "Report issues with problem plants, bugs, or invasive species.",
+      "categories": [
+        "File a Report",
+        "Parks & Recreation"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1177804",
+      "slug": "property-information",
+      "name": "Property Information Finder",
+      "type": "Online Service",
+      "url": "https://www.halifax.ca/home-property/building-development-permits/planning-development-dashboard/property-information",
+      "summary": "Enter your civic address or PID into our Property Information tool to see maps and information about your property.",
+      "categories": [
+        "Find, Maps, and Open Data"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "1258944",
+      "slug": "property-tax-services",
+      "name": "Property Tax Services",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home-property/property-taxes/property-tax-services",
+      "summary": "Property tax inquiries and transactions",
+      "categories": [
+        "Payments"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "1292823",
+      "slug": "register-recreation-programs",
+      "name": "Register for recreation programs",
+      "type": "Online Service",
+      "url": "https://www.halifax.ca/home/online-services/register-recreation-programs",
+      "summary": "Register for Halifax Recreation programs, camps, and classes.",
+      "categories": [
+        "Apply & Register",
+        "Parks & Recreation"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "12981",
+      "slug": "alarm-registration",
+      "name": "Register your alarm",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home-property/building-development-permits/alarm-registration",
+      "summary": "Register an alarm for a residence or business.",
+      "categories": [
+        "Apply & Register"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1171",
+      "slug": "reporting-crime",
+      "name": "Report a crime to Halifax Police",
+      "type": "Online Service",
+      "url": "https://www.halifax.ca/safety-security/police/reporting-crime",
+      "summary": "Report a minor crime to Halifax Regional Police. If a crime is in progress, call 911.",
+      "categories": [
+        "Contact & Request",
+        "File a Report"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "721241",
+      "slug": "report-a-missing-animal",
+      "name": "Report a missing animal",
+      "type": "Service Information",
+      "url": "https://www.halifax.ca/home-property/animal-services/report-a-missing-animal",
+      "summary": "Report your missing pet.",
+      "categories": [
+        "File a Report"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "213881",
+      "slug": "report-a-pothole",
+      "name": "Report a pothole or sinkhole",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/transportation/streets-sidewalks/paving-repair/report-a-pothole",
+      "summary": "Report a pothole or sinkhole on a municipal street or sidewalk. If you are reporting potholes on a 100 series highway, please contact NSTAT at TPWPAFF@novascotia.ca",
+      "categories": [
+        "File a Report"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "213901",
+      "slug": "street-lighting-concerns",
+      "name": "Report a problem with a streetlight",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/transportation/streets-sidewalks/street-lighting-concerns",
+      "summary": "Report an issue with a streetlight on a municipal street, park, or open space.",
+      "categories": [
+        "File a Report"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "213961",
+      "slug": "report-park-litter",
+      "name": "Report litter in parks and fields",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/parks-recreation/parks-trails-gardens/report-park-litter",
+      "summary": "Report litter, broken glass and overflowing waste bins in municipal parks, playgrounds or athletic fields.",
+      "categories": [
+        "Parks & Recreation",
+        "File a Report"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "213971",
+      "slug": "report-street-litter",
+      "name": "Report litter on streets or sidewalks",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/transportation/streets-sidewalks/report-street-litter",
+      "summary": "Report litter or overflowing waste bins on municipal streets, sidewalks, paths, walkways, between streets or in ditches.",
+      "categories": [
+        "File a Report"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "721221",
+      "slug": "request-mini-green-bin",
+      "name": "Request a new mini green bin",
+      "type": "Service Information",
+      "url": "https://www.halifax.ca/home-property/garbage-recycling-green-cart/green-carts-leaf-yard-material/request-mini-green-bin",
+      "summary": "Request a replacement countertop mini bin for organic waste.",
+      "categories": [
+        "Contact & Request"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "213921",
+      "slug": "request-repairs",
+      "name": "Request repairs (parks & playgrounds)",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/parks-recreation/parks-trails-gardens/request-repairs",
+      "summary": "Report damage to something in a municipal park, playground, or field.",
+      "categories": [
+        "Contact & Request",
+        "Parks & Recreation",
+        "File a Report"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "721231",
+      "slug": "request-residential-refrigerant",
+      "name": "Request residential refrigerant removal",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home-property/garbage-recycling-green-cart/garbage-collection/request-residential-refrigerant",
+      "summary": "Request the free removal of refrigerants from your domestic refrigerator, air conditioner, or other cooling appliance before garbage collection.",
+      "categories": [
+        "Contact & Request"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1292781",
+      "slug": "road-shoulder",
+      "name": "Road Shoulder",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/road-shoulder",
+      "summary": "Requests for maintenance of road shoulders (pothole, washouts, cracking)",
+      "categories": [
+        "File a Report",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1292825",
+      "slug": "roadside-memorials",
+      "name": "Roadside Memorials",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/roadside-memorials",
+      "summary": "The Roadside Memorials Administrative Order requires the person who places a roadside memorial to submit their contact information to the Municipality.",
+      "categories": [
+        "Apply & Register",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1292780",
+      "slug": "row-bench",
+      "name": "ROW bench",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/row-bench",
+      "summary": "Requests for new ROW Benches or Bench Repairs.",
+      "categories": [
+        "File a Report",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1292792",
+      "slug": "row-services-general-inquiries",
+      "name": "ROW Services General Inquiries",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/row-services-general-inquiries",
+      "summary": "Report issues about activity in the ROW or roadside memorials. Report general ROW inquiries regarding obstructions or placement of containers/excavation equipment.",
+      "categories": [
+        "Contact & Request",
+        "File a Report"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1292791",
+      "slug": "row-signage",
+      "name": "ROW Signage",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/row-signage",
+      "summary": "Request for new ROW/Traffic signs, damage to signs, missing signs, sign maintenance, change or removal of traffic signs.",
+      "categories": [
+        "Contact & Request",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1297910",
+      "slug": "rss-feeds",
+      "name": "RSS Feeds",
+      "type": "Online Service",
+      "url": "https://www.halifax.ca/home/stay-informed/rss-feeds",
+      "summary": "Really Simple Syndication (RSS) feeds for monitoring updates and news on the Halifax.ca website.",
+      "categories": [
+        "Find, Maps, and Open Data"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "1292824",
+      "slug": "search-jobs-halifax",
+      "name": "Search for jobs in Halifax",
+      "type": "Online Service",
+      "url": "https://www.halifax.ca/home/online-services/search-jobs-halifax",
+      "summary": "Search current job opportunities available with the Halifax Regional Municipality.",
+      "categories": [
+        "Apply & Register"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "1292820",
+      "slug": "search-municipal-archives",
+      "name": "Search the Municipal Archives",
+      "type": "Online Service",
+      "url": "https://www.halifax.ca/home/online-services/search-municipal-archives",
+      "summary": "Search the Municipal Archives online database.",
+      "categories": [
+        "Find, Maps, and Open Data"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "10961",
+      "slug": "sidewalk-cafes",
+      "name": "Sidewalk Café License",
+      "type": "Online Service",
+      "url": "https://www.halifax.ca/business/licences/sidewalk-cafes",
+      "summary": "Apply for a Sidewalk Café License",
+      "categories": [
+        "Permits & Licenses"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "1292790",
+      "slug": "snow-damage",
+      "name": "Snow Damage",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/snow-damage",
+      "summary": "Report damage to HRM Property such as vehicles, buildings, sidewalks, curbs, grass, trees, shrubs, gardens, etc.",
+      "categories": [
+        "Contact & Request",
+        "File a Report"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1297933",
+      "slug": "stay-informed",
+      "name": "Stay informed, stay connected",
+      "type": "Service Information",
+      "url": "https://www.halifax.ca/home/stay-informed",
+      "summary": "Service alerts, emergency notifications, public engagement opportunities or updates on programs and events, residents have more ways than ever to stay connected.",
+      "categories": [
+        "Contact & Request",
+        "Find, Maps, and Open Data"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "697831",
+      "slug": "winter-street-information",
+      "name": "Street Directory Service Maps",
+      "type": "Service Information",
+      "url": "https://www.halifax.ca/transportation/winter-operations/winter-street-information",
+      "summary": "Search a street name to find street ownership maps and maintenance details.",
+      "categories": [
+        "Find, Maps, and Open Data"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "1292789",
+      "slug": "street-sign-missing-or-damaged",
+      "name": "Street Sign Missing or Damaged",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/street-sign-missing-or-damaged",
+      "summary": "Report missing or damaged street signs.",
+      "categories": [
+        "File a Report",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1292788",
+      "slug": "street-sweeping",
+      "name": "Street Sweeping",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/street-sweeping",
+      "summary": "Requests for street sweeping outside of regularly scheduled weekly sweeping (during warmer months).",
+      "categories": [
+        "Contact & Request",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1193620",
+      "slug": "streets-services-permits",
+      "name": "Streets and Services Permits",
+      "type": "Online Service",
+      "url": "https://www.halifax.ca/home-property/building-development-permits/streets-services-permits",
+      "summary": "Here's what you need to know if you are working in the municipal right of way and if you need to run water and sewer.",
+      "categories": [
+        "Permits & Licenses"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "10161",
+      "slug": "temporary-signs",
+      "name": "Temporary Sign Licenses",
+      "type": "Online Service",
+      "url": "https://www.halifax.ca/business/licences/temporary-signs",
+      "summary": "Apply for a Temporary Sign License",
+      "categories": [
+        "Permits & Licenses"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "1292778",
+      "slug": "traffic-calming",
+      "name": "Traffic Calming",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/traffic-calming",
+      "summary": "Requests for traffic calming measures.",
+      "categories": [
+        "File a Report",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1292787",
+      "slug": "traffic-signals",
+      "name": "Traffic Signals",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/traffic-signals",
+      "summary": "Maintenance or repair of traffic signals. This includes flashing lights, stuck lights, lights out, audible crosswalk signal chirping, snow covered traffic heads, etc.",
+      "categories": [
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1292786",
+      "slug": "trees",
+      "name": "Trees",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/trees",
+      "summary": "Request work pertaining to tree pruning, tree removal, tree planting, and stump removal, and/or report tree vandalism (illegal cuts or pruning).",
+      "categories": [
+        "File a Report",
+        "Parks & Recreation",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "2881",
+      "slug": "address-change-form",
+      "name": "Update your address",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home-property/property-taxes/address-change-form",
+      "summary": "Change your address on your tax bill.",
+      "categories": [
+        "Apply & Register"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1292784",
+      "slug": "utility-related-street-cuts-trenches",
+      "name": "Utility Related Street Cuts and Trenches",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/utility-related-street-cuts-trenches",
+      "summary": "Requests for inspections of a completed utility cut.",
+      "categories": [
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1292785",
+      "slug": "vegetation-maintenance",
+      "name": "Vegetation Maintenance",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/vegetation-maintenance",
+      "summary": "Report on vegetation causing line of site issues, or vegetation in the right-of-way impeding the flow of traffic or pedestrians.",
+      "categories": [
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "1292783",
+      "slug": "walking-surface-maintenance",
+      "name": "Walking Surface Maintenance",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/home/online-services/walking-surface-maintenance",
+      "summary": "Requests for maintenance of sidewalks, pedestrian ramps at intersections/crosswalks, tactile plates, street to street walkways, marked crosswalks or stairs.",
+      "categories": [
+        "File a Report",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "submittable_form": true
+    },
+    {
+      "service_id": "64",
+      "slug": "garbage-collection",
+      "name": "What goes where",
+      "type": "Online Service",
+      "url": "https://www.halifax.ca/home-property/garbage-recycling-green-cart/garbage-collection",
+      "summary": "Create your customized waste collection schedule and search items by name to learn what goes where.",
+      "categories": [
+        "Find, Maps, and Open Data"
+      ],
+      "submittable_form": false
+    },
+    {
+      "service_id": "4181",
+      "slug": "youth-advocate-program",
+      "name": "Youth Advocate Program referral",
+      "type": "Online Form",
+      "url": "https://www.halifax.ca/parks-recreation/halifax-youth/youth-advocate-program",
+      "summary": "Refer a youth in need to the Youth Advocate Program.",
+      "categories": [
+        "Apply & Register",
+        "Parks & Recreation"
+      ],
+      "submittable_form": false
+    }
+  ]
+}
