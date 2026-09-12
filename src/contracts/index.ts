@@ -59,7 +59,7 @@ export interface ReportSuggestion {
   clarificationQuestions: string[]; suggestedNextSteps: string[];
   prioritySuggestion: Priority; priorityReason: string;
 }
-export interface PreparationInput { draftId: string; originalDescription: string; publicLocation: Location; category?: Category }
+export interface PreparationInput { draftId: string; originalDescription: string; publicLocation: Location; category?: Category; attachmentIds?: string[] }
 export interface CandidateIssue { id: string; title: string; summary: string; category: Category; publicLocation: Location; status: IssueStatus; updatedAt: string }
 export interface EngineContext { organizations: Organization[]; candidateIssues: CandidateIssue[] }
 export interface Preparation {

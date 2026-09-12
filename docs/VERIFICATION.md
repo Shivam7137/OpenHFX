@@ -2,6 +2,20 @@
 
 Date: 2026-09-12. Branch: `feat/llm-engine`. This file records application evidence, not the older HTML design reference.
 
+## Anthropic follow-up
+
+After the baseline below, an Anthropic Messages adapter was added for `claude-sonnet-4-6` with a fixed HTTPS endpoint, structured JSON output, cancellation, bounded response reads, and sanitized errors. The user-provided key is now configured in ignored `.env.local`, never committed. The updated production server is running locally on port 3000 in provider mode. The engine still allows manual reporting on provider failure.
+
+Photo-context verification (2026-09-12):
+
+- `npm run verify` passed: strict typecheck, all 86 tests across five files, and production build.
+- `node scripts/verify-provider.mjs --live --with-image` passed through local sign-in, synthetic image upload, preparation queue, real Anthropic Messages, strict output validation, and persisted terminal read. Result: `succeeded`, provider `anthropic`, model `claude-sonnet-4-6`, one image, one attempt, 13,762 ms engine latency, category `trees`, no error. This created a private test attachment/preparation, not a published issue.
+- Offline checks assert actual image blocks, JPEG dimensions and metadata removal, caption ordering, no base64 in persisted/public preparation records, and rejection of missing/foreign/public-but-foreign/duplicate/excessive photos and arbitrary URLs. Demo mode makes no provider request.
+- `npm run smoke` passed against a separate port-3001 demo-mode server and isolated `.data/vision-verification` store: HFX-0145, two organizations, evidence, public/private boundaries, and lead-controlled resolution. The temporary server was stopped; port 3000 remains running. This avoided additional paid model requests.
+- The report form sends its uploaded photo IDs and displays the Anthropic text/photo disclosure. This follow-up verified the API image journey, not a new browser-driven upload test. Earlier mobile browser evidence below belongs to the baseline UI.
+
+One successful synthetic-image request verifies connectivity and the multimodal path, not real-world visual accuracy or production readiness. Earlier no-provider statements below describe the original baseline.
+
 ## Scope
 
 Two mobile web experiences share persisted reports, resident evidence, follows, notifications, organization assignments, team milestones, public/staff updates, reopening, and lead-controlled resolution. The provider-neutral engine runs deterministic labeled suggestions or an explicit unconfigured failure. The map is a replaceable illustration.
@@ -32,8 +46,8 @@ The coordinator browser accepted HFX-0147, assigned Canopy 2, saved an on-site m
 ## Remaining integration and QA boundaries
 
 - Real map, tiles, geocoding, attribution, and map camera/update behavior belong to the map teammate; see MAP_INTEGRATION.
-- Provider choice, credentials, and SDK adapter remain intentionally empty; see ENGINE.
+- Anthropic text-and-image integration is verified above; other providers remain unimplemented. See ENGINE.
 - Hosted identity/storage/database policies and durable background jobs require deployment work. Local SQLite stores one transactional domain snapshot and is not a multi-instance backend.
-- No physical-phone, screen-reader, keyboard-visible mobile OS, production load, real provider latency, or broad accessibility certification is claimed. Snapshot polling is functional, but the three-second interval is not a measured service-level guarantee.
+- No physical-phone, screen-reader, keyboard-visible mobile OS, production load, or broad accessibility certification is claimed. The single real-provider latency above is not a benchmark or guarantee. Snapshot polling is functional, but the three-second interval is not a measured service-level guarantee.
 - Unuploaded photo files cannot survive navigation; uploaded report photo IDs do. Resident free text/photos can still reveal identifying details despite coordinate/metadata protection; do not use real personal data in the demo.
 - The original DELIVERY matrix includes larger release gates and is not wholly marked complete by these checks.

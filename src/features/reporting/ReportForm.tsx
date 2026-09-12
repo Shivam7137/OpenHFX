@@ -110,6 +110,7 @@ export function ReportForm() {
       const result = await mutate<Preparation>("/report-preparations", {
         draftId: draft.draftId,
         originalDescription,
+        attachmentIds: attachments.map(photo => photo.id),
         publicLocation: preparationLocation(
           {
             latitude: draft.latitude,
@@ -193,6 +194,7 @@ export function ReportForm() {
         <ArrowLeft size={18} />
         Nearby issues
       </Link>
+      {session?.engineMode === 'provider' && <Notice>Preparing suggestions sends your report text, public location, and uploaded photos with their descriptions to Anthropic. Avoid contact details, faces, licence plates, and other private information. AI suggestions need your review.</Notice>}
       <div className="row-between">
         <h1>Report a problem</h1>
         <button
@@ -396,6 +398,7 @@ export function ReportForm() {
                 No LLM provider is connected.
               </Notice>
             )}
+            {result?.mode === 'provider' && result.status === 'succeeded' && <Notice>AI suggestions · {result.provider} / {result.model}. Review for accuracy before sending.</Notice>}
             {result?.mode === "unconfigured" || result?.status === "failed" ? (
               <Notice>
                 Suggestions unavailable. Your report can still be sent.

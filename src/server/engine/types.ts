@@ -29,11 +29,19 @@ export class ProviderError extends Error {
   }
 }
 
+/** Server-derived bytes only; never accept image URLs or base64 from public JSON. */
+export interface EngineImage {
+  mediaType: 'image/jpeg';
+  data: string;
+  description: string;
+}
+
 export interface ProviderRequest {
   promptVersion: string;
   instructions: string;
   /** JSON-encoded, explicitly untrusted source data. Never interpolate into instructions. */
   data: string;
+  images?: EngineImage[];
   maxOutputTokens: number;
   outputSchema: Record<string, unknown>;
 }
@@ -47,6 +55,7 @@ export interface ReportProvider {
 export interface EngineOptions {
   mode?: EngineMode;
   provider?: ReportProvider;
+  images?: EngineImage[];
   signal?: AbortSignal;
   /** The caller can compare its persisted draft revision without exposing persistence here. */
   isCurrent?: () => boolean;

@@ -4,30 +4,35 @@ import { EngineError, PROMPT_VERSION, distanceKm, prepareReport, summarizeProgre
 import { attachmentIds, authenticated, fail, jsonBody, location, mutate, shortText } from './security';
 import { addEvent, attachOwned, bump, detail, findIssue, publicSummary } from './domain';
 import { id, now, type State, type Store, type StoredPreparation } from './store';
+import { configuredProvider } from './provider';
+import { ownedPreparationPhotos, preparationImages } from './preparation-images';
 
 export const engineMode = () => ['demo', 'provider', 'unconfigured'].includes(process.env.OPENHFX_ENGINE_MODE || '') ? process.env.OPENHFX_ENGINE_MODE as 'demo' | 'provider' | 'unconfigured' : 'demo';
-const preparationSchema = z.object({ draftId: shortText, originalDescription: z.string().trim().min(20).max(2000), publicLocation: location, category: z.enum(CATEGORIES).optional() }).strict();
+const preparationSchema = z.object({ draftId: shortText, originalDescription: z.string().trim().min(20).max(2000), publicLocation: location, category: z.enum(CATEGORIES).optional(), attachmentIds: attachmentIds.default([]) }).strict();
 const createSchema = z.object({ draftId: shortText, originalDescription: z.string().trim().min(20).max(2000), title: z.string().trim().min(8).max(100), summary: z.string().trim().min(20).max(500), category: z.enum(CATEGORIES), exactLocation: location, publicLocationLabel: z.string().trim().min(1).max(160), sensitiveLocation: z.boolean(), attachmentIds, preparationId: z.string().optional(), relatedIssueId: z.string().optional() }).strict();
 export function preparationProjection({ ownerId: _ownerId, ...value }: StoredPreparation) { return value; }
 export async function createPreparation(request: Request, store: Store, actor: User | null) {
   const user = authenticated(actor); const input = await jsonBody(request, preparationSchema);
   const preparation = store.transaction(state => {
+    ownedPreparationPhotos(state, user.id, input.attachmentIds);
     if (state.preparations.filter(row => row.ownerId === user.id && ['queued', 'running'].includes(row.status)).length >= 3) fail(429, 'RATE_LIMITED', 'Please wait for the current preparations to finish.');
     const value: StoredPreparation = { id: id(), ownerId: user.id, draftId: input.draftId, status: 'queued', suggestion: null, error: null, mode: engineMode(), provider: null, model: null, promptVersion: PROMPT_VERSION, attempts: 0, latencyMs: null, createdAt: now(), updatedAt: now() };
     state.preparations.push(value); return value;
   });
   // Detached engine completion only updates its preparation, never the resident's issue.
-  setTimeout(() => { void runPreparation(store, preparation.id, input); }, 0);
+  setTimeout(() => { void runPreparation(store, preparation.id, input, user.id); }, 0);
   return preparationProjection(preparation);
 }
-async function runPreparation(store: Store, preparationId: string, input: PreparationInput) {
+async function runPreparation(store: Store, preparationId: string, input: PreparationInput, ownerId: string) {
   try {
     const context = store.transaction(state => {
       const record = state.preparations.find(row => row.id === preparationId)!;
       record.status = 'running'; record.updatedAt = now();
       return { mode: record.mode, organizations: state.organizations, candidateIssues: state.issues.filter(issue => distanceKm(input.publicLocation, issue.publicLocation) <= 2).sort((a, b) => distanceKm(input.publicLocation, a.publicLocation) - distanceKm(input.publicLocation, b.publicLocation)).slice(0, 12).map(issue => publicSummary(state, issue)) };
     });
-    const result = await prepareReport(input, context, { mode: context.mode });
+    const result = await prepareReport(input, context, { mode: context.mode, ...(context.mode === 'provider' ? {
+      provider: configuredProvider(), images: await preparationImages(store, ownerId, input.attachmentIds ?? []),
+    } : {}) });
     store.transaction(state => {
       const record = state.preparations.find(row => row.id === preparationId)!;
       if (record.status !== 'running') return;

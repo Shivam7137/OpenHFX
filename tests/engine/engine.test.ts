@@ -23,6 +23,14 @@ const event = (overrides: Partial<PublishedEvent> = {}): PublishedEvent => ({
 afterEach(() => vi.useRealTimers());
 
 describe('explicit demonstration and geographical routing', () => {
+  it('rejects excessive, malformed and oversized internal image context before calling a provider', async () => {
+    const adapter = provider();
+    const photo = { mediaType: 'image/jpeg' as const, data: 'aW1hZ2U=', description: 'Untrusted caption' };
+    for (const images of [Array(4).fill(photo), [{ ...photo, data: 'https://example.com/photo.jpg' }], [{ ...photo, data: 'a'.repeat(2_796_205) }]]) {
+      await expect(prepareReport(input, context, { mode: 'provider', provider: adapter, images })).rejects.toMatchObject({ code: 'INVALID_INPUT', attempts: 0 });
+    }
+    expect(adapter.generate).not.toHaveBeenCalled();
+  });
   it.each<[string, Category]>([
     ['A fallen branch is blocking the walkway.', 'trees'],
     ['The wheelchair ramp is blocked by an obstruction.', 'access'],

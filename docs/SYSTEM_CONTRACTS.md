@@ -189,6 +189,8 @@ For progress summaries, use only published source event text and retain its IDs.
 
 ## Canonical demo identity
 
+Provider photo follow-up: `PreparationInput.attachmentIds?: string[]` accepts up to three unique uploaded photo IDs. The server authorizes ownership before queueing, then supplies bounded metadata-free image bytes and captions internally. No remote image URLs or client base64 are accepted. Text-only clients remain compatible. Provider mode sends photos to Anthropic; demo mode does not visually analyze them. See `ENGINE.md` for limits, privacy, and the opt-in live verification command.
+
 Display reference `HFX-0142`: “Branch blocking the walkway,” category `trees`, public place “Harbour path,” demo-only map point near the Halifax peninsula. Real persistence uses generated UUIDs; fixtures export stable aliases for A/B to share. Sample organizations: Harbour Parks (lead), Street Response (contributor); sample team names: Canopy 2 and Access 1. These are fictional.
 
 One fixture owns the issue, organizations, assignments, two resident accounts, workers, and chronological events. Both apps import/use it. The fixture must not include real personal data or claim the sample issue exists in Halifax.

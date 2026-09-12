@@ -2,6 +2,8 @@
 
 Branch: `feat/llm-engine`. User authorized the complete public and authority prototype, excluding the real map and LLM-provider connection. This brief refines the baseline for the current build.
 
+Provider follow-up (2026-09-12): the user selected Anthropic / `claude-sonnet-4-6`. The server adapter is now implemented behind the existing provider interface; this supersedes the original no-connection boundary for Anthropic only. The real map remains excluded. See [ENGINE](ENGINE.md) for private configuration and [VERIFICATION](VERIFICATION.md) for actual live-test status.
+
 ## Decisions for this branch
 
 - One Next.js app with shared TypeScript types at `src/contracts/index.ts`.

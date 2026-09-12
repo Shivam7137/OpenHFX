@@ -21,7 +21,7 @@ AI coding assistants must also read [AGENTS.md](AGENTS.md). The [early brainstor
 
 ## Current deliverables
 
-The `feat/llm-engine` branch contains a runnable local prototype: both mobile apps, persistent reports/evidence, multi-authority assignments, field-team milestones, notifications, and a provider-neutral preparation engine. The real map and provider connection are deliberately left for integration. This is not a production deployment or municipal service.
+The `feat/llm-engine` branch contains a runnable local prototype: both mobile apps, persistent reports/evidence, multi-authority assignments, field-team milestones, notifications, and a provider-neutral preparation engine with an optional Anthropic adapter. The real map remains a teammate integration. This is not a production deployment or municipal service.
 
 ### Run the app
 
@@ -36,15 +36,15 @@ Open [the public app](http://127.0.0.1:3000/public) or [the authority app](http:
 
 `npm test` runs engine/backend tests; `npm run typecheck` checks types; `npm run build` builds the app. With the app running, `npm run smoke` exercises six independent authenticated sessions through report creation, two organizations, worker progress, evidence, notifications, and guarded resolution. Smoke reports remain in the local database and are labeled.
 
-The default engine uses labeled deterministic demo suggestions. `.env.example` documents configuration; provider/model remain empty. Set `OPENHFX_ENGINE_MODE=unconfigured` in `.env.local` to exercise manual reporting without suggestions, then restart. Never put provider credentials in browser variables.
+The default engine uses labeled deterministic demo suggestions. For real suggestions, set `LLM_API_KEY`, `LLM_PROVIDER=anthropic`, `LLM_MODEL=claude-sonnet-4-6`, and `OPENHFX_ENGINE_MODE=provider` in ignored `.env.local`, then restart. Set the mode to `demo` for no-cost examples or `unconfigured` for manual reporting. Provider mode sends report text, public location context, and up to three uploaded photos with descriptions to Anthropic and incurs usage charges. Images are ownership-checked and resized server-side. Never put credentials in browser variables or commit them.
 
-Read [implementation/API boundaries](docs/IMPLEMENTATION.md), [engine integration](docs/ENGINE.md), and [map handoff](docs/MAP_INTEGRATION.md) before changing shared interfaces. Live persisted data refreshes by polling; the map illustration is explicitly a placeholder, not a connected basemap. Local SQLite and loopback-only demo identity are prototype adapters; hosted authentication, database policies, deployment, real dispatch, and provider integration remain separate work.
+Read [implementation/API boundaries](docs/IMPLEMENTATION.md), [engine integration](docs/ENGINE.md), and [map handoff](docs/MAP_INTEGRATION.md) before changing shared interfaces. Live persisted data refreshes by polling; the map illustration is explicitly a placeholder, not a connected basemap. Local SQLite and loopback-only demo identity are prototype adapters; hosted authentication, database policies, deployment, and real dispatch remain separate work.
 
 ### Design reference
 
 Open `docs/design/reference.html` in a browser. It needs no install and uses illustrative geography and explicitly simulated events. Its controls demonstrate the shared response; they do not contact anyone or track a real worker.
 
-See the [reviewed desktop capture](docs/design/reference-desktop.png) and [reference verification notes](docs/design/REVIEW.md). To serve the reference locally with Python installed, run `python -m http.server 8767 --bind 127.0.0.1` from the repository and open [the local reference](http://127.0.0.1:8767/docs/design/reference.html). This serves documentation only, not the future application.
+See the [reviewed desktop capture](docs/design/reference-desktop.png) and [reference verification notes](docs/design/REVIEW.md). To serve only the reference safely, run `python -m http.server 8767 --bind 127.0.0.1 --directory docs/design` and open [the local reference](http://127.0.0.1:8767/reference.html). Never serve the repository root with a generic file server: it contains your private `.env.local`.
 
 The longer-term architecture retains Supabase for hosted persistence/identity and MapLibre for the map. Neither is connected by this branch. The installed stack and exact versions are in `package.json` and its lockfile.
 
