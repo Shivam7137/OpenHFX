@@ -29,6 +29,8 @@ export interface Contribution { id: string; issueId: string; authorName: string;
 export interface TimelineEvent { id: string; sequence: string; issueId: string; type: string; actorName: string; organizationId: string | null; visibility: Visibility; text: string; createdAt: string }
 export interface PublicResponse { organizationId: string; organizationName: string; isLead: boolean; assignmentStatus: AssignmentStatus; nextStep: string }
 export interface IssueSummary {
+  /** Resident-reported estimate, metres around the public point. Zero/absent means unknown. */
+  impactRadiusMeters?: number;
   id: string; reference: string; title: string; summary: string; category: Category;
   publicLocation: Location; publicLocationLabel: string; locationPrecision: 'exact' | 'approximate';
   status: IssueStatus; priority: Priority; priorityReviewed: boolean;
@@ -72,6 +74,7 @@ export interface Preparation {
 export interface PublishedEvent { id: string; issueId: string; visibility: Visibility; text: string; createdAt: string; organizationName: string }
 export interface ProgressSummary { text: string; sourceEventIds: string[]; mode: 'extractive' | 'provider' | 'demo' }
 export interface CreateIssueInput {
+  impactRadiusMeters?: number;
   draftId: string; originalDescription: string; title: string; summary: string; category: Category;
   exactLocation: Location; publicLocationLabel: string; sensitiveLocation: boolean;
   attachmentIds: string[]; preparationId?: string; relatedIssueId?: string;

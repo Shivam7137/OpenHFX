@@ -77,6 +77,8 @@ Static visual-reference checks are recorded separately in `docs/design/REVIEW.md
 
 ## Three-minute demo script
 
+Use [the current operational walkthrough](DEMO.md) for startup and exact presenter actions, including the optional urgent phone notification and transit segment. The short outline below remains the core shared-response narrative.
+
 Use separate resident and coordinator sessions visible side by side, with a worker session ready. All organizations/data are visibly labeled demonstration accounts. Seed the map with a few fictional issues to establish context; the new report should be created during the demonstration.
 
 | Time | Operator/action | What judges should see |

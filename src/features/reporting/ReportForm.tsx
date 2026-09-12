@@ -145,6 +145,7 @@ export function ReportForm() {
             longitude: draft.longitude,
           },
           publicLocationLabel: draft.locationLabel,
+          impactRadiusMeters: draft.impactRadiusMeters ?? 0,
           sensitiveLocation: draft.sensitive,
           attachmentIds: attachments.map((a) => a.id),
           ...(draft.preparationId
@@ -336,6 +337,14 @@ export function ReportForm() {
                 placeholder="Path beside the north entrance"
               />
             </label>
+            <label>
+              Estimated affected area
+              <select value={draft.impactRadiusMeters ?? 0} onChange={e => change("impactRadiusMeters", Number(e.target.value))}>
+                <option value={0}>Unknown / point only</option>
+                {[10, 25, 50, 100, 250, 500].map(radius => <option key={radius} value={radius}>{radius} m radius</option>)}
+              </select>
+              <span className="meta">Shaded around the public location. Your estimate, not a confirmed closure or hazard boundary.</span>
+            </label>
             <label className="check-label">
               <input
                 required
@@ -377,6 +386,7 @@ export function ReportForm() {
         {draft.step === 3 && (
           <>
             <h2>Review your report</h2>
+            <p className="meta">Reported area: {draft.impactRadiusMeters ? `approximately ${draft.impactRadiusMeters} m radius` : 'point only; area unknown'}.</p>
             <p className="meta">
               {attachments.length} uploaded{" "}
               {attachments.length === 1 ? "photo" : "photos"} attached.{" "}

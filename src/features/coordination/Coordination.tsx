@@ -13,6 +13,7 @@ import { useSession } from "@/components/shell";
 import { errorMessage, mutate, request, usePoll } from "@/components/api";
 import { ErrorNotice, Notice, Status } from "@/components/ui";
 import { Decisions } from "./Decisions";
+import { DemoCallPanel } from "./DemoCallPanel";
 import { TaskProgress } from "@/features/teams/TaskProgress";
 export function Coordination({
   issue,
@@ -61,6 +62,7 @@ export function Coordination({
   return (
     <section className="section coordination">
       <h2>Coordinate the response</h2>
+      {coordinator && own && <DemoCallPanel key={issue.id} issue={issue} refresh={refresh} />}
       <ErrorNotice message={error} />
       {success && (
         <p className="success-text" role="status">

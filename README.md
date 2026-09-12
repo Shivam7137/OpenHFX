@@ -6,6 +6,8 @@ Two mobile web experiences share one issue record: residents report and contribu
 
 ## Start here
 
+For presenting the working application, use the [step-by-step demo walkthrough](docs/DEMO.md), including startup, separate accounts, transit, the real demo call, and fallback steps.
+
 Read these before starting a task. They are the team's shared baseline, version 1.0, dated 2026-09-12.
 
 | Document | Answers |
@@ -42,6 +44,10 @@ Read [implementation/API boundaries](docs/IMPLEMENTATION.md), [engine integratio
 
 The basemap defaults to OpenFreeMap with OpenStreetMap attribution and requires network access. Set public `NEXT_PUBLIC_MAP_STYLE_URL` and, for a custom provider, `NEXT_PUBLIC_MAP_ATTRIBUTION` before building. The issue list and coordinate inputs remain available if tiles fail. `dev` and `build` automatically stage the matching MapLibre worker into ignored `public/maplibre/`.
 
+The public daily view also includes Halifax Transit stop markers, bus departure predictions, service notices, and up to eight locally saved stops. These are real public-feed data, separate from fictional problem reports. Optional reported-area estimates shade open problems in metres around their public location. See [transit integration](docs/TRANSIT.md) for feed freshness, attribution, and limitations.
+
+For presentations, choose **Transit mode · Demo** at the top of the public app. Four simulated buses move along two illustrative routes with clickable demo stops, Play/Pause and Reset. This separate mode is visibly labeled and does not represent real vehicle locations or schedules.
+
 ### Design reference
 
 Open `docs/design/reference.html` in a browser. It needs no install and uses illustrative geography and explicitly simulated events. Its controls demonstrate the shared response; they do not contact anyone or track a real worker.
@@ -51,6 +57,10 @@ See the [reviewed desktop capture](docs/design/reference-desktop.png) and [refer
 The longer-term architecture retains Supabase for hosted persistence/identity; that hosted adapter is not connected. MapLibre is connected to the local application's public issue projections. The installed stack and exact versions are in `package.json` and its lockfile.
 
 ## Product rules
+
+Optional urgent-request demo calls integrate with the local Dispatcher project. A participating coordinator can explicitly call the user-controlled demo number after reviewing an issue as urgent. See [demo call setup and boundaries](docs/DEMO_CALLS.md). Twilio configuration is required; this is not emergency dispatch or municipal integration.
+
+For no-cost workflow verification on a server configured with a paid engine, run `npm run smoke -- --manual`. It exercises manual reporting through the six-session workflow; the default smoke command requires deterministic demo engine mode.
 
 - The live map is core prototype scope.
 - Agent tracking means authority teams or field workers and work progress. Continuous GPS is outside version 1.

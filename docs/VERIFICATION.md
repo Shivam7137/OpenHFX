@@ -2,6 +2,33 @@
 
 Date: 2026-09-12. Map integration target: `main`; earlier evidence below describes `feat/llm-engine`. This file records application evidence, not the older HTML design reference.
 
+## Daily transit and reported areas
+
+### Simulated transit-mode follow-up
+
+User-requested presentation mode verified on 2026-09-12:
+
+- `npm run verify` passed again: 129 tests across 11 files, strict types, and production build. New tests cover the public labeled scenario endpoint, distance-weighted movement, continuous turnaround, repeatable cycles, and stationary paths.
+- Rebuilt demo-mode port-3001 server passed the six-session workflow smoke as HFX-0147. No paid model or phone call was made.
+- Production browser at 1440 px showed four bus marker buttons and both illustrative routes. Marker positions changed during playback, remained identical during pause, and repeated after reset. Bus marker selection set its selected state; exiting removed all four marker elements.
+- At 360 px, reduced-motion preference started the mode paused, Enter selected a focused bus marker, and selecting a demo stop displayed its name. No horizontal page overflow was measured at either width. Screenshots inspected: `.playwright-mcp/demo-transit-desktop.png` and `.playwright-mcp/demo-transit-mobile.png` (ignored local QA artifacts).
+- Normal checks had zero runtime errors; the existing basemap nullable-property warnings remain. Mode labels identify the routes, stops, and movement as simulated. The simulation has no dependency on real GTFS availability, though basemap tiles still require network access. Physical-phone and screen-reader validation remain open.
+
+Earlier daily-transit evidence follows; it describes the separate real-feed mode.
+
+Verified on 2026-09-12 in the current local working tree, preserving concurrent demo-call work:
+
+- `npm run verify` passed: strict types, 126 tests across 10 files, and the production build. This includes 25 offline transit tests, reported-radius persistence/validation, geodesic/private-coordinate/resolved-area checks, browser-side feed expiry, and the separate demo-call suite. No live provider or dispatcher call was made by this task.
+- The rebuilt production server on port 3001, with explicit `OPENHFX_ENGINE_MODE=demo` and `.data/daily-nearby-verification`, passed `npm run smoke` as HFX-0146: six independent identities, two organizations, evidence, permission guards, resolution, and extractive summary.
+- Actual Halifax feeds loaded successfully. The subagent's static probe found 2,358 stops, 81 routes, and 9,239 trips; three sampled stop boards had fresh predictions. The final integrated production endpoint for stop 6084 returned eight departures and fresh trip/alert timestamps. These are point-in-time observations, not availability guarantees.
+- Browser testing detected duplicate 7A entries from a modified-trip alias. The backend now uses current trip identity and preserves distinct instances. A regression test covers that case; the production endpoint subsequently showed only one corresponding 7A journey.
+- At 1440 px, a real map stop-symbol click opened its departure board. At 360 px, the map, problem panel, transit board, and report detail had no horizontal page overflow. Saved stop 6084 survived reload. Service notices precede departures; the official schedule/licence links remain available.
+- A mobile form submission retained a selected 50 m radius through review and saved HFX-0145. Its API and public detail showed the same radius with estimate language. Rendering uses only public coordinates. The map showed the new polygon alongside the original seeded estimates; resolved smoke reports have no own shading.
+- Deliberately stale board data hid all departure rows and showed separate stale-prediction/notice explanations. A controlled HTTP 503 showed retry; removing the interception and retrying restored eight real departure rows. An offline map-area search showed the offline explanation with no indefinite loading indicator. All browser intercepts/offline settings were restored afterward.
+- Production screenshots were inspected locally at `.playwright-mcp/daily-transit-production-desktop.png` and `.playwright-mcp/daily-transit-production-mobile.png` (ignored QA artifacts). Existing nullable-property warnings from the basemap style remain; normal final map rendering had no runtime errors. The injected 503 produces its expected failed-network console entry.
+
+Limitations: no route-line overlay, moving vehicles, full timetable, ferry predictions, or journey planner. Nearby filtering applies to the 30 returned closest stops. Notices without an explicit stop depend on observed serving trips; coverage is not comprehensive. Physical-device, screen-reader, sustained load, and municipal/production deployment validation remain open. The implementation/freshness contract is [TRANSIT](TRANSIT.md). This follow-up has not been committed or pushed.
+
 ## Selective map integration
 
 The useful renderer code from `feat/public-map` (`6c75558`) was integrated into the persisted application at `29a1203`. The standalone map branch's second schema/fixture, disconnected actions, duplicate shell, and older app configuration were omitted. See [MAP_INTEGRATION](MAP_INTEGRATION.md) for the contract and retained functionality.

@@ -20,6 +20,9 @@ Residents can report a problem without knowing which organization handles it. Au
 | Team milestones without continuous GPS | Version 1 scope default |
 | Halifax demo setting; fictional organizations/cases | Project default; no municipal integration claim |
 | Open browsing; sign-in for contributions/follows | Implementation default |
+| Daily-use transit alongside local problems | User requested bus information, markers, and a more useful daily view |
+| Shaded problem areas | User clarified: resident-reported estimates, not a distance filter or confirmed hazard boundary |
+| Simulated transit presentation mode | User requested fake moving buses and stops for the demo; clearly labeled and separate from real transit information |
 
 Defaults let the team work consistently. Change shared decisions through [TEAM.md](TEAM.md), rather than making different choices in each feature.
 
@@ -54,6 +57,10 @@ Fictional demo organizations: **Harbour Parks**, **Street Response**, **Access S
 Static screens are design references, not implementation of these capabilities. Release requires a connected journey.
 
 ## Outside this release
+
+The daily-use follow-up adds public Halifax Transit stop information, provider departure predictions, service notices, and device-local saved stops. This is a read-only public-data integration; problem reports remain fictional demo records. It does not add trip planning, a full timetable, moving vehicles, or locally inferred arrival estimates. See [TRANSIT](TRANSIT.md).
+
+User-approved demo exception (2026-09-12): an explicit coordinator action may initiate a spoken demonstration call to the user-controlled +19024739228 for an unresolved, authority-reviewed urgent demo issue. This does not authorize automatic AI-triggered contact or emergency dispatch. See [DEMO_CALLS](DEMO_CALLS.md).
 
 - Native app-store packages, background GPS, moving vehicles, and inferred arrival estimates.
 - Automatic external contact, emergency dispatch, municipal integration, or unverified staff onboarding.

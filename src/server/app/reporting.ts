@@ -9,7 +9,7 @@ import { ownedPreparationPhotos, preparationImages } from './preparation-images'
 
 export const engineMode = () => ['demo', 'provider', 'unconfigured'].includes(process.env.OPENHFX_ENGINE_MODE || '') ? process.env.OPENHFX_ENGINE_MODE as 'demo' | 'provider' | 'unconfigured' : 'demo';
 const preparationSchema = z.object({ draftId: shortText, originalDescription: z.string().trim().min(20).max(2000), publicLocation: location, category: z.enum(CATEGORIES).optional(), attachmentIds: attachmentIds.default([]) }).strict();
-const createSchema = z.object({ draftId: shortText, originalDescription: z.string().trim().min(20).max(2000), title: z.string().trim().min(8).max(100), summary: z.string().trim().min(20).max(500), category: z.enum(CATEGORIES), exactLocation: location, publicLocationLabel: z.string().trim().min(1).max(160), sensitiveLocation: z.boolean(), attachmentIds, preparationId: z.string().optional(), relatedIssueId: z.string().optional() }).strict();
+const createSchema = z.object({ draftId: shortText, originalDescription: z.string().trim().min(20).max(2000), title: z.string().trim().min(8).max(100), summary: z.string().trim().min(20).max(500), category: z.enum(CATEGORIES), exactLocation: location, publicLocationLabel: z.string().trim().min(1).max(160), sensitiveLocation: z.boolean(), impactRadiusMeters: z.number().int().min(0).max(500).default(0), attachmentIds, preparationId: z.string().optional(), relatedIssueId: z.string().optional() }).strict();
 export function preparationProjection({ ownerId: _ownerId, ...value }: StoredPreparation) { return value; }
 export async function createPreparation(request: Request, store: Store, actor: User | null) {
   const user = authenticated(actor); const input = await jsonBody(request, preparationSchema);
@@ -65,6 +65,7 @@ export async function createIssue(request: Request, store: Store, actor: User | 
     const publicLocation = input.sensitiveLocation ? { latitude, longitude: Math.round(input.exactLocation.longitude * metersLongitude / 100) * 100 / metersLongitude } : input.exactLocation;
     const issue = { id: issueId, reference: `HFX-${String(145 + state.issues.length - 3).padStart(4, '0')}`, reporterId: user.id, originalDescription: input.originalDescription, title: input.title, summary: input.summary, category: input.category, exactLocation: input.exactLocation, publicLocation,
       publicLocationLabel: input.sensitiveLocation ? 'Approximate area · exact location private' : input.publicLocationLabel,
+      impactRadiusMeters: input.impactRadiusMeters,
       locationPrecision: input.sensitiveLocation ? 'approximate' as const : 'exact' as const, status: 'reported' as const, priority: 'standard' as const, priorityReviewed: false, leadOrganizationId: null, leadOrganizationName: null, needsInformation: false, nextStep: 'Awaiting authority review', evidenceCount: 0, followersCount: 1, version: 1, createdAt, updatedAt: createdAt, isDemo: true, nominatedLeadId: null, relatedIssueId: input.relatedIssueId || null };
     state.issues.push(issue); state.follows.push({ userId: user.id, issueId });
     const photos = attachOwned(state, input.attachmentIds, issueId, user);

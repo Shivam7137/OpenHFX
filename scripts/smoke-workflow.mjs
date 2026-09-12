@@ -21,6 +21,8 @@ function client() {
 const publicClient = client();
 const session = (await publicClient('session')).data;
 assert.equal(session.demoMode, true, 'Smoke test requires the explicitly labeled demo environment.');
+const manual = process.argv.includes('--manual');
+assert.ok(manual || session.engineMode === 'demo', 'Use --manual to verify the workflow without invoking a configured paid provider.');
 const account = (role, organizationId) => {
   const found = session.accounts.find(value => value.role === role && (organizationId === undefined || value.organizationId === organizationId));
   assert.ok(found, `Missing ${role} demo account`); return found;
@@ -39,20 +41,24 @@ await parkWorker('session', { accountId: account('worker', parks.id).id });
 await streetWorker('session', { accountId: account('worker', streets.id).id });
 const draftId = randomUUID();
 const description = 'Demo integration check: a fallen branch is blocking a public walkway and wheelchair access. No real incident is being reported.';
-const preparation = (await resident('report-preparations', {
-  draftId, originalDescription: description, publicLocation: { latitude: 44.6488, longitude: -63.5752 }, category: 'trees',
-}, 'POST', [200, 201, 202])).data;
-let completedPreparation = preparation;
-for (let attempt = 0; attempt < 40 && ['queued', 'running'].includes(completedPreparation.status); attempt++) {
-  await new Promise(resolve => setTimeout(resolve, 50));
-  completedPreparation = (await resident(`report-preparations/${preparation.id}`)).data;
+let preparation;
+let completedPreparation = { status: 'skipped-manual', mode: 'manual' };
+if (!manual) {
+  preparation = (await resident('report-preparations', {
+    draftId, originalDescription: description, publicLocation: { latitude: 44.6488, longitude: -63.5752 }, category: 'trees',
+  }, 'POST', [200, 201, 202])).data;
+  completedPreparation = preparation;
+  for (let attempt = 0; attempt < 40 && ['queued', 'running'].includes(completedPreparation.status); attempt++) {
+    await new Promise(resolve => setTimeout(resolve, 50));
+    completedPreparation = (await resident(`report-preparations/${preparation.id}`)).data;
+  }
+  assert.ok(['succeeded', 'failed'].includes(completedPreparation.status), 'Preparation reached a terminal state.');
+  await neighbour(`report-preparations/${preparation.id}`, undefined, 'GET', [403, 404]);
 }
-assert.ok(['succeeded', 'failed'].includes(completedPreparation.status), 'Preparation reached a terminal state.');
-await neighbour(`report-preparations/${preparation.id}`, undefined, 'GET', [403, 404]);
 let issue = (await resident('issues', {
   draftId, originalDescription: description, title: 'Demo integration: branch on walkway', summary: description, category: 'trees',
   exactLocation: { latitude: 44.6488, longitude: -63.5752 }, publicLocationLabel: 'Fictional harbour-path test', sensitiveLocation: false,
-  attachmentIds: [], preparationId: preparation.id,
+  attachmentIds: [], ...(preparation ? { preparationId: preparation.id } : {}),
 }, 'POST', [200, 201])).data;
 const issueId = issue.id;
 assert.ok(issueId);

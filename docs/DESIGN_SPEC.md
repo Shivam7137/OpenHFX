@@ -22,6 +22,10 @@ Review against the brief: an identical dashboard for both roles would hide their
 
 ## Visual system
 
+Transit presentation mode: the header's **Transit mode · Demo** button toggles a dedicated map with harbour/green illustrative routes, white-edged bus pills, square stop symbols, and a persistent simulated label. The panel gives explicit Play/Pause and Reset controls plus bus/stop list alternatives. Exiting returns to neighbourhood mode. Keep simulation identity visible both on the map and in the panel; do not style simulated positions as actual vehicle tracking.
+
+Daily-use extension (2026-09-12): public discovery is “Around Halifax,” with the map as its main surface and a 400 px Problems/Transit panel on desktop. On phones the map precedes the panel and existing bottom navigation. Public Sans and the same harbour tokens remain the visual system. Bus-stop symbols are square/blue; issue glyphs retain lifecycle colors. Reported-area shading is ochre with a dashed edge and visible estimate language. Stop service notices precede a compact, tabular-number departure board. Save/unsave is an explicit 48 px star button; stops persist on this device only. Loading, empty predictions, stale feeds, unavailable notices, and storage failures have separate visible states. See [TRANSIT](TRANSIT.md).
+
 ### Core palette
 
 | Token | Value | Role |

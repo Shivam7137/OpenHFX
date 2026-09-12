@@ -88,4 +88,6 @@ Record decision, reason, affected docs/contracts, owner, and migration impact. B
 
 ## Teammate handoff
 
+Daily-map follow-up ownership (2026-09-12): the user requested a transit subagent. It owns `src/server/transit/**`, `src/contracts/transit.ts`, and `tests/transit/**`; the controller owns API wiring, dependency changes, map layers, public UI, reported-area persistence, docs, and integration verification. Transit is read-only official public data; local issue estimates and all seeded events remain demonstrations. Preserve concurrent unrelated demo-call work in this checkout.
+
 “Read README, PRODUCT, DESIGN_SPEC, SYSTEM_CONTRACTS, TEAM, and your DELIVERY package before coding. Use shared tokens and fixtures. Claim paths, keep contracts compatible, and show your feature across public and authority sessions. Record limitations and label simulated behavior.”

@@ -4,6 +4,7 @@ import { resolve, join } from 'node:path';
 import { randomUUID } from 'node:crypto';
 import type { Attachment, Assignment, Contribution, IssueSummary, Location, Notification, Organization, Preparation, ReopenRequest, Team, TimelineEvent, User, WorkTask } from '@/contracts';
 import { seedState } from './seed';
+import type { DemoCall } from '@/contracts/demo-calls';
 
 export interface StoredIssue extends IssueSummary {
   reporterId: string; originalDescription: string; exactLocation: Location;
@@ -12,6 +13,7 @@ export interface StoredIssue extends IssueSummary {
 export interface StoredAttachment extends Attachment { ownerId: string; issueId: string | null }
 export interface StoredPreparation extends Preparation { ownerId: string }
 export interface State {
+  demoCalls?: Record<string, DemoCall>;
   users: User[]; organizations: Organization[]; teams: Team[]; issues: StoredIssue[];
   assignments: Assignment[]; tasks: WorkTask[]; events: TimelineEvent[];
   contributions: (Contribution & { authorId: string })[];

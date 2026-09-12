@@ -6,6 +6,7 @@ import {
   Map as MapLibreMap,
   Marker,
   NavigationControl,
+  ScaleControl,
   setWorkerUrl,
   type ExpressionSpecification,
   type GeoJSONSource,
@@ -13,6 +14,9 @@ import {
   type PointLike,
 } from 'maplibre-gl';
 import type { IssueSummary, Location } from '@/contracts';
+import type { TransitStop } from '@/contracts/transit';
+import { addDailyLayers, updateDailyLayers, STOP_LAYER, AREA_LAYER } from './dailyLayers';
+import { useDemoTransitLayer, type DemoTransitDisplay } from './demoTransitLayer';
 import type { BoundingBox } from './geo';
 import styles from './MapView.module.css';
 import {
@@ -55,6 +59,12 @@ type MapCanvasProps = {
   location?: Location;
   onLocationChange?: (location: Location) => void;
   compact?: boolean;
+  transitStops?: TransitStop[];
+  selectedStopId?: string | null;
+  onStopSelect?: (id: string) => void;
+  stopCameraTarget?: LocateTarget;
+  showAreas?: boolean;
+  demoTransit?: DemoTransitDisplay;
 };
 
 const STYLE_LOAD_TIMEOUT_MS = 12_000;
@@ -105,6 +115,7 @@ export default function MapCanvas({
   location,
   onLocationChange,
   compact = false,
+  transitStops = [], selectedStopId, onStopSelect, stopCameraTarget, showAreas = true, demoTransit,
 }: MapCanvasProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
@@ -115,9 +126,9 @@ export default function MapCanvas({
 
   // Long-lived map listeners read the latest props and callbacks from here, so
   // setting up the map does not have to run again when either changes.
-  const latestRef = useRef({ issues, bottomInset, onSelect, onMoved, onReady, onUnavailable, location, onLocationChange, selectedId, compact });
+  const latestRef = useRef({ issues, bottomInset, onSelect, onMoved, onReady, onUnavailable, location, onLocationChange, selectedId, compact, transitStops, onStopSelect, showAreas });
   useEffect(() => {
-    latestRef.current = { issues, bottomInset, onSelect, onMoved, onReady, onUnavailable, location, onLocationChange, selectedId, compact };
+    latestRef.current = { issues, bottomInset, onSelect, onMoved, onReady, onUnavailable, location, onLocationChange, selectedId, compact, transitStops, onStopSelect, showAreas };
   });
 
   useEffect(() => {
@@ -148,6 +159,7 @@ export default function MapCanvas({
     mapRef.current = map;
     map.addControl(new AttributionControl({ compact: false, customAttribution: MAP_ATTRIBUTION }), 'bottom-left');
     map.addControl(new NavigationControl({ showCompass: false }), 'top-right');
+    map.addControl(new ScaleControl({ maxWidth: 100, unit: 'metric' }), 'bottom-right');
     map.touchZoomRotate.disableRotation();
 
     const failureTimer = window.setTimeout(() => {
@@ -172,6 +184,7 @@ export default function MapCanvas({
       window.clearTimeout(failureTimer);
       applyBrandOverrides(map);
       registerMarkerImages(map);
+      addDailyLayers(map, latestRef.current.showAreas ? latestRef.current.issues : [], latestRef.current.transitStops);
 
       map.addSource(SOURCE_ID, {
         type: 'geojson',
@@ -286,7 +299,7 @@ export default function MapCanvas({
       latestRef.current.onMoved(readBounds(map));
     });
 
-    const pointerLayers = [LAYER_IDS.clusters, LAYER_IDS.markers, LAYER_IDS.categoryIcons];
+    const pointerLayers = [LAYER_IDS.clusters, LAYER_IDS.markers, LAYER_IDS.categoryIcons, STOP_LAYER, AREA_LAYER];
     map.on('mousemove', (event) => {
       if (!readyRef.current) return;
       const hovered = map.queryRenderedFeatures(event.point, { layers: pointerLayers });
@@ -326,6 +339,11 @@ export default function MapCanvas({
       }
 
       const markers = map.queryRenderedFeatures(box, { layers: [LAYER_IDS.markers] });
+      if (!markers.length) {
+        const stop = map.queryRenderedFeatures(box, { layers: [STOP_LAYER] })[0];
+        if (stop) { latestRef.current.onStopSelect?.(String(stop.properties.id)); return; }
+        markers.push(...map.queryRenderedFeatures(event.point, { layers: [AREA_LAYER] }));
+      }
       const ids = Array.from(
         new Set(markers.map((feature: MapGeoJSONFeature) => String(feature.properties?.id ?? '')).filter(Boolean)),
       );
@@ -358,6 +376,16 @@ export default function MapCanvas({
     const source = map.getSource(SOURCE_ID) as GeoJSONSource | undefined;
     source?.setData(toIssueFeatureCollection(issues));
   }, [issues, loaded]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (map && loaded) updateDailyLayers(map, showAreas ? issues : [], transitStops, selectedStopId);
+  }, [issues, transitStops, selectedStopId, showAreas, loaded]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (map && loaded && stopCameraTarget) map.easeTo({ center: [stopCameraTarget.longitude, stopCameraTarget.latitude], zoom: Math.max(map.getZoom(), 16), duration: prefersReducedMotion() ? 0 : tokens.motionMs.sheet });
+  }, [stopCameraTarget, loaded]);
 
   // Selection ring, plus a single 300 ms emphasis ring unless motion is reduced.
   useEffect(() => {
@@ -431,5 +459,7 @@ export default function MapCanvas({
     if (!map.getBounds().contains(position)) map.easeTo({ center: position, duration: prefersReducedMotion() ? 0 : tokens.motionMs.sheet });
   }, [location?.latitude, location?.longitude, loaded]);
 
-  return <div ref={containerRef} className={styles.canvas} aria-label={onLocationChange ? 'Choose report location on the map' : 'Map of nearby reported issues'} />;
+  useDemoTransitLayer(mapRef, loaded, demoTransit);
+
+  return <div ref={containerRef} className={styles.canvas} aria-label={demoTransit ? 'Simulated buses and transit stops' : onLocationChange ? 'Choose report location on the map' : 'Map of nearby reported issues'} />;
 }

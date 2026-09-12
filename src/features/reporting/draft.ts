@@ -10,6 +10,7 @@ export const emptyDraft = {
   locationLabel: "",
   locationConfirmed: false,
   sensitive: false,
+  impactRadiusMeters: 0,
   title: "",
   summary: "",
   category: "other" as Category,

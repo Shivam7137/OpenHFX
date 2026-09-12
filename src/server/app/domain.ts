@@ -41,7 +41,7 @@ export function addEvent(state: State, issue: StoredIssue, user: User, type: str
 }
 export function publicSummary(state: State, issue: StoredIssue): IssueSummary {
   const { id: issueId, reference, title, summary, category, publicLocation, publicLocationLabel, locationPrecision, status, priority, priorityReviewed, leadOrganizationId, needsInformation, nextStep, version, createdAt, updatedAt, isDemo } = issue;
-  return { id: issueId, reference, title, summary, category, publicLocation, publicLocationLabel, locationPrecision, status, priority: priorityReviewed ? priority : 'standard', priorityReviewed, leadOrganizationId, leadOrganizationName: state.organizations.find(row => row.id === leadOrganizationId)?.name || null, needsInformation, nextStep,
+  return { id: issueId, reference, title, summary, category, publicLocation, publicLocationLabel, locationPrecision, impactRadiusMeters: issue.impactRadiusMeters ?? 0, status, priority: priorityReviewed ? priority : 'standard', priorityReviewed, leadOrganizationId, leadOrganizationName: state.organizations.find(row => row.id === leadOrganizationId)?.name || null, needsInformation, nextStep,
     evidenceCount: state.contributions.filter(row => row.issueId === issueId).length, followersCount: state.follows.filter(row => row.issueId === issueId).length, version, createdAt, updatedAt, isDemo };
 }
 export function detail(state: State, issue: StoredIssue, user: User | null, authority = false): IssueDetail {

@@ -25,6 +25,27 @@ const report = (extras = {}) => ({ draftId: randomUUID(), originalDescription: '
 const issuePath = `/authority/issues/${DEMO_IDS.issue}`;
 
 describe('identity, persistence and public boundaries', () => {
+  it('serves the labeled transit demonstration without authentication or real feeds', async () => {
+    const result = await call('/transit/demo');
+    expect(result.status).toBe(200);
+    expect(result.json.data.isDemo).toBe(true);
+    expect(result.json.data.vehicles).toHaveLength(4);
+    expect(result.json.data.stops.length).toBeGreaterThan(0);
+    const routes = result.json.data.routes.map((route: { id: string }) => route.id);
+    for (const vehicle of result.json.data.vehicles) expect(routes).toContain(vehicle.routeId);
+  });
+  it('persists a reported radius, defaults old clients to unknown, and rejects invalid areas', async () => {
+    const cookie = await login('resident');
+    const created = await call('/issues', 'POST', report({ impactRadiusMeters: 50, sensitiveLocation: true }), cookie);
+    expect(created.status).toBe(201);
+    expect(created.json.data.impactRadiusMeters).toBe(50);
+    expect(created.json.data).not.toHaveProperty('exactLocation');
+    expect((await call(`/issues/${created.json.data.id}`)).json.data.impactRadiusMeters).toBe(50);
+    expect((await call('/issues', 'POST', report(), cookie)).json.data.impactRadiusMeters).toBe(0);
+    for (const radius of [-1, 501, 12.5, '50']) {
+      expect((await call('/issues', 'POST', report({ impactRadiusMeters: radius }), cookie)).status).toBe(400);
+    }
+  });
   it('searches map bounds using sanitized public locations and includes fresh persisted reports', async () => {
     const cookie = await login('resident');
     const created = await call('/issues', 'POST', report({ sensitiveLocation: true }), cookie);

@@ -17,8 +17,13 @@ import { MapView } from "@/features/map/MapView";
 import type { BoundingBox } from "@/features/map/geo";
 import type { CameraTarget } from "@/features/map/MapCanvas";
 import styles from "./IssueBrowser.module.css";
+import { DailyNearby } from './DailyNearby';
 
 export function IssueBrowser({ authority = false }: { authority?: boolean }) {
+  return authority ? <OrganizationBrowser authority /> : <DailyNearby />;
+}
+
+function OrganizationBrowser({ authority = false }: { authority?: boolean }) {
   const { session } = useSession();
   const [category, setCategory] = useState<Category | "">("");
   const [query, setQuery] = useState("");

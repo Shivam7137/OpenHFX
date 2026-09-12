@@ -1,10 +1,13 @@
 import { z } from 'zod';
+import { transitNearby, transitBoard, TransitError } from '@/server/transit';
+import { TRANSIT_DEMO } from './seed';
 import { CATEGORIES, type User } from '@/contracts';
 import { ApiError, authenticated, checkOrigin, coordinator, currentUser, fail, jsonBody, localDemo, sessionCookie, signOut } from './security';
 import { detail, findIssue, matches, participates, publicSummary, requireAuthorityRead } from './domain';
 import { contribute, createIssue, createPreparation, engineMode, follow, preparationProjection, progressSummary, reopen } from './reporting';
 import { acceptAssignment, assignmentProgress, createTask, publishUpdate, taskProgress } from './workflow';
 import { decide } from './decisions';
+import { demoCallInfo, initiateDemoCall } from './demo-calls';
 import { serveImage, upload } from './uploads';
 import { getStore, id, now, type State, type Store } from './store';
 
@@ -49,6 +52,18 @@ export function createApiHandler(store: Store) {
       if (!url.pathname.startsWith('/api/v1/')) fail(404, 'NOT_FOUND', 'Endpoint not found.');
       const method = request.method; const state = store.read(); const user = currentUser(request, state);
       if (!['GET', 'HEAD', 'OPTIONS'].includes(method)) checkOrigin(request);
+      if (path[0] === 'transit' && method === 'GET') {
+        if (path.length === 2 && path[1] === 'demo') return response(TRANSIT_DEMO);
+        if (path.length === 1) {
+          const coordinate = (name: string) => {
+            const value = url.searchParams.get(name);
+            if (!value?.trim() || !Number.isFinite(Number(value))) fail(400, 'VALIDATION_ERROR', 'Choose a valid map location.');
+            return Number(value);
+          };
+          return response(await transitNearby({ latitude: coordinate('latitude'), longitude: coordinate('longitude') }));
+        }
+        if (path.length === 3 && path[1] === 'stops') return response(await transitBoard(path[2]));
+      }
       if (path[0] === 'health' && path.length === 1 && method === 'GET') return response({ status: 'ok', storage: 'local-sqlite', demoMode: localDemo(request), engineMode: engineMode() });
       if (path[0] === 'session' && path.length === 1) {
         const info = (account: User | null) => ({ user: account, demoMode: localDemo(request), engineMode: engineMode(), accounts: localDemo(request) ? state.users : [] });
@@ -97,6 +112,8 @@ export function createApiHandler(store: Store) {
         if (path[1] === 'issues' && path.length >= 3) {
           if (path.length === 3 && method === 'GET') return response(detail(state, findIssue(state, path[2]), actor, true));
           if (path.length === 4) {
+            if (path[3] === 'demo-call' && method === 'GET') return response(demoCallInfo(store, actor, path[2]));
+            if (path[3] === 'demo-call' && method === 'POST') return response(await initiateDemoCall(request, store, actor, path[2]));
             if (path[3] === 'assignments' && method === 'POST') return response(await acceptAssignment(request, store, actor, path[2]));
             if (path[3] === 'updates' && method === 'POST') return response(await publishUpdate(request, store, actor, path[2]));
             if (path[3] === 'decisions' && method === 'POST') return response(await decide(request, store, actor, path[2]));
@@ -112,7 +129,7 @@ export function createApiHandler(store: Store) {
       }
       return fail(404, 'NOT_FOUND', 'Endpoint not found.');
     } catch (error) {
-      const failure = error instanceof ApiError ? error : new ApiError(503, 'TEMPORARY_FAILURE', 'The service could not complete that request. Please try again.');
+      const failure = error instanceof ApiError ? error : error instanceof TransitError ? new ApiError(error.status, error.code, error.message) : new ApiError(503, 'TEMPORARY_FAILURE', 'The service could not complete that request. Please try again.');
       return Response.json({ error: { code: failure.code, message: failure.message, ...(failure.fieldErrors ? { fieldErrors: failure.fieldErrors } : {}) }, requestId }, { status: failure.status, headers: { 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' } });
     }
   };

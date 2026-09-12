@@ -17,10 +17,22 @@ interface MapViewProps {
   onBoundsChange?: (bounds: readonly [number, number, number, number]) => void;
   cameraTarget?: { issueId: string; nonce: number } | null;
   authority?: boolean;
+  transitStops?: TransitStop[];
+  selectedStopId?: string | null;
+  onStopSelect?: (id: string) => void;
+  stopCameraTarget?: { latitude: number; longitude: number; nonce: number } | null;
+  showAreas?: boolean;
+  demoTransit?: DemoTransitDisplay;
 }
 ```
 
 Types are exported from `src/contracts/index.ts`. All three consumers use the shared `MapView` export.
+
+`DemoTransitDisplay` is a renderer-only prop defined in `demoTransitLayer.ts`: scenario, play state, reset key, selected vehicle ID, and selection callback. It adds disposable route layers and keyboard-accessible moving bus markers. The transit presentation hides issue layers and real stop boards, keeps a persistent simulated label, and defaults to paused for reduced motion. See [TRANSIT](TRANSIT.md).
+
+Transit types are in `src/contracts/transit.ts`. Public discovery uses `DailyNearby`: a larger map and Problems/Transit panel, with independent stop/area toggles, explicit map-area search, saved stops, and a metric scale. Stop selection opens the board; issue selection keeps the existing response journey. Staff discovery retains its work-first inbox. Transit stops use harbour-blue bus symbols; issue glyphs retain lifecycle colors.
+
+Open issues with a positive `impactRadiusMeters` render 64-segment geodesic polygons in metres around their public point. Ochre fill and dashed outline identify an unverified reported area; the radius is shown in the list/detail. The privacy halo remains a separate approximate-location indicator. Filtering and polling update both issue markers and polygons without recentering. Zero/absent estimates and resolved issues produce no polygons. Report location/review controls collect and retain the optional estimate.
 
 - Render issue markers from `publicLocation`, never a private field. Public `locationPrecision=approximate` must stay visibly approximate.
 - `onSelect` changes the selected issue ID; it does not create an issue or change status.

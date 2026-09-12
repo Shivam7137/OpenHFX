@@ -74,6 +74,10 @@ All times are UTC ISO-8601, all IDs are opaque strings (UUIDs in persistence), a
 
 ## Public and authority views
 
+Presentation-only transit exception: `GET /transit/demo` exposes the canonical fictional `DemoTransitScenario` (`isDemo:true`, illustrative routes, stops, and vehicle offsets). `Transit mode` animates this scenario locally; it creates no issue, vehicle tracking, ETA, or authority event. Real GTFS endpoints remain unchanged. See [TRANSIT](TRANSIT.md).
+
+Daily map addition: `IssueSummary` and `CreateIssueInput` include optional `impactRadiusMeters` (integer 0–500, default 0/unknown). This is the resident's approximate area estimate, never an authority decision. Its polygon is generated exclusively around `publicLocation`; resolved issues have no area shading. Sensitive locations retain their public grid point. New seed estimates are explicitly fictional; old records without the field stay unshaded. Transit has separate read-only types in `src/contracts/transit.ts` and does not introduce an issue category or status. [TRANSIT](TRANSIT.md) defines those response/freshness contracts.
+
 `PublicIssue` contains only ID/reference, title, public summary, category, public location/label/precision, lifecycle, reviewed priority if present, published next step, public organization progress, public evidence counts, timestamps, version, and demo flag. Never include reporter ID/contact, exact private coordinates, staff notes, assignee IDs, internal blocker reasons, storage keys, or raw AI input/output.
 
 `AuthorityIssue` adds permitted original description, exact location, assignments, work tasks, and staff events. Participating organizations share issue staff notes; unrelated organizations do not. Reporter contact is restricted to participating coordinators. Workers receive the operational description/location and their tasks, not reporter contact.
@@ -194,3 +198,6 @@ Provider photo follow-up: `PreparationInput.attachmentIds?: string[]` accepts up
 Display reference `HFX-0142`: “Branch blocking the walkway,” category `trees`, public place “Harbour path,” demo-only map point near the Halifax peninsula. Real persistence uses generated UUIDs; fixtures export stable aliases for A/B to share. Sample organizations: Harbour Parks (lead), Street Response (contributor); sample team names: Canopy 2 and Access 1. These are fictional.
 
 One fixture owns the issue, organizations, assignments, two resident accounts, workers, and chronological events. Both apps import/use it. The fixture must not include real personal data or claim the sample issue exists in Halifax.
+# Optional urgent demo call contract
+
+The user-approved Dispatcher integration adds call-attempt types in `src/contracts/demo-calls.ts`, without changing any issue/assignment/work statuses. Participating coordinators may GET `/api/v1/authority/issues/:id/demo-call` for `{configured,destination,call}` or POST `{expectedVersion,confirmed:true}` for an attempt. Existing session, origin and visibility checks apply; initiation is local-demo-only and requires an unresolved demo issue with reviewed `urgent` priority. The destination is fixed at +19024739228. Call state is `submitting|accepted|rejected|uncertain`; acceptance does not mean answered or delivered. `demo_call.*` audit events are staff-only. A durable per-issue reservation prevents duplicate network calls and survives restarts. See [DEMO_CALLS](DEMO_CALLS.md) for payload, setup, retry and failure boundaries.

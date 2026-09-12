@@ -27,6 +27,10 @@ Agents do not change manifests/contracts, commit, push, or edit one another's fi
 
 ## Stable HTTP integration
 
+Daily map follow-up: `GET /transit?latitude=&longitude=` returns `ApiEnvelope<TransitNearby>`; `GET /transit/stops/:id` returns `ApiEnvelope<TransitBoard>`. Both are public, bounded, read-only endpoints backed by the official Halifax feeds. Wire contracts are in `src/contracts/transit.ts`; see [TRANSIT](TRANSIT.md). `CreateIssueInput.impactRadiusMeters?` accepts an integer 0–500; omitted/zero means unknown. It persists on the existing issue snapshot and appears in public projections. Legacy records default to zero without invented geometry or a database migration.
+
+The optional Dispatcher demo-call integration is documented in [DEMO_CALLS](DEMO_CALLS.md). GET and POST `/api/v1/authority/issues/:id/demo-call` require a participating coordinator. GET returns `DemoCallInfo`; POST accepts `{expectedVersion,confirmed:true}` and returns `DemoCall`. POST is loopback-demo-only and requires an unresolved reviewed-urgent demo issue. Both use the usual `{data}` envelope. One durable attempt per issue; explicit Dispatcher preflight rejections permit retry after correction. Call events are staff-only and do not change issue status.
+
 All paths start `/api/v1`. Lists use `{items,nextCursor:null,syncedAt}`. Other success responses use `{data}`; mutations include the newly updated relevant record. Errors use the shared ApiFailure envelope. Include cookies on same-origin requests. Mutations use `Idempotency-Key` for issue/contribution/assignment creation; versioned updates use `expectedVersion`.
 
 | Request | Body / data |

@@ -25,4 +25,8 @@
 .fields input {min-width:0}
 .draftMarker {width:24px;height:24px;background:var(--harbour);border:4px solid var(--surface);border-radius:50%;box-shadow:0 0 0 3px var(--harbour)}
 .locateMarker {width:16px;height:16px;background:var(--harbour);border:3px solid var(--surface);border-radius:50%;box-shadow:0 0 0 6px #145e7830}
+.demoBus {display:flex;align-items:center;justify-content:center;gap:6px;min-width:60px;min-height:48px;padding:8px;color:var(--surface);border:3px solid var(--surface);border-radius:14px;font-size:13px;font-weight:700;box-shadow:0 3px 10px #142e3a40;cursor:pointer}
+.demoBus[aria-pressed=true] {outline:3px solid var(--ink);outline-offset:3px}
+.demoBus:focus-visible {outline:3px solid var(--ink);outline-offset:3px}
+.demoLabel {position:absolute;top:12px;left:12px;max-width:calc(100% - 84px);background:var(--surface);color:var(--harbour);font-size:12px;font-weight:600;padding:10px 12px;border:1px solid var(--control-border);border-radius:12px;pointer-events:none;z-index:1}
 @media(max-width:767px){.frame{min-height:300px}.compact{min-height:220px}.legend{gap:8px 12px;font-size:10px}.picker .viewport{height:260px}}

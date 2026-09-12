@@ -55,7 +55,7 @@ export function errorMessage(error: unknown) {
     ? error.message
     : "Your update was not saved. Your text is still here. Please retry.";
 }
-export function usePoll<T>(path: string | null) {
+export function usePoll<T>(path: string | null, intervalMs = 3000) {
   const [data, setData] = useState<T | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [syncedAt, setSyncedAt] = useState<number | null>(null);
@@ -76,7 +76,7 @@ export function usePoll<T>(path: string | null) {
     } catch (e) {
       if (current === generation.current) setError(errorMessage(e));
     } finally {
-      busy.current = false;
+      if (current === generation.current) busy.current = false;
     }
   }, [path]);
   useEffect(() => {
@@ -91,7 +91,7 @@ export function usePoll<T>(path: string | null) {
         void refresh();
     };
     tick();
-    const interval = setInterval(tick, 3000);
+    const interval = setInterval(tick, intervalMs);
     window.addEventListener("online", tick);
     window.addEventListener("offline", tick);
     window.addEventListener("focus", tick);
@@ -104,7 +104,7 @@ export function usePoll<T>(path: string | null) {
       window.removeEventListener("focus", tick);
       document.removeEventListener("visibilitychange", tick);
     };
-  }, [refresh]);
+  }, [refresh, intervalMs]);
   return { data, error, syncedAt, offline, refresh };
 }
 export function useDraft<T>(key: string, initial: T) {
