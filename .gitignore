@@ -1,0 +1,19 @@
+node_modules/
+.next/
+out/
+build/
+next-env.d.ts
+*.tsbuildinfo
+
+# Generated from docs/design/tokens.json by scripts/generate-tokens.mjs
+src/styles/tokens.css
+
+.env
+.env.local
+.env.*.local
+
+.DS_Store
+*.log
+
+# Staged from node_modules by scripts/copy-map-worker.mjs
+public/maplibre/

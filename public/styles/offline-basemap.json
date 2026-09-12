@@ -1,0 +1,17 @@
+{
+  "version": 8,
+  "name": "OpenHFX offline development basemap",
+  "metadata": {
+    "openhfx:purpose": "Development and testing only. This style has no tile sources, so it draws no geography at all - only a plain ground colour under the issue markers. Never present it to anyone as the map; configure NEXT_PUBLIC_MAP_STYLE_URL with a real open style or your own tiles."
+  },
+  "sources": {},
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {
+        "background-color": "#F4F7F8"
+      }
+    }
+  ]
+}

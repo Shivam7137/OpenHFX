@@ -16,15 +16,17 @@ This is a dependency-ordered delivery backlog, not a claim of implemented featur
 | F5 Evidence and notifications | A UI / B events | F2, F3 | Second resident contributes, followers receive one public notice, attachments enforce ownership |
 | F6 Integration and presentation | All | F1-F5 | Full demo, failure scenarios, viewport/accessibility review, performance measurement, limitations card |
 
+Current progress: F0 is partly built. The application is scaffolded with shared contracts, generated tokens, one shared status component, and a demo fixture; identity, persistence, and the authority route shell are not started. The presentation half of F1 is built for P01 — basemap, markers, clustering, selection, list fallback, and the no-basemap state. The data half is not: the map reads the bundled fixture through a stand-in that mirrors the `GET /issues?bbox=` envelope, so there is no permitted bounds query, no subscription, and no real freshness state, and the screen says so.
+
 The public and authority presentation work can proceed independently after F0 contracts are exercised. Do not implement each app against separate invented mock schemas. F2-F5 should merge incrementally so F6 is verification, not first integration.
 
 ## Foundation exit requirements
 
-- [ ] Pin compatible stable dependency versions; record Node/npm versions and commit one lockfile when authorized.
-- [ ] Add real install/dev/build/test commands to README only after executing them.
-- [ ] Generate CSS variables from the canonical tokens; import one shared status component.
-- [ ] Define and validate canonical enums/payloads in `src/contracts/`.
-- [ ] Configure a tile/style source with attribution and a server-side LLM adapter; document which demo dependencies require network access.
+- [x] Pin compatible stable dependency versions; record Node/npm versions and commit one lockfile when authorized. Node 22.22.2, npm 10.9.7, `package-lock.json` committed.
+- [x] Add real install/dev/build/test commands to README only after executing them. Install, dev, build, start, typecheck, and lint were each executed before being documented; there is no test runner yet.
+- [x] Generate CSS variables from the canonical tokens; import one shared status component. `scripts/generate-tokens.mjs` writes `src/styles/tokens.css`; `src/components/StatusPill.tsx` is the shared lifecycle indicator.
+- [~] Define and validate canonical enums/payloads in `src/contracts/`. Category, IssueStatus, Priority, location precision, `PublicIssue`, and the list envelope are defined and Zod-validated. Assignment, work-task, event, and authority payloads are not.
+- [~] Configure a tile/style source with attribution and a server-side LLM adapter; document which demo dependencies require network access. The basemap provider and its attribution are configurable through `NEXT_PUBLIC_MAP_STYLE_URL` and `NEXT_PUBLIC_MAP_ATTRIBUTION` and default to OpenFreeMap, which requires network access at runtime. The LLM adapter is not started.
 - [ ] Create migrations and tests for public/staff projection separation and memberships.
 - [ ] Seed one fictional scenario and provision separate resident, coordinator, and worker demo identities.
 - [ ] Confirm each identity sees only permitted fields/actions and both app routes load the same issue ID.
@@ -62,7 +64,7 @@ Record an observed result, commit, and evidence location when executing. All row
 
 | View/state | 360x800 | 390x844 | 430x932 | Desktop 1440x900 |
 | --- | --- | --- | --- | --- |
-| Public map, selected marker, sheet | Pending | Pending | Pending | Pending |
+| Public map, selected marker, sheet | Checked | Checked | Checked | Checked |
 | Report with keyboard and validation | Pending | Pending | Pending | Pending |
 | Issue response and evidence sheet | Pending | Pending | Pending | Pending |
 | Authority inbox and assignment blocks | Pending | Pending | Pending | Pending |
@@ -70,6 +72,8 @@ Record an observed result, commit, and evidence location when executing. All row
 | Offline/failure/conflict states | Pending | Pending | Pending | Pending |
 
 Also check a short landscape screen, 200% text scaling, full keyboard path, visible focus, screen-reader labels, reduced motion, touch targets, and normal/control/status contrast. Verify no horizontal page overflow and no actions hidden behind the keyboard or safe-area bars.
+
+The public map row was checked in headless Chromium at 360x800, 390x844, 430x932, 1440x900, and an 844x390 landscape screen: the map renders, markers and cluster counts draw, marker selection keeps the camera still, list selection recentres, the category filter narrows map and list together, "Search this area" appears only after a pan, the no-basemap state falls back to the list, and no width scrolls horizontally. Text scaling, the keyboard path, screen-reader labels, and reduced motion are not yet checked for this row.
 
 Static visual-reference checks are recorded separately in `docs/design/REVIEW.md`. Passing those cannot mark these application checks complete.
 

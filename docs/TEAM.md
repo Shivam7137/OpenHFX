@@ -57,7 +57,7 @@ Out of scope: editing another resident's evidence; video
 6. At each checkpoint, run one issue across both sessions and record the result in DELIVERY.
 7. Freeze features before the final rehearsal window; fix the canonical journey and missing states.
 
-The local repository currently has an unborn `master` branch. The first authorized commit establishes a baseline; use the actual agreed remote default as the integration target. Do not independently rename it or rewrite teammates' commits.
+The integration target is the remote default branch, `main`. Do not independently rename it or rewrite teammates' commits.
 
 ## Ready and done
 
@@ -81,6 +81,7 @@ Record decision, reason, affected docs/contracts, owner, and migration impact. B
 | D08 | Fictional demo organizations/cases | Visible labeling; no official claims |
 | D09 | Map-first public; work-first authority | Common tokens, different hierarchy |
 | D10 | Current delivery is docs and visual reference | Production implementation follows separately |
+| D11 | Basemap provider is configuration, defaulting to OpenFreeMap | No API key or paid account is required to run the map; swapping provider is an environment change, and attribution follows the provider |
 
 ## Teammate handoff
 
