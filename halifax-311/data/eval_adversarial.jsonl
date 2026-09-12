@@ -1,0 +1,28 @@
+{"utterance":"the light is out","expected_intent":"street-lighting-concerns","axis":"underspecified","note":"street vs park lighting - no location given"}
+{"utterance":"there's a broken bench","expected_intent":"row-bench","axis":"park-vs-street","note":"genuinely ambiguous; park would be request-repairs"}
+{"utterance":"the bench in the playground is smashed","expected_intent":"request-repairs","axis":"park-vs-street"}
+{"utterance":"can we get a bench put in by the bus stop","expected_intent":"row-bench","axis":"new-vs-repair"}
+{"utterance":"the lights over by the soccer field are dead","expected_intent":"lights-parks-playground-fields","axis":"park-vs-street"}
+{"utterance":"the lamp on my street corner is dead","expected_intent":"street-lighting-concerns","axis":"park-vs-street"}
+{"utterance":"garbage everywhere by the swings","expected_intent":"report-park-litter","axis":"park-vs-street"}
+{"utterance":"garbage everywhere outside the corner store","expected_intent":"report-street-litter","axis":"park-vs-street"}
+{"utterance":"we need somewhere to put trash by the playground","expected_intent":"new-litter-bin-park-request","axis":"new-vs-repair"}
+{"utterance":"the sidewalk here is a mess","expected_intent":"walking-surface-maintenance","axis":"new-vs-repair","note":"repair, not a new sidewalk"}
+{"utterance":"there's nowhere to walk along this road at all","expected_intent":"new-sidewalk-request","axis":"new-vs-repair"}
+{"utterance":"the signal at the corner is stuck","expected_intent":"traffic-signals","axis":"new-vs-repair"}
+{"utterance":"this corner is dangerous, nothing controls the traffic","expected_intent":"new-traffic-signal-request","axis":"new-vs-repair"}
+{"utterance":"water is pouring across the road right now","expected_intent":"flooding-requests","axis":"active-vs-asset"}
+{"utterance":"the catch basin lid is cracked, no water issue at the moment","expected_intent":"drainage-infrastructure-maintenance-or-repair","axis":"active-vs-asset"}
+{"utterance":"there's no drain on this stretch so it always ponds","expected_intent":"drainage-infrastructure-request","axis":"active-vs-asset"}
+{"utterance":"the drain is blocked and the street is filling up","expected_intent":"flooding-requests","axis":"active-vs-asset"}
+{"utterance":"a sign got knocked over","expected_intent":"street-sign-missing-or-damaged","axis":"new-vs-repair"}
+{"utterance":"we'd like a slow-down sign on our road","expected_intent":"row-signage","axis":"new-vs-repair"}
+{"utterance":"the sign at the park gate is broken","expected_intent":"non-row-signage","axis":"park-vs-street"}
+{"utterance":"a tree branch came down in the park","expected_intent":"trees","axis":"cross-category","note":"trees regardless of park/street"}
+{"utterance":"the grass by the ball field is waist high","expected_intent":"grass","axis":"cross-category"}
+{"utterance":"there's a weird plant spreading everywhere along the trail","expected_intent":"problem-plants-insects-invasive-species","axis":"cross-category"}
+{"utterance":"someone's car has sat outside my place for two weeks","expected_intent":"illegally-parked-vehicle","axis":"cross-category"}
+{"utterance":"there's a shopping trolley in the middle of the road","expected_intent":"obstructions","axis":"cross-category"}
+{"utterance":"the road is wrecked where they dug it up for the gas main","expected_intent":"utility-related-street-cuts-trenches","axis":"cross-category"}
+{"utterance":"my street never got swept after the winter","expected_intent":"street-sweeping","axis":"cross-category"}
+{"utterance":"the plough wrecked my grass verge","expected_intent":"snow-damage","axis":"cross-category"}

@@ -226,10 +226,27 @@ python3 baseline_match.py --all
 
 The keyword baseline scores **87.2%** top-1 on the phrases its keywords came from and
 **42.6%** on `eval_holdout.jsonl`, which says the same things in different words. That
-gap is the whole point: the first number is overfitting, the second is the floor your
+gap is the whole point: the first number is overfitting, the second is the floor the
 LLM router has to clear.
 
-Run the holdout through `route()` and compare before shipping. When you add keywords
+It clears it. Measured 2026-09-12 with `eval_router.py` on `claude-opus-5`:
+
+| Set | top-1 | with `alternatives` |
+|---|---|---|
+| `eval_holdout.jsonl` (68) | **100%** | 100% |
+| `eval_adversarial.jsonl` (28) | **96.4%** | 100% |
+
+100% on the holdout means that set has stopped discriminating, not that the router is
+perfect — paraphrase is easy once the whole catalogue is in the prompt.
+`eval_adversarial.jsonl` is the one that still bites: 28 deliberately underdetermined
+requests along the axes that actually confuse the classifier (park vs. street, new vs.
+repair, active flooding vs. asset repair).
+
+**The calibration matters more than the accuracy.** Mean confidence was 0.80 when
+right and 0.45 when wrong, and the single adversarial miss — "there's a broken bench",
+which no amount of prompting can resolve without asking — came back at 0.45. Under the
+thresholds above the UI asks instead of guessing. Check that property survives any
+prompt change you make; it is what keeps a wrong form off the screen. When you add keywords
 to `scraper/kb.py`, re-run **`--holdout`** — tuning against `eval_utterances.jsonl`
 moves that number and teaches you nothing.
 

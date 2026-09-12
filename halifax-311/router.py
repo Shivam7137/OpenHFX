@@ -155,16 +155,19 @@ def extract_slots(intent_id: str, transcript: str) -> dict[str, Any]:
     if not fields:
         return {}
 
+    # Every field is a string with "" meaning "not stated". A nullable union plus an
+    # enum is rejected by the API (the enum members must match the declared type), and
+    # an empty-string sentinel keeps one shape for all field kinds.
     props, described = {}, []
     for f in fields:
         if f.get('options'):
-            props[f['name']] = {'type': ['string', 'null'], 'enum': [*f['options'], None]}
+            props[f['name']] = {'type': 'string', 'enum': [*f['options'], '']}
             described.append(f"{f['name']} ({f['label']}) - one of: {', '.join(f['options'])}")
         elif f['type'] == 'number':
-            props[f['name']] = {'type': ['number', 'null']}
+            props[f['name']] = {'type': 'string', 'description': 'a number, as digits'}
             described.append(f"{f['name']} ({f['label']}) - a number")
         else:
-            props[f['name']] = {'type': ['string', 'null']}
+            props[f['name']] = {'type': 'string'}
             described.append(f"{f['name']} ({f['label']})")
 
     intents, _ = load()
@@ -175,9 +178,9 @@ def extract_slots(intent_id: str, transcript: str) -> dict[str, Any]:
         f"Form: {it['display_name']}\n\nFields:\n" + '\n'.join(f'- {d}' for d in described)
         + (f'\n\nNotes:\n{hints}' if hints else '')
         + "\n\nResident said:\n" + transcript
-        + "\n\nReturn a value for each field the resident actually gave. Use null for "
-          "anything they did not say - never guess, and never pick the closest enum "
-          "option unless their words clearly match it."
+        + "\n\nReturn a value for each field the resident actually gave. Use an empty "
+          "string for anything they did not say - never guess, and never pick the "
+          "closest enum option unless their words clearly match it."
     )
 
     resp = _client.messages.create(
