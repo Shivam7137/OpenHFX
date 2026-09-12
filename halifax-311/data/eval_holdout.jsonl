@@ -1,0 +1,68 @@
+{"utterance":"my tire got wrecked by a massive dip in the road on Gottingen","expected_intent":"report-a-pothole","lang":"en","note":"colloquial, no keyword 'pothole'"}
+{"utterance":"the asphalt has completely broken up outside number 42","expected_intent":"report-a-pothole","lang":"en"}
+{"utterance":"there is a deep hollow in the driving lane that keeps getting worse","expected_intent":"report-a-pothole","lang":"en"}
+{"utterance":"the concrete slabs where people walk are lifted and my mother nearly fell","expected_intent":"walking-surface-maintenance","lang":"en"}
+{"utterance":"footpath outside the library is all cracked up","expected_intent":"walking-surface-maintenance","lang":"en"}
+{"utterance":"kids have to walk on the road here because there is nowhere to walk","expected_intent":"new-sidewalk-request","lang":"en","note":"implicit new sidewalk"}
+{"utterance":"the lamp outside my window has been dead for a month","expected_intent":"street-lighting-concerns","lang":"en"}
+{"utterance":"whole block is pitch black at night, none of the poles are lit","expected_intent":"street-lighting-concerns","lang":"en"}
+{"utterance":"floodlights over the soccer pitch won't come on for evening practice","expected_intent":"lights-parks-playground-fields","lang":"en"}
+{"utterance":"someone scrawled all over the side of the community centre","expected_intent":"graffiti-removal","lang":"en"}
+{"utterance":"there's paint sprayed across the underpass wall again","expected_intent":"graffiti-removal","lang":"en"}
+{"utterance":"a big maple came down in the wind and it's across the footpath","expected_intent":"trees","lang":"en"}
+{"utterance":"the old oak looks rotten and I'm worried it'll come down on the house","expected_intent":"trees","lang":"en"}
+{"utterance":"you can't see oncoming cars because the greenery has taken over the corner","expected_intent":"vegetation-maintenance","lang":"en"}
+{"utterance":"the field by the school hasn't been cut in weeks, it's up to my knees","expected_intent":"grass","lang":"en"}
+{"utterance":"the planters downtown are full of weeds and look terrible","expected_intent":"landscaping","lang":"en"}
+{"utterance":"there's a huge patch of that poisonous plant with white flowers by the trail","expected_intent":"problem-plants-insects-invasive-species","lang":"en","note":"describes hogweed without naming it"}
+{"utterance":"a wasp nest is right beside the swings and my kid got stung","expected_intent":"problem-plants-insects-invasive-species","lang":"en"}
+{"utterance":"there's a raccoon carcass rotting on the shoulder","expected_intent":"deceased-animals","lang":"en"}
+{"utterance":"something died in the park and it smells awful","expected_intent":"deceased-animals","lang":"en"}
+{"utterance":"a van has been sat outside my house for ten days and hasn't moved","expected_intent":"illegally-parked-vehicle","lang":"en"}
+{"utterance":"someone left their car right across the entrance to my drive","expected_intent":"illegally-parked-vehicle","lang":"en"}
+{"utterance":"a vehicle is in the disabled bay with no badge","expected_intent":"illegally-parked-vehicle","lang":"en"}
+{"utterance":"there's a mattress dumped in the middle of the lane","expected_intent":"obstructions","lang":"en"}
+{"utterance":"broken glass and bits of bumper all over the junction after a crash","expected_intent":"obstructions","lang":"en"}
+{"utterance":"the pavement outside the shops is covered in rubbish","expected_intent":"report-street-litter","lang":"en"}
+{"utterance":"whole picnic area is covered in cans and wrappers after the weekend","expected_intent":"report-park-litter","lang":"en"}
+{"utterance":"nowhere to throw anything away at the playground, could you add something","expected_intent":"new-litter-bin-park-request","lang":"en"}
+{"utterance":"the painted crossing outside the school has nearly vanished","expected_intent":"crosswalks","lang":"en"}
+{"utterance":"people cross here constantly and there's no marked place to do it","expected_intent":"crosswalks","lang":"en"}
+{"utterance":"you can't tell where the lanes are anymore on this stretch","expected_intent":"pavement-markings","lang":"en"}
+{"utterance":"the signals at the junction are completely dead, nobody knows who goes","expected_intent":"traffic-signals","lang":"en"}
+{"utterance":"the green doesn't last long enough for older people to get across","expected_intent":"traffic-signals","lang":"en"}
+{"utterance":"this junction has had three crashes, it badly needs proper signals","expected_intent":"new-traffic-signal-request","lang":"en"}
+{"utterance":"people fly down our road, something needs to slow them down","expected_intent":"traffic-calming","lang":"en"}
+{"utterance":"the give way sign at the end of the road has been flattened","expected_intent":"street-sign-missing-or-damaged","lang":"en"}
+{"utterance":"there's no name plate on our street so deliveries can't find us","expected_intent":"street-sign-missing-or-damaged","lang":"en"}
+{"utterance":"candidate boards are stuck all along the verge blocking the path","expected_intent":"election-signs","lang":"en"}
+{"utterance":"water is halfway up my wheels on the road right now","expected_intent":"flooding-requests","lang":"en","note":"active, urgent"}
+{"utterance":"the gully is choked and it's backing up into the road","expected_intent":"flooding-requests","lang":"en"}
+{"utterance":"the metal grate over the drain is smashed","expected_intent":"drainage-infrastructure-maintenance-or-repair","lang":"en"}
+{"utterance":"water always sits here after rain, there's nothing to take it away","expected_intent":"drainage-infrastructure-request","lang":"en"}
+{"utterance":"the kerb stones are coming loose outside my gate","expected_intent":"curb-andor-gutter-maintenance","lang":"en"}
+{"utterance":"the edge of the road has eroded away and there's a sheer drop","expected_intent":"road-shoulder","lang":"en"}
+{"utterance":"the metal crash barrier on the bend is mangled","expected_intent":"barrier-maintenance","lang":"en"}
+{"utterance":"the handrail on the steps is wobbly and unsafe","expected_intent":"barrier-maintenance","lang":"en"}
+{"utterance":"our road is still covered in winter grit months later","expected_intent":"street-sweeping","lang":"en"}
+{"utterance":"the plough tore up the turf along my frontage","expected_intent":"snow-damage","lang":"en"}
+{"utterance":"contractors dug a channel across the road and the patch has sunk","expected_intent":"utility-related-street-cuts-trenches","lang":"en"}
+{"utterance":"a memorial stone has toppled over in the burial ground","expected_intent":"cemeteries","lang":"en"}
+{"utterance":"the swing seat is snapped and hanging by one chain","expected_intent":"request-repairs","lang":"en"}
+{"utterance":"could we have somewhere to sit along the walking route in the park","expected_intent":"parks-infrastructure-requests","lang":"en"}
+{"utterance":"I need the council to take away an old fridge freezer","expected_intent":"request-residential-refrigerant","lang":"en"}
+{"utterance":"how do I apply to park on my own street","expected_intent":"parking-permits","lang":"en"}
+{"utterance":"I want to see the picture they took when they fined me","expected_intent":"parking-ticket-photo-request","lang":"en"}
+{"utterance":"I've had a burglar alarm fitted and I'm told I have to register it","expected_intent":"alarm-registration","lang":"en"}
+{"utterance":"we've moved house, where do I send the new address for the rates bill","expected_intent":"address-change-form","lang":"en"}
+{"utterance":"we want to hold our ceremony in one of the council gardens","expected_intent":"outdoor-weddings","lang":"en"}
+{"utterance":"my grandparents hit sixty years together, does the mayor do a certificate","expected_intent":"wedding-anniversary-message","lang":"en"}
+{"utterance":"dad turns one hundred next month, can we get something from the mayor","expected_intent":"birthday-message-mayor","lang":"en"}
+{"utterance":"we'd love the mayor to open our summer fair","expected_intent":"invitations-mayor-attend-public-events","lang":"en"}
+{"utterance":"my uncle is leaving the forces after 30 years, is there a congratulations letter","expected_intent":"military-retirement-congratulatory-form","lang":"en"}
+{"utterance":"our residents group did a tidy up, who collects the sacks","expected_intent":"community-clean-adopt-a-highway","lang":"en"}
+{"utterance":"someone put a roadside tribute at the crash site on the bypass","expected_intent":"roadside-memorials","lang":"en"}
+{"utterance":"um so like there's this really big hole right where you turn in and I nearly lost my wheel","expected_intent":"report-a-pothole","lang":"en","note":"voice-style disfluency"}
+{"utterance":"yeah hi so the light thing on the corner it's not working at all and it's kinda dangerous","expected_intent":"traffic-signals","lang":"en","note":"voice-style, ambiguous light/signal"}
+{"utterance":"there's water everywhere on the road it's flooding right now","expected_intent":"flooding-requests","lang":"en","note":"voice-style urgent"}
+{"utterance":"a tree branch is like hanging right down over the sidewalk you have to duck","expected_intent":"trees","lang":"en","note":"voice-style"}

@@ -1,0 +1,164 @@
+{"utterance": "My parents are celebrating their 50th anniversary, can the mayor send a message", "expected_intent": "wedding-anniversary-message", "lang": "en"}
+{"utterance": "Requesting an anniversary certificate from the mayor", "expected_intent": "wedding-anniversary-message", "lang": "en"}
+{"utterance": "The guardrail on the highway is bent and damaged", "expected_intent": "barrier-maintenance", "lang": "en"}
+{"utterance": "A railing along the walkway is loose and dangerous", "expected_intent": "barrier-maintenance", "lang": "en"}
+{"utterance": "The retaining wall is starting to collapse", "expected_intent": "barrier-maintenance", "lang": "en"}
+{"utterance": "Fence beside the road has been knocked down", "expected_intent": "barrier-maintenance", "lang": "en"}
+{"utterance": "My grandmother is turning 100, can the mayor send a birthday message", "expected_intent": "birthday-message-mayor", "lang": "en"}
+{"utterance": "Requesting a birthday greeting from the mayor", "expected_intent": "birthday-message-mayor", "lang": "en"}
+{"utterance": "I want to book a park for my wedding ceremony", "expected_intent": "outdoor-weddings", "lang": "en"}
+{"utterance": "How do I reserve an outdoor venue for a wedding", "expected_intent": "outdoor-weddings", "lang": "en"}
+{"utterance": "A headstone has fallen over in the municipal cemetery", "expected_intent": "cemeteries", "lang": "en"}
+{"utterance": "There's a depression over a grave that needs filling", "expected_intent": "cemeteries", "lang": "en"}
+{"utterance": "The gravestone is damaged and leaning", "expected_intent": "cemeteries", "lang": "en"}
+{"utterance": "We finished our community cleanup, can you pick up the bags", "expected_intent": "community-clean-adopt-a-highway", "lang": "en"}
+{"utterance": "Our Adopt-A-Highway group needs a collection scheduled", "expected_intent": "community-clean-adopt-a-highway", "lang": "en"}
+{"utterance": "The crosswalk paint is completely faded and drivers don't stop", "expected_intent": "crosswalks", "lang": "en"}
+{"utterance": "We need a crosswalk at this intersection, it's dangerous", "expected_intent": "crosswalks", "lang": "en"}
+{"utterance": "The crosswalk flashing lights aren't working", "expected_intent": "crosswalks", "lang": "en"}
+{"utterance": "The curb outside my house is crumbling", "expected_intent": "curb-andor-gutter-maintenance", "lang": "en"}
+{"utterance": "Gutter along the street is broken", "expected_intent": "curb-andor-gutter-maintenance", "lang": "en"}
+{"utterance": "Curb was damaged by a truck", "expected_intent": "curb-andor-gutter-maintenance", "lang": "en"}
+{"utterance": "There's a dead raccoon on the side of the road", "expected_intent": "deceased-animals", "lang": "en"}
+{"utterance": "A deer was hit by a car and is lying in the ditch", "expected_intent": "deceased-animals", "lang": "en"}
+{"utterance": "Dead bird in the playground", "expected_intent": "deceased-animals", "lang": "en"}
+{"utterance": "There's a dead seal washed up on the beach", "expected_intent": "deceased-animals", "lang": "en"}
+{"utterance": "The catch basin grate is broken and needs repair", "expected_intent": "drainage-infrastructure-maintenance-or-repair", "lang": "en"}
+{"utterance": "A culvert under my driveway has collapsed", "expected_intent": "drainage-infrastructure-maintenance-or-repair", "lang": "en"}
+{"utterance": "The ditch needs cleaning out, it's full of silt", "expected_intent": "drainage-infrastructure-maintenance-or-repair", "lang": "en"}
+{"utterance": "Storm drain cover is loose", "expected_intent": "drainage-infrastructure-maintenance-or-repair", "lang": "en"}
+{"utterance": "We need a new catch basin on this corner, water always pools", "expected_intent": "drainage-infrastructure-request", "lang": "en"}
+{"utterance": "Can you install a culvert under our driveway", "expected_intent": "drainage-infrastructure-request", "lang": "en"}
+{"utterance": "There are campaign signs blocking the sidewalk", "expected_intent": "election-signs", "lang": "en"}
+{"utterance": "An election sign is in a prohibited area", "expected_intent": "election-signs", "lang": "en"}
+{"utterance": "Political signs are too big and blocking sight lines", "expected_intent": "election-signs", "lang": "en"}
+{"utterance": "The street is flooding, water is up to the curb", "expected_intent": "flooding-requests", "lang": "en"}
+{"utterance": "A catch basin is blocked and water is pooling", "expected_intent": "flooding-requests", "lang": "en"}
+{"utterance": "Water is running down the road into my driveway", "expected_intent": "flooding-requests", "lang": "en"}
+{"utterance": "The ditch is overflowing onto the street", "expected_intent": "flooding-requests", "lang": "en"}
+{"utterance": "Someone spray painted graffiti on the underpass", "expected_intent": "graffiti-removal", "lang": "en"}
+{"utterance": "There's tagging all over the bus shelter", "expected_intent": "graffiti-removal", "lang": "en"}
+{"utterance": "The wall by the park has been defaced with graffiti", "expected_intent": "graffiti-removal", "lang": "en"}
+{"utterance": "Can you remove the spray paint from the fence", "expected_intent": "graffiti-removal", "lang": "en"}
+{"utterance": "The grass in the park hasn't been cut all summer", "expected_intent": "grass", "lang": "en"}
+{"utterance": "Can you mow the boulevard in front of my house", "expected_intent": "grass", "lang": "en"}
+{"utterance": "Long grass on the sports field needs cutting", "expected_intent": "grass", "lang": "en"}
+{"utterance": "The lawn at the cemetery is overgrown", "expected_intent": "grass", "lang": "en"}
+{"utterance": "Where can I see recent fire department calls", "expected_intent": "hrfe-incident-feed", "lang": "en"}
+{"utterance": "A car is blocking my driveway and I can't get out", "expected_intent": "illegally-parked-vehicle", "lang": "en"}
+{"utterance": "Someone parked in the accessible spot without a permit", "expected_intent": "illegally-parked-vehicle", "lang": "en"}
+{"utterance": "There's a vehicle parked on the sidewalk", "expected_intent": "illegally-parked-vehicle", "lang": "en"}
+{"utterance": "Car has been parked in front of my house for a week", "expected_intent": "illegally-parked-vehicle", "lang": "en"}
+{"utterance": "Someone is double parked and blocking traffic", "expected_intent": "illegally-parked-vehicle", "lang": "en"}
+{"utterance": "A truck is parked in the fire lane", "expected_intent": "illegally-parked-vehicle", "lang": "en"}
+{"utterance": "We'd like to invite the mayor to our community festival", "expected_intent": "invitations-mayor-attend-public-events", "lang": "en"}
+{"utterance": "Can the mayor speak at our opening ceremony", "expected_intent": "invitations-mayor-attend-public-events", "lang": "en"}
+{"utterance": "The flower beds downtown need weeding", "expected_intent": "landscaping", "lang": "en"}
+{"utterance": "Hanging baskets on the street look dead", "expected_intent": "landscaping", "lang": "en"}
+{"utterance": "Shrubs in the median need pruning", "expected_intent": "landscaping", "lang": "en"}
+{"utterance": "There are rodent holes in the shrub bed", "expected_intent": "landscaping", "lang": "en"}
+{"utterance": "The lights on the ball diamond aren't turning on", "expected_intent": "lights-parks-playground-fields", "lang": "en"}
+{"utterance": "Playground lighting is broken at the community park", "expected_intent": "lights-parks-playground-fields", "lang": "en"}
+{"utterance": "Can you turn on the lights at the tennis court", "expected_intent": "lights-parks-playground-fields", "lang": "en"}
+{"utterance": "The lights along the park walkway are out", "expected_intent": "lights-parks-playground-fields", "lang": "en"}
+{"utterance": "A colleague is retiring from the navy, can the mayor send congratulations", "expected_intent": "military-retirement-congratulatory-form", "lang": "en"}
+{"utterance": "Can you put a garbage can in the playground area", "expected_intent": "new-litter-bin-park-request", "lang": "en"}
+{"utterance": "We need a litter bin at the park entrance", "expected_intent": "new-litter-bin-park-request", "lang": "en"}
+{"utterance": "There's no garbage can at this bus stop, can you add one", "expected_intent": "new-litter-bin-row-request", "lang": "en"}
+{"utterance": "We need a litter bin on the sidewalk here", "expected_intent": "new-litter-bin-row-request", "lang": "en"}
+{"utterance": "There is no sidewalk on our street and kids walk on the road", "expected_intent": "new-sidewalk-request", "lang": "en"}
+{"utterance": "Can you build a sidewalk along this stretch", "expected_intent": "new-sidewalk-request", "lang": "en"}
+{"utterance": "We need a new sidewalk installed on Main Street", "expected_intent": "new-sidewalk-request", "lang": "en"}
+{"utterance": "This intersection is dangerous, we need a traffic light installed", "expected_intent": "new-traffic-signal-request", "lang": "en"}
+{"utterance": "Can you put a stop light at this corner", "expected_intent": "new-traffic-signal-request", "lang": "en"}
+{"utterance": "The sign at the park entrance is broken", "expected_intent": "non-row-signage", "lang": "en"}
+{"utterance": "We need a dog-on-leash sign in the park", "expected_intent": "non-row-signage", "lang": "en"}
+{"utterance": "There's debris all over the road after a crash", "expected_intent": "obstructions", "lang": "en"}
+{"utterance": "Shopping carts dumped in the middle of the bike lane", "expected_intent": "obstructions", "lang": "en"}
+{"utterance": "Something is blocking the sidewalk and people can't get by", "expected_intent": "obstructions", "lang": "en"}
+{"utterance": "Garbage bags left on the roadway", "expected_intent": "obstructions", "lang": "en"}
+{"utterance": "I need to apply for a residential parking permit", "expected_intent": "parking-permits", "lang": "en"}
+{"utterance": "How do I get a parking permit for my street", "expected_intent": "parking-permits", "lang": "en"}
+{"utterance": "I want the photo evidence for my parking ticket", "expected_intent": "parking-ticket-photo-request", "lang": "en"}
+{"utterance": "Can I see the picture taken when I got ticketed", "expected_intent": "parking-ticket-photo-request", "lang": "en"}
+{"utterance": "Can you add a picnic table to the park", "expected_intent": "parks-infrastructure-requests", "lang": "en"}
+{"utterance": "We'd like a bench installed along the trail", "expected_intent": "parks-infrastructure-requests", "lang": "en"}
+{"utterance": "I have a general question about the park near me", "expected_intent": "parks-inquiries", "lang": "en"}
+{"utterance": "Who do I talk to about park opening hours", "expected_intent": "parks-inquiries", "lang": "en"}
+{"utterance": "The lane lines on the highway are completely worn off", "expected_intent": "pavement-markings", "lang": "en"}
+{"utterance": "Can you repaint the centre line on our road", "expected_intent": "pavement-markings", "lang": "en"}
+{"utterance": "The stop bar at the intersection has faded away", "expected_intent": "pavement-markings", "lang": "en"}
+{"utterance": "There's giant hogweed growing beside the trail", "expected_intent": "problem-plants-insects-invasive-species", "lang": "en"}
+{"utterance": "Japanese knotweed is spreading in the park", "expected_intent": "problem-plants-insects-invasive-species", "lang": "en"}
+{"utterance": "A wasp nest on municipal property near the playground", "expected_intent": "problem-plants-insects-invasive-species", "lang": "en"}
+{"utterance": "I found ticks in the park grass", "expected_intent": "problem-plants-insects-invasive-species", "lang": "en"}
+{"utterance": "European fire ants all over the boulevard", "expected_intent": "problem-plants-insects-invasive-species", "lang": "en"}
+{"utterance": "I need to register my home security alarm", "expected_intent": "alarm-registration", "lang": "en"}
+{"utterance": "How do I register a commercial alarm system", "expected_intent": "alarm-registration", "lang": "en"}
+{"utterance": "There's a huge pothole on Robie Street that nearly blew my tire", "expected_intent": "report-a-pothole", "lang": "en"}
+{"utterance": "A sinkhole opened up in the middle of my street", "expected_intent": "report-a-pothole", "lang": "en"}
+{"utterance": "The road surface is falling apart near the intersection", "expected_intent": "report-a-pothole", "lang": "en"}
+{"utterance": "Big hole in the pavement outside my house, cars are swerving", "expected_intent": "report-a-pothole", "lang": "en"}
+{"utterance": "Can someone fix the crater on Quinpool Road", "expected_intent": "report-a-pothole", "lang": "en"}
+{"utterance": "The streetlight in front of my house has been out for two weeks", "expected_intent": "street-lighting-concerns", "lang": "en"}
+{"utterance": "Street lamp is flickering all night", "expected_intent": "street-lighting-concerns", "lang": "en"}
+{"utterance": "Our whole street is dark, the lights aren't working", "expected_intent": "street-lighting-concerns", "lang": "en"}
+{"utterance": "Burnt out light on the corner of Agricola and North", "expected_intent": "street-lighting-concerns", "lang": "en"}
+{"utterance": "There's garbage all over the park after the weekend", "expected_intent": "report-park-litter", "lang": "en"}
+{"utterance": "Trash left on the sports field", "expected_intent": "report-park-litter", "lang": "en"}
+{"utterance": "The playground is covered in litter", "expected_intent": "report-park-litter", "lang": "en"}
+{"utterance": "There's garbage strewn all over the sidewalk", "expected_intent": "report-street-litter", "lang": "en"}
+{"utterance": "Someone dumped trash bags on the street corner", "expected_intent": "report-street-litter", "lang": "en"}
+{"utterance": "Lots of litter along the roadside", "expected_intent": "report-street-litter", "lang": "en"}
+{"utterance": "The swing set at the playground is broken", "expected_intent": "request-repairs", "lang": "en"}
+{"utterance": "A slide in the park is cracked and unsafe", "expected_intent": "request-repairs", "lang": "en"}
+{"utterance": "The bench in the park is falling apart", "expected_intent": "request-repairs", "lang": "en"}
+{"utterance": "Play structure needs repair", "expected_intent": "request-repairs", "lang": "en"}
+{"utterance": "I need my old fridge picked up", "expected_intent": "request-residential-refrigerant", "lang": "en"}
+{"utterance": "How do I get rid of a freezer with refrigerant", "expected_intent": "request-residential-refrigerant", "lang": "en"}
+{"utterance": "Need an air conditioner removed from my house", "expected_intent": "request-residential-refrigerant", "lang": "en"}
+{"utterance": "The shoulder of the road has washed away", "expected_intent": "road-shoulder", "lang": "en"}
+{"utterance": "There's a big drop-off at the edge of the pavement", "expected_intent": "road-shoulder", "lang": "en"}
+{"utterance": "Gravel shoulder needs grading", "expected_intent": "road-shoulder", "lang": "en"}
+{"utterance": "I'd like to report a roadside memorial that was placed", "expected_intent": "roadside-memorials", "lang": "en"}
+{"utterance": "There's a memorial cross on the highway shoulder", "expected_intent": "roadside-memorials", "lang": "en"}
+{"utterance": "Can we get a bench at this bus stop", "expected_intent": "row-bench", "lang": "en"}
+{"utterance": "The bench on the sidewalk is damaged", "expected_intent": "row-bench", "lang": "en"}
+{"utterance": "I have a general question about street maintenance", "expected_intent": "row-services-general-inquiries", "lang": "en"}
+{"utterance": "Who is responsible for maintaining this road", "expected_intent": "row-services-general-inquiries", "lang": "en"}
+{"utterance": "Can you install a no-parking sign on this block", "expected_intent": "row-signage", "lang": "en"}
+{"utterance": "We'd like a children-at-play sign on our street", "expected_intent": "row-signage", "lang": "en"}
+{"utterance": "The snow plow tore up my lawn this winter", "expected_intent": "snow-damage", "lang": "en"}
+{"utterance": "A plow knocked over my mailbox", "expected_intent": "snow-damage", "lang": "en"}
+{"utterance": "Plow damaged the edge of my driveway", "expected_intent": "snow-damage", "lang": "en"}
+{"utterance": "The stop sign at the corner has been knocked down", "expected_intent": "street-sign-missing-or-damaged", "lang": "en"}
+{"utterance": "Our street name sign is missing", "expected_intent": "street-sign-missing-or-damaged", "lang": "en"}
+{"utterance": "A road sign is bent and unreadable", "expected_intent": "street-sign-missing-or-damaged", "lang": "en"}
+{"utterance": "Our street still has winter sand all over it", "expected_intent": "street-sweeping", "lang": "en"}
+{"utterance": "Can you send a street sweeper, there's gravel everywhere", "expected_intent": "street-sweeping", "lang": "en"}
+{"utterance": "The bike lane is full of dirt and sand", "expected_intent": "street-sweeping", "lang": "en"}
+{"utterance": "Cars speed down our residential street all day", "expected_intent": "traffic-calming", "lang": "en"}
+{"utterance": "Can we get speed bumps installed, it's not safe for kids", "expected_intent": "traffic-calming", "lang": "en"}
+{"utterance": "Drivers are racing through the neighbourhood", "expected_intent": "traffic-calming", "lang": "en"}
+{"utterance": "The traffic light at the intersection is stuck on red", "expected_intent": "traffic-signals", "lang": "en"}
+{"utterance": "Traffic signal is completely dark, it's dangerous", "expected_intent": "traffic-signals", "lang": "en"}
+{"utterance": "The light timing is too short to cross", "expected_intent": "traffic-signals", "lang": "en"}
+{"utterance": "Pedestrian button isn't working at the signal", "expected_intent": "traffic-signals", "lang": "en"}
+{"utterance": "A tree fell down across the sidewalk", "expected_intent": "trees", "lang": "en"}
+{"utterance": "There's a dead tree that looks like it might fall on my house", "expected_intent": "trees", "lang": "en"}
+{"utterance": "Branches are hanging over the road and hitting buses", "expected_intent": "trees", "lang": "en"}
+{"utterance": "Can someone trim the tree in front of my property", "expected_intent": "trees", "lang": "en"}
+{"utterance": "Big limb broke off in the storm and is blocking the path", "expected_intent": "trees", "lang": "en"}
+{"utterance": "I moved and need to update my mailing address for property tax", "expected_intent": "address-change-form", "lang": "en"}
+{"utterance": "Change of address for my tax bill", "expected_intent": "address-change-form", "lang": "en"}
+{"utterance": "A utility company dug up the road and never repaired it properly", "expected_intent": "utility-related-street-cuts-trenches", "lang": "en"}
+{"utterance": "There's a sunken trench across the street from the gas work", "expected_intent": "utility-related-street-cuts-trenches", "lang": "en"}
+{"utterance": "The patch from the street cut is uneven and rough", "expected_intent": "utility-related-street-cuts-trenches", "lang": "en"}
+{"utterance": "The bushes at the corner are so overgrown I can't see traffic", "expected_intent": "vegetation-maintenance", "lang": "en"}
+{"utterance": "Vegetation is growing over the sidewalk", "expected_intent": "vegetation-maintenance", "lang": "en"}
+{"utterance": "Brush along the roadside needs clearing", "expected_intent": "vegetation-maintenance", "lang": "en"}
+{"utterance": "Weeds and overgrowth blocking the stop sign", "expected_intent": "vegetation-maintenance", "lang": "en"}
+{"utterance": "The sidewalk is cracked and I tripped on it", "expected_intent": "walking-surface-maintenance", "lang": "en"}
+{"utterance": "Uneven slabs on the footpath outside the school", "expected_intent": "walking-surface-maintenance", "lang": "en"}
+{"utterance": "The walkway in front of my building is a trip hazard", "expected_intent": "walking-surface-maintenance", "lang": "en"}
+{"utterance": "Sidewalk pavement is broken and lifting", "expected_intent": "walking-surface-maintenance", "lang": "en"}

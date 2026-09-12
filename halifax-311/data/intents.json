@@ -1,0 +1,1826 @@
+{
+  "count": 55,
+  "intents": [
+    {
+      "intent_id": "wedding-anniversary-message",
+      "form_slug": "wedding-anniversary-message",
+      "service_id": "2161",
+      "display_name": "Anniversary message from the mayor",
+      "url": "https://www.halifax.ca/city-hall/mayor-andy-fillmore/requests/wedding-anniversary-message",
+      "official_summary": "Ask the mayor to send an anniversary message to couples celebrating a 50th, 55th, 60th, 65th, 70th, or 75th anniversary.",
+      "categories": [
+        "Contact & Request",
+        "Mayor & Council"
+      ],
+      "keywords": [
+        "anniversary message",
+        "anniversary certificate",
+        "mayor anniversary",
+        "50th anniversary",
+        "congratulations anniversary"
+      ],
+      "example_utterances": [
+        "My parents are celebrating their 50th anniversary, can the mayor send a message",
+        "Requesting an anniversary certificate from the mayor"
+      ],
+      "disambiguation": {
+        "birthday-message-mayor": "Anniversary, not birthday."
+      }
+    },
+    {
+      "intent_id": "barrier-maintenance",
+      "form_slug": "barrier-maintenance",
+      "service_id": "1292779",
+      "display_name": "Barrier Maintenance",
+      "url": "https://www.halifax.ca/home/online-services/barrier-maintenance",
+      "official_summary": "Requests for maintenance of guiderails, retaining walls, fences, or railings.",
+      "categories": [
+        "File a Report",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "keywords": [
+        "guardrail",
+        "guiderail",
+        "guide rail",
+        "railing",
+        "retaining wall",
+        "fence",
+        "barrier",
+        "handrail",
+        "damaged guardrail",
+        "broken railing",
+        "wall collapsing"
+      ],
+      "example_utterances": [
+        "The guardrail on the highway is bent and damaged",
+        "A railing along the walkway is loose and dangerous",
+        "The retaining wall is starting to collapse",
+        "Fence beside the road has been knocked down"
+      ],
+      "disambiguation": {
+        "request-repairs": "Barrier in the road right-of-way; park/playground equipment repairs go to request-repairs."
+      }
+    },
+    {
+      "intent_id": "birthday-message-mayor",
+      "form_slug": "birthday-message-mayor",
+      "service_id": "12191",
+      "display_name": "Birthday message from the mayor",
+      "url": "https://www.halifax.ca/city-hall/mayor-andy-fillmore/requests/birthday-message-mayor",
+      "official_summary": "Ask the mayor to send a birthday message to someone turning 80, 90, or 100 (also available every year after 100).",
+      "categories": [
+        "Contact & Request",
+        "Mayor & Council"
+      ],
+      "keywords": [
+        "birthday message",
+        "birthday certificate",
+        "mayor birthday",
+        "100th birthday",
+        "90th birthday",
+        "milestone birthday"
+      ],
+      "example_utterances": [
+        "My grandmother is turning 100, can the mayor send a birthday message",
+        "Requesting a birthday greeting from the mayor"
+      ],
+      "disambiguation": {
+        "wedding-anniversary-message": "Birthday, not anniversary."
+      }
+    },
+    {
+      "intent_id": "outdoor-weddings",
+      "form_slug": "outdoor-weddings",
+      "service_id": "14351",
+      "display_name": "Book a park or facility (wedding)",
+      "url": "https://www.halifax.ca/parks-recreation/facility-rentals-bookings-field-conditions/bookings-rentals/outdoor-weddings",
+      "official_summary": "Book one of the municipality’s beautiful venues for your wedding. Indoor and outdoor options available.",
+      "categories": [
+        "Apply & Register",
+        "Parks & Recreation"
+      ],
+      "keywords": [
+        "wedding booking",
+        "book a park for wedding",
+        "outdoor wedding",
+        "wedding venue",
+        "rent park wedding",
+        "ceremony in park"
+      ],
+      "example_utterances": [
+        "I want to book a park for my wedding ceremony",
+        "How do I reserve an outdoor venue for a wedding"
+      ],
+      "disambiguation": {}
+    },
+    {
+      "intent_id": "cemeteries",
+      "form_slug": "cemeteries",
+      "service_id": "1292815",
+      "display_name": "Cemeteries",
+      "url": "https://www.halifax.ca/home/online-services/cemeteries",
+      "official_summary": "Report on damaged headstones, fallen over headstones, grave depressions, or general cemetery inquiries. HRM Owned cemeteries only.",
+      "categories": [
+        "File a Report",
+        "Parks & Recreation"
+      ],
+      "keywords": [
+        "cemetery",
+        "headstone",
+        "gravestone",
+        "grave",
+        "tombstone",
+        "grave depression",
+        "fallen headstone",
+        "damaged headstone",
+        "burial ground"
+      ],
+      "example_utterances": [
+        "A headstone has fallen over in the municipal cemetery",
+        "There's a depression over a grave that needs filling",
+        "The gravestone is damaged and leaning"
+      ],
+      "disambiguation": {},
+      "note": "HRM-owned cemeteries only."
+    },
+    {
+      "intent_id": "community-clean-adopt-a-highway",
+      "form_slug": "community-clean-adopt-a-highway",
+      "service_id": "1292814",
+      "display_name": "Community Clean Up / Adopt A Highway",
+      "url": "https://www.halifax.ca/home/online-services/community-clean-adopt-a-highway",
+      "official_summary": "Schedule pick up from Community Clean Up programs. Please ensure you have registered for the program prior to contacting HRM",
+      "categories": [
+        "Contact & Request",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "keywords": [
+        "community cleanup",
+        "adopt a highway",
+        "cleanup pickup",
+        "collect cleanup bags",
+        "volunteer cleanup",
+        "group cleanup"
+      ],
+      "example_utterances": [
+        "We finished our community cleanup, can you pick up the bags",
+        "Our Adopt-A-Highway group needs a collection scheduled"
+      ],
+      "disambiguation": {
+        "report-street-litter": "Organized/registered cleanup program pickup, not a litter report."
+      },
+      "note": "Requester must already be registered in the program."
+    },
+    {
+      "intent_id": "crosswalks",
+      "form_slug": "crosswalks",
+      "service_id": "1292777",
+      "display_name": "Crosswalks",
+      "url": "https://www.halifax.ca/home/online-services/crosswalks",
+      "official_summary": "Requests for new crosswalks, crosswalk repairs, or crosswalk painting.",
+      "categories": [
+        "File a Report",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "keywords": [
+        "crosswalk",
+        "cross walk",
+        "pedestrian crossing",
+        "zebra crossing",
+        "crosswalk paint",
+        "crossing faded",
+        "crosswalk lights",
+        "need a crosswalk",
+        "crossing signal button"
+      ],
+      "example_utterances": [
+        "The crosswalk paint is completely faded and drivers don't stop",
+        "We need a crosswalk at this intersection, it's dangerous",
+        "The crosswalk flashing lights aren't working"
+      ],
+      "disambiguation": {
+        "pavement-markings": "Crosswalk specifically; other road markings (lines, arrows, stop bars) go to pavement-markings.",
+        "traffic-signals": "Pedestrian crosswalk; full traffic signals go to traffic-signals."
+      }
+    },
+    {
+      "intent_id": "curb-andor-gutter-maintenance",
+      "form_slug": "curb-andor-gutter-maintenance",
+      "service_id": "1292782",
+      "display_name": "Curb and/or Gutter Maintenance",
+      "url": "https://www.halifax.ca/home/online-services/curb-andor-gutter-maintenance",
+      "official_summary": "Requests for repairs on curbs or gutters",
+      "categories": [
+        "File a Report",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "keywords": [
+        "curb",
+        "kerb",
+        "gutter",
+        "broken curb",
+        "curb damaged",
+        "gutter repair",
+        "curb crumbling",
+        "curb cut damaged"
+      ],
+      "example_utterances": [
+        "The curb outside my house is crumbling",
+        "Gutter along the street is broken",
+        "Curb was damaged by a truck"
+      ],
+      "disambiguation": {
+        "walking-surface-maintenance": "Curb/gutter specifically, not the sidewalk surface.",
+        "snow-damage": "If a snow plow caused it, use snow-damage."
+      }
+    },
+    {
+      "intent_id": "deceased-animals",
+      "form_slug": "deceased-animals",
+      "service_id": "1292813",
+      "display_name": "Deceased Animals",
+      "url": "https://www.halifax.ca/home/online-services/deceased-animals",
+      "official_summary": "Report issues on deceased animals or marine life on HRM Property, including parks, playgrounds, and fields.",
+      "categories": [
+        "File a Report",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "keywords": [
+        "hit by a car",
+        "struck by vehicle",
+        "lying in the ditch",
+        "animal body",
+        "dead animal",
+        "deceased animal",
+        "roadkill",
+        "road kill",
+        "dead cat",
+        "dead dog",
+        "dead bird",
+        "dead deer",
+        "dead raccoon",
+        "carcass",
+        "dead marine life",
+        "dead whale",
+        "dead seal",
+        "animal remains"
+      ],
+      "example_utterances": [
+        "There's a dead raccoon on the side of the road",
+        "A deer was hit by a car and is lying in the ditch",
+        "Dead bird in the playground",
+        "There's a dead seal washed up on the beach"
+      ],
+      "disambiguation": {
+        "problem-plants-insects-invasive-species": "Animal is dead; living nuisance animals go to problem-plants-insects-invasive-species."
+      },
+      "slot_extraction": {
+        "animal_type": "Map the mentioned animal to the `animal_type` dropdown (Bird, Cat, Deer, Dog, Marine Life, Raccoon, Other Animal, Unknown)."
+      }
+    },
+    {
+      "intent_id": "drainage-infrastructure-maintenance-or-repair",
+      "form_slug": "drainage-infrastructure-maintenance-or-repair",
+      "service_id": "1292812",
+      "display_name": "Drainage Infrastructure Maintenance or Repair",
+      "url": "https://www.halifax.ca/home/online-services/drainage-infrastructure-maintenance-or-repair",
+      "official_summary": "Report issues related to repair or maintenance of drainage assets (where flooding is not currently happening). Examples include culverts, ditch, street drains, catch basins, other.",
+      "categories": [
+        "File a Report",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "keywords": [
+        "catch basin",
+        "culvert",
+        "ditch",
+        "storm drain",
+        "street drain",
+        "drainage repair",
+        "broken catch basin",
+        "collapsed culvert",
+        "drain grate",
+        "damaged ditch"
+      ],
+      "example_utterances": [
+        "The catch basin grate is broken and needs repair",
+        "A culvert under my driveway has collapsed",
+        "The ditch needs cleaning out, it's full of silt",
+        "Storm drain cover is loose"
+      ],
+      "disambiguation": {
+        "flooding-requests": "Repair/maintenance where flooding is NOT currently happening.",
+        "drainage-infrastructure-request": "Repair of EXISTING drainage; a request for NEW drainage goes to drainage-infrastructure-request."
+      }
+    },
+    {
+      "intent_id": "drainage-infrastructure-request",
+      "form_slug": "drainage-infrastructure-request",
+      "service_id": "1292811",
+      "display_name": "Drainage Infrastructure Request",
+      "url": "https://www.halifax.ca/home/online-services/drainage-infrastructure-request",
+      "official_summary": "Request for new drainage infrastructure (e.g. new catch basin, culvert, street drain).",
+      "categories": [
+        "Contact & Request"
+      ],
+      "keywords": [
+        "new catch basin",
+        "new culvert",
+        "new storm drain",
+        "install drainage",
+        "need a drain",
+        "add a culvert"
+      ],
+      "example_utterances": [
+        "We need a new catch basin on this corner, water always pools",
+        "Can you install a culvert under our driveway"
+      ],
+      "disambiguation": {
+        "drainage-infrastructure-maintenance-or-repair": "NEW infrastructure request, not repair."
+      }
+    },
+    {
+      "intent_id": "election-signs",
+      "form_slug": "election-signs",
+      "service_id": "1292810",
+      "display_name": "Election Signs",
+      "url": "https://www.halifax.ca/home/online-services/election-signs",
+      "official_summary": "Report concerns on the size of election signs, signs in prohibited areas, signs on a travel way, path, or other concerns.",
+      "categories": [
+        "Contact & Request"
+      ],
+      "keywords": [
+        "campaign signs sidewalk",
+        "political signage",
+        "candidate signage",
+        "election signage",
+        "election sign",
+        "campaign sign",
+        "political sign",
+        "candidate sign",
+        "sign on the road election",
+        "oversized election sign"
+      ],
+      "example_utterances": [
+        "There are campaign signs blocking the sidewalk",
+        "An election sign is in a prohibited area",
+        "Political signs are too big and blocking sight lines"
+      ],
+      "disambiguation": {
+        "street-sign-missing-or-damaged": "Election/campaign signage specifically."
+      }
+    },
+    {
+      "intent_id": "flooding-requests",
+      "form_slug": "flooding-requests",
+      "service_id": "1292809",
+      "display_name": "Flooding Requests",
+      "url": "https://www.halifax.ca/home/online-services/flooding-requests",
+      "official_summary": "Report active incidents of flooding; catch basins, water running into the street, culverts and ditches.",
+      "categories": [
+        "File a Report",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "keywords": [
+        "flooding",
+        "flood",
+        "water in the street",
+        "street flooded",
+        "water pooling",
+        "blocked catch basin",
+        "standing water",
+        "drain blocked",
+        "water running into street",
+        "ditch overflowing"
+      ],
+      "example_utterances": [
+        "The street is flooding, water is up to the curb",
+        "A catch basin is blocked and water is pooling",
+        "Water is running down the road into my driveway",
+        "The ditch is overflowing onto the street"
+      ],
+      "disambiguation": {
+        "drainage-infrastructure-maintenance-or-repair": "ACTIVE flooding happening now. If water is not currently flooding and it's an asset repair, use drainage-infrastructure-maintenance-or-repair."
+      },
+      "urgency": "Active flooding is time-sensitive; flag as high priority."
+    },
+    {
+      "intent_id": "graffiti-removal",
+      "form_slug": "graffiti-removal",
+      "service_id": "1292808",
+      "display_name": "Graffiti Removal",
+      "url": "https://www.halifax.ca/home/online-services/graffiti-removal",
+      "official_summary": "Requests to have graffiti removed.",
+      "categories": [
+        "File a Report",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "keywords": [
+        "graffiti",
+        "tagging",
+        "tagged",
+        "spray paint",
+        "vandalism paint",
+        "scrawl",
+        "defaced wall",
+        "painted on wall",
+        "marker on wall"
+      ],
+      "example_utterances": [
+        "Someone spray painted graffiti on the underpass",
+        "There's tagging all over the bus shelter",
+        "The wall by the park has been defaced with graffiti",
+        "Can you remove the spray paint from the fence"
+      ],
+      "disambiguation": {}
+    },
+    {
+      "intent_id": "grass",
+      "form_slug": "grass",
+      "service_id": "1292807",
+      "display_name": "Grass",
+      "url": "https://www.halifax.ca/home/online-services/grass",
+      "official_summary": "Requests to cut grass in parks, playgrounds, athletic fields, cemeteries and in the boulevard.",
+      "categories": [
+        "Contact & Request",
+        "Parks & Recreation"
+      ],
+      "keywords": [
+        "grass",
+        "mowing",
+        "mow",
+        "cut the grass",
+        "long grass",
+        "lawn",
+        "uncut grass",
+        "overgrown grass",
+        "boulevard grass",
+        "field mowing"
+      ],
+      "example_utterances": [
+        "The grass in the park hasn't been cut all summer",
+        "Can you mow the boulevard in front of my house",
+        "Long grass on the sports field needs cutting",
+        "The lawn at the cemetery is overgrown"
+      ],
+      "disambiguation": {
+        "vegetation-maintenance": "Grass cutting only; brush and overgrowth go to vegetation-maintenance.",
+        "landscaping": "Beds and shrubs go to landscaping."
+      }
+    },
+    {
+      "intent_id": "hrfe-incident-feed",
+      "form_slug": "hrfe-incident-feed",
+      "service_id": "1297994",
+      "display_name": "HRFE incident feed",
+      "url": "https://www.halifax.ca/safety-security/fire-emergency/hrfe-incident-feed",
+      "official_summary": "View recent information about HRFE fire calls and incidents in one place.",
+      "categories": [
+        "Find, Maps, and Open Data"
+      ],
+      "keywords": [
+        "fire incident feed",
+        "fire calls",
+        "recent fire incidents"
+      ],
+      "example_utterances": [
+        "Where can I see recent fire department calls"
+      ],
+      "disambiguation": {},
+      "note": "Informational feed, not a submittable request."
+    },
+    {
+      "intent_id": "illegally-parked-vehicle",
+      "form_slug": "illegally-parked-vehicle",
+      "service_id": "1292806",
+      "display_name": "Illegally Parked Vehicle",
+      "url": "https://www.halifax.ca/home/online-services/illegally-parked-vehicle",
+      "official_summary": "Report illegally parked vehicles.",
+      "categories": [
+        "File a Report",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "keywords": [
+        "illegally parked",
+        "parked illegally",
+        "blocking my driveway",
+        "parked on sidewalk",
+        "fire lane",
+        "handicap spot",
+        "accessible spot",
+        "double parked",
+        "bus stop parking",
+        "no parking",
+        "abandoned car",
+        "parked in bike lane",
+        "winter parking ban",
+        "blocking crosswalk",
+        "parked too long"
+      ],
+      "example_utterances": [
+        "A car is blocking my driveway and I can't get out",
+        "Someone parked in the accessible spot without a permit",
+        "There's a vehicle parked on the sidewalk",
+        "Car has been parked in front of my house for a week",
+        "Someone is double parked and blocking traffic",
+        "A truck is parked in the fire lane"
+      ],
+      "disambiguation": {
+        "obstructions": "A parked VEHICLE. Debris, carts or other objects go to obstructions.",
+        "parking-permits": "A complaint, not a permit application."
+      },
+      "slot_extraction": {
+        "alleged_violation": "Map to the `alleged_violation` dropdown. Options flagged (DISPATCH) are urgent and trigger immediate dispatch.",
+        "vehicle_make": "Extract make",
+        "vehicle_model": "Extract model",
+        "vehicle_color": "Extract colour",
+        "vehicle_plate": "Extract licence plate"
+      },
+      "urgency": "Options marked (DISPATCH) — blocking driveway, fire lane on public property, on sidewalk, near hydrant/crosswalk/stop sign — are high priority."
+    },
+    {
+      "intent_id": "invitations-mayor-attend-public-events",
+      "form_slug": "invitations-mayor-attend-public-events",
+      "service_id": "13001",
+      "display_name": "Invite the mayor (Public Event)",
+      "url": "https://www.halifax.ca/city-hall/mayor-andy-fillmore/requests/invitations-mayor-attend-public-events",
+      "official_summary": "Invite the mayor to attend your special event.",
+      "categories": [
+        "Contact & Request",
+        "Mayor & Council"
+      ],
+      "keywords": [
+        "invite the mayor",
+        "mayor attend",
+        "mayor at our event",
+        "invitation mayor",
+        "mayor speak at event"
+      ],
+      "example_utterances": [
+        "We'd like to invite the mayor to our community festival",
+        "Can the mayor speak at our opening ceremony"
+      ],
+      "disambiguation": {}
+    },
+    {
+      "intent_id": "landscaping",
+      "form_slug": "landscaping",
+      "service_id": "1292805",
+      "display_name": "Landscaping",
+      "url": "https://www.halifax.ca/home/online-services/landscaping",
+      "official_summary": "Requests for pruning and maintenance of foliage, vegetation, shrubs, flower beds, hanging baskets. Examples include weeds in shrub beds, rodent holes, etc.",
+      "categories": [
+        "Contact & Request",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "keywords": [
+        "hanging basket dead",
+        "dead flowers",
+        "planter",
+        "flower pot",
+        "median planting",
+        "shrub",
+        "flower bed",
+        "planting",
+        "hanging basket",
+        "pruning shrubs",
+        "foliage",
+        "garden bed",
+        "weeds in bed",
+        "rodent hole",
+        "ornamental"
+      ],
+      "example_utterances": [
+        "The flower beds downtown need weeding",
+        "Hanging baskets on the street look dead",
+        "Shrubs in the median need pruning",
+        "There are rodent holes in the shrub bed"
+      ],
+      "disambiguation": {
+        "grass": "Beds/shrubs, not grass mowing.",
+        "trees": "Shrubs and beds, not trees."
+      }
+    },
+    {
+      "intent_id": "lights-parks-playground-fields",
+      "form_slug": "lights-parks-playground-fields",
+      "service_id": "1292804",
+      "display_name": "Lights - Parks, Playground, Fields",
+      "url": "https://www.halifax.ca/home/online-services/lights-parks-playground-fields",
+      "official_summary": "Lighting requests for HRM owned sports fields, sports courts, ball diamonds, all-weather fields and courts. Includes HRM owned parks, playgrounds, cemeteries, open spaces and walkways.",
+      "categories": [
+        "Parks & Recreation"
+      ],
+      "keywords": [
+        "park walkway light",
+        "trail lighting",
+        "lights in park out",
+        "field lighting",
+        "park light",
+        "playground light",
+        "field light",
+        "sports light",
+        "ball diamond light",
+        "court light",
+        "tennis court lights",
+        "lighting in the park",
+        "trail light",
+        "walkway light in park"
+      ],
+      "example_utterances": [
+        "The lights on the ball diamond aren't turning on",
+        "Playground lighting is broken at the community park",
+        "Can you turn on the lights at the tennis court",
+        "The lights along the park walkway are out"
+      ],
+      "disambiguation": {
+        "street-lighting-concerns": "Lighting on municipal PARK / field / playground property, not a street."
+      }
+    },
+    {
+      "intent_id": "military-retirement-congratulatory-form",
+      "form_slug": "military-retirement-congratulatory-form",
+      "service_id": "12171",
+      "display_name": "Military Retirement Congratulations",
+      "url": "https://www.halifax.ca/city-hall/mayor-andy-fillmore/requests/military-retirement-congratulatory-form",
+      "official_summary": "Ask the mayor to send a congratulatory message to someone retiring from the military.",
+      "categories": [
+        "Contact & Request",
+        "Mayor & Council"
+      ],
+      "keywords": [
+        "military retirement",
+        "retiring from the military",
+        "armed forces retirement",
+        "congratulatory message military",
+        "navy retirement"
+      ],
+      "example_utterances": [
+        "A colleague is retiring from the navy, can the mayor send congratulations"
+      ],
+      "disambiguation": {}
+    },
+    {
+      "intent_id": "new-litter-bin-park-request",
+      "form_slug": "new-litter-bin-park-request",
+      "service_id": "1292803",
+      "display_name": "New Litter Bin in Park Request",
+      "url": "https://www.halifax.ca/home/online-services/new-litter-bin-park-request",
+      "official_summary": "New Litter Bin in Park Request",
+      "categories": [
+        "Contact & Request",
+        "Parks & Recreation"
+      ],
+      "keywords": [
+        "garbage can playground",
+        "bin playground",
+        "garbage can park",
+        "add bin park",
+        "new litter bin in park",
+        "garbage can in park",
+        "trash bin park",
+        "need a bin in the park",
+        "add a garbage can park"
+      ],
+      "example_utterances": [
+        "Can you put a garbage can in the playground area",
+        "We need a litter bin at the park entrance"
+      ],
+      "disambiguation": {
+        "new-litter-bin-row-request": "Bin located in a PARK; a bin on a street/sidewalk goes to new-litter-bin-row-request.",
+        "report-park-litter": "Requesting a NEW bin, not reporting existing litter."
+      }
+    },
+    {
+      "intent_id": "new-litter-bin-row-request",
+      "form_slug": "new-litter-bin-row-request",
+      "service_id": "1292802",
+      "display_name": "New Litter Bin in ROW Request",
+      "url": "https://www.halifax.ca/home/online-services/new-litter-bin-row-request",
+      "official_summary": "Request for new litterbins in the right-of-way.",
+      "categories": [
+        "Contact & Request"
+      ],
+      "keywords": [
+        "garbage can bus stop",
+        "no garbage can",
+        "bin at bus stop",
+        "add a bin street",
+        "litter bin sidewalk",
+        "new litter bin on street",
+        "garbage can on sidewalk",
+        "trash bin right of way",
+        "bin on the street",
+        "add garbage can downtown"
+      ],
+      "example_utterances": [
+        "There's no garbage can at this bus stop, can you add one",
+        "We need a litter bin on the sidewalk here"
+      ],
+      "disambiguation": {
+        "new-litter-bin-park-request": "Bin in the right-of-way (street/sidewalk); a bin in a park goes to new-litter-bin-park-request."
+      }
+    },
+    {
+      "intent_id": "new-sidewalk-request",
+      "form_slug": "new-sidewalk-request",
+      "service_id": "1292801",
+      "display_name": "New Sidewalk Request",
+      "url": "https://www.halifax.ca/home/online-services/new-sidewalk-request",
+      "official_summary": "Request for new sidewalks.",
+      "categories": [
+        "Contact & Request"
+      ],
+      "keywords": [
+        "new sidewalk",
+        "build a sidewalk",
+        "install sidewalk",
+        "no sidewalk",
+        "add a sidewalk",
+        "sidewalk needed",
+        "want a sidewalk"
+      ],
+      "example_utterances": [
+        "There is no sidewalk on our street and kids walk on the road",
+        "Can you build a sidewalk along this stretch",
+        "We need a new sidewalk installed on Main Street"
+      ],
+      "disambiguation": {
+        "walking-surface-maintenance": "NEW construction request, not repair of an existing sidewalk."
+      }
+    },
+    {
+      "intent_id": "new-traffic-signal-request",
+      "form_slug": "new-traffic-signal-request",
+      "service_id": "1292800",
+      "display_name": "New Traffic Signal Request",
+      "url": "https://www.halifax.ca/home/online-services/new-traffic-signal-request",
+      "official_summary": "Request new traffic signals.",
+      "categories": [],
+      "keywords": [
+        "stop light",
+        "stoplight",
+        "put a light",
+        "install a light",
+        "signal at corner",
+        "light at intersection",
+        "new traffic light",
+        "install traffic signal",
+        "need a stop light",
+        "request traffic signal",
+        "intersection needs a light"
+      ],
+      "example_utterances": [
+        "This intersection is dangerous, we need a traffic light installed",
+        "Can you put a stop light at this corner"
+      ],
+      "disambiguation": {
+        "traffic-signals": "NEW signal request, not a malfunction.",
+        "traffic-calming": "If the concern is speeding, use traffic-calming."
+      }
+    },
+    {
+      "intent_id": "non-row-signage",
+      "form_slug": "non-row-signage",
+      "service_id": "1292799",
+      "display_name": "Non-ROW Signage",
+      "url": "https://www.halifax.ca/home/online-services/non-row-signage",
+      "official_summary": "Request for a new sign in a park (sign maintenance, complaints about signs in a park -including election signs).",
+      "categories": [
+        "Contact & Request",
+        "Parks & Recreation"
+      ],
+      "keywords": [
+        "park sign",
+        "sign in the park",
+        "playground sign",
+        "trail sign",
+        "park sign damaged",
+        "sign complaint park"
+      ],
+      "example_utterances": [
+        "The sign at the park entrance is broken",
+        "We need a dog-on-leash sign in the park"
+      ],
+      "disambiguation": {
+        "row-signage": "Sign located in a PARK, not the street right-of-way."
+      }
+    },
+    {
+      "intent_id": "obstructions",
+      "form_slug": "obstructions",
+      "service_id": "1292798",
+      "display_name": "Obstructions",
+      "url": "https://www.halifax.ca/home/online-services/obstructions",
+      "official_summary": "Report anything impeding the flow of traffic or pedestrians such as MVA debris (including fluids from the vehicle), garbage bags, temporary signs, shopping carts.",
+      "categories": [
+        "File a Report",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "keywords": [
+        "obstruction",
+        "blocking the road",
+        "debris",
+        "garbage bags on road",
+        "shopping cart",
+        "fallen object",
+        "blocking traffic",
+        "blocking sidewalk",
+        "car accident debris",
+        "MVA debris",
+        "fluid on road",
+        "temporary sign blocking"
+      ],
+      "example_utterances": [
+        "There's debris all over the road after a crash",
+        "Shopping carts dumped in the middle of the bike lane",
+        "Something is blocking the sidewalk and people can't get by",
+        "Garbage bags left on the roadway"
+      ],
+      "disambiguation": {
+        "illegally-parked-vehicle": "Objects/debris, not a parked vehicle.",
+        "report-street-litter": "Something IMPEDING traffic or pedestrians; scattered litter goes to report-street-litter."
+      }
+    },
+    {
+      "intent_id": "parking-permits",
+      "form_slug": "parking-permits",
+      "service_id": "1292797",
+      "display_name": "Parking Permits",
+      "url": "https://www.halifax.ca/home/online-services/parking-permits",
+      "official_summary": "Inquire about parking permits (inquiry/complaint).",
+      "categories": [
+        "Permits & Licenses",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "keywords": [
+        "parking permit",
+        "residential parking permit",
+        "permit to park",
+        "apply for parking permit",
+        "visitor parking permit"
+      ],
+      "example_utterances": [
+        "I need to apply for a residential parking permit",
+        "How do I get a parking permit for my street"
+      ],
+      "disambiguation": {
+        "illegally-parked-vehicle": "Permit application, not a complaint."
+      }
+    },
+    {
+      "intent_id": "parking-ticket-photo-request",
+      "form_slug": "parking-ticket-photo-request",
+      "service_id": "1298856",
+      "display_name": "Parking Ticket Photo Request",
+      "url": "https://www.halifax.ca/home/online-services/parking-ticket-photo-request",
+      "official_summary": "Inquire about getting a photo of when your ticket was issued. This is not to be used for FOIPOP requests, Disclosure requests, or if your ticket has already been paid.",
+      "categories": [
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "keywords": [
+        "parking ticket photo",
+        "ticket photo",
+        "evidence photo ticket",
+        "photo of my ticket",
+        "dispute ticket photo"
+      ],
+      "example_utterances": [
+        "I want the photo evidence for my parking ticket",
+        "Can I see the picture taken when I got ticketed"
+      ],
+      "disambiguation": {},
+      "slot_extraction": {
+        "ticket_number": "Extract ticket number.",
+        "license_plate": "Extract plate."
+      }
+    },
+    {
+      "intent_id": "parks-infrastructure-requests",
+      "form_slug": "parks-infrastructure-requests",
+      "service_id": "1292796",
+      "display_name": "Parks Infrastructure Requests",
+      "url": "https://www.halifax.ca/home/online-services/parks-infrastructure-requests",
+      "official_summary": "Inquiries on, or request for a new park, playground, greenspace, or infrastructure.",
+      "categories": [
+        "Contact & Request",
+        "Parks & Recreation"
+      ],
+      "keywords": [
+        "picnic table",
+        "new bench park",
+        "park amenity",
+        "trail bench",
+        "bike rack park",
+        "water fountain park",
+        "install in park",
+        "park infrastructure",
+        "new bench in park",
+        "park equipment request",
+        "add equipment park",
+        "park amenity request",
+        "picnic table request"
+      ],
+      "example_utterances": [
+        "Can you add a picnic table to the park",
+        "We'd like a bench installed along the trail"
+      ],
+      "disambiguation": {
+        "row-bench": "Bench in a PARK; a bench on the street right-of-way goes to row-bench.",
+        "request-repairs": "NEW infrastructure, not a repair."
+      }
+    },
+    {
+      "intent_id": "parks-inquiries",
+      "form_slug": "parks-inquiries",
+      "service_id": "1292795",
+      "display_name": "Parks Inquiries",
+      "url": "https://www.halifax.ca/home/online-services/parks-inquiries",
+      "official_summary": "Parks related inquiries, including complaints & compliments, hours of operation, policy inquiries, lost items in parks.",
+      "categories": [
+        "Contact & Request",
+        "Parks & Recreation"
+      ],
+      "keywords": [
+        "park question",
+        "park inquiry",
+        "about the park",
+        "park hours",
+        "park general question",
+        "ask about a park"
+      ],
+      "example_utterances": [
+        "I have a general question about the park near me",
+        "Who do I talk to about park opening hours"
+      ],
+      "disambiguation": {
+        "parks-infrastructure-requests": "General inquiry; requests for park equipment/infrastructure go to parks-infrastructure-requests.",
+        "request-repairs": "Inquiry, not a repair report."
+      }
+    },
+    {
+      "intent_id": "pavement-markings",
+      "form_slug": "pavement-markings",
+      "service_id": "1292794",
+      "display_name": "Pavement Markings",
+      "url": "https://www.halifax.ca/home/online-services/pavement-markings",
+      "official_summary": "Request for new pavement markings or repainting of existing markings.",
+      "categories": [
+        "Contact & Request",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "keywords": [
+        "lane lines",
+        "worn lines",
+        "white lines",
+        "yellow lines",
+        "line marking",
+        "road lines faded",
+        "highway lines",
+        "road markings",
+        "line painting",
+        "faded lines",
+        "centre line",
+        "lane markings",
+        "stop bar",
+        "road paint",
+        "arrows on road",
+        "bike lane markings",
+        "parking lines"
+      ],
+      "example_utterances": [
+        "The lane lines on the highway are completely worn off",
+        "Can you repaint the centre line on our road",
+        "The stop bar at the intersection has faded away"
+      ],
+      "disambiguation": {
+        "crosswalks": "General road markings; crosswalks go to crosswalks."
+      }
+    },
+    {
+      "intent_id": "problem-plants-insects-invasive-species",
+      "form_slug": "problem-plants-insects-invasive-species",
+      "service_id": "1292793",
+      "display_name": "Problem Plants, Insects, or Invasive Species",
+      "url": "https://www.halifax.ca/home/online-services/problem-plants-insects-invasive-species",
+      "official_summary": "Report issues with problem plants, bugs, or invasive species.",
+      "categories": [
+        "File a Report",
+        "Parks & Recreation"
+      ],
+      "keywords": [
+        "ticks",
+        "ants",
+        "fire ants",
+        "insects",
+        "bugs",
+        "infestation",
+        "hogweed",
+        "knotweed",
+        "nest of wasps",
+        "invasive species",
+        "noxious plant",
+        "japanese knotweed",
+        "giant hogweed",
+        "wild parsnip",
+        "goutweed",
+        "scotch broom",
+        "tick",
+        "wasp",
+        "hornet",
+        "bee",
+        "nest",
+        "fire ant",
+        "chinch bug",
+        "beetle",
+        "invasive animal",
+        "nuisance animal",
+        "poisonous plant"
+      ],
+      "example_utterances": [
+        "There's giant hogweed growing beside the trail",
+        "Japanese knotweed is spreading in the park",
+        "A wasp nest on municipal property near the playground",
+        "I found ticks in the park grass",
+        "European fire ants all over the boulevard"
+      ],
+      "disambiguation": {
+        "trees": "Species/pest problem, not general tree maintenance.",
+        "deceased-animals": "Living pest/plant problem; a dead animal goes to deceased-animals."
+      },
+      "slot_extraction": {
+        "species": "Map the named plant/insect to the `species` dropdown value."
+      }
+    },
+    {
+      "intent_id": "alarm-registration",
+      "form_slug": "alarm-registration",
+      "service_id": "12981",
+      "display_name": "Register your alarm",
+      "url": "https://www.halifax.ca/home-property/building-development-permits/alarm-registration",
+      "official_summary": "Register an alarm for a residence or business.",
+      "categories": [
+        "Apply & Register"
+      ],
+      "keywords": [
+        "alarm registration",
+        "register alarm",
+        "security alarm",
+        "burglar alarm permit",
+        "alarm permit",
+        "register my alarm system"
+      ],
+      "example_utterances": [
+        "I need to register my home security alarm",
+        "How do I register a commercial alarm system"
+      ],
+      "disambiguation": {},
+      "slot_extraction": {
+        "this_registration_is_for": "Residential property owner / Commercial property owner / Business owner / Tenant."
+      }
+    },
+    {
+      "intent_id": "report-a-pothole",
+      "form_slug": "report-a-pothole",
+      "service_id": "213881",
+      "display_name": "Report a pothole or sinkhole",
+      "url": "https://www.halifax.ca/transportation/streets-sidewalks/paving-repair/report-a-pothole",
+      "official_summary": "Report a pothole or sinkhole on a municipal street or sidewalk. If you are reporting potholes on a 100 series highway, please contact NSTAT at TPWPAFF@novascotia.ca",
+      "categories": [
+        "File a Report"
+      ],
+      "keywords": [
+        "road surface",
+        "falling apart",
+        "broken road",
+        "road crumbling",
+        "rough road",
+        "damaged pavement road",
+        "pothole",
+        "pot hole",
+        "sinkhole",
+        "sink hole",
+        "hole in the road",
+        "hole in the street",
+        "crater",
+        "road damage",
+        "pavement hole",
+        "broken asphalt",
+        "damaged road surface",
+        "rut",
+        "depression in road"
+      ],
+      "example_utterances": [
+        "There's a huge pothole on Robie Street that nearly blew my tire",
+        "A sinkhole opened up in the middle of my street",
+        "The road surface is falling apart near the intersection",
+        "Big hole in the pavement outside my house, cars are swerving",
+        "Can someone fix the crater on Quinpool Road"
+      ],
+      "disambiguation": {
+        "walking-surface-maintenance": "Pothole = roadway/driving surface. If the damage is on a SIDEWALK or walkway, use walking-surface-maintenance.",
+        "utility-related-street-cuts-trenches": "If the hole is a utility trench/cut left by a contractor, use utility-related-street-cuts-trenches."
+      }
+    },
+    {
+      "intent_id": "street-lighting-concerns",
+      "form_slug": "street-lighting-concerns",
+      "service_id": "213901",
+      "display_name": "Report a problem with a streetlight",
+      "url": "https://www.halifax.ca/transportation/streets-sidewalks/street-lighting-concerns",
+      "official_summary": "Report an issue with a streetlight on a municipal street, park, or open space.",
+      "categories": [
+        "File a Report"
+      ],
+      "keywords": [
+        "streetlight",
+        "street light",
+        "street lamp",
+        "lamp post",
+        "light out",
+        "light is out",
+        "burnt out light",
+        "flickering light",
+        "dark street",
+        "no lighting",
+        "lamppost",
+        "light pole"
+      ],
+      "example_utterances": [
+        "The streetlight in front of my house has been out for two weeks",
+        "Street lamp is flickering all night",
+        "Our whole street is dark, the lights aren't working",
+        "Burnt out light on the corner of Agricola and North"
+      ],
+      "disambiguation": {
+        "lights-parks-playground-fields": "Street/roadway lighting. Lighting in a PARK, playground, sports field or court goes to lights-parks-playground-fields."
+      }
+    },
+    {
+      "intent_id": "report-park-litter",
+      "form_slug": "report-park-litter",
+      "service_id": "213961",
+      "display_name": "Report litter in parks and fields",
+      "url": "https://www.halifax.ca/parks-recreation/parks-trails-gardens/report-park-litter",
+      "official_summary": "Report litter, broken glass and overflowing waste bins in municipal parks, playgrounds or athletic fields.",
+      "categories": [
+        "Parks & Recreation",
+        "File a Report"
+      ],
+      "keywords": [
+        "garbage park",
+        "trash park",
+        "sports field garbage",
+        "beach litter",
+        "litter field",
+        "litter in park",
+        "garbage in park",
+        "trash in the park",
+        "litter on field",
+        "mess in playground",
+        "garbage at the beach",
+        "overflowing bin in park"
+      ],
+      "example_utterances": [
+        "There's garbage all over the park after the weekend",
+        "Trash left on the sports field",
+        "The playground is covered in litter"
+      ],
+      "disambiguation": {
+        "report-street-litter": "Park/field; streets and sidewalks go to report-street-litter.",
+        "new-litter-bin-park-request": "A cleanup request, not a new bin."
+      }
+    },
+    {
+      "intent_id": "report-street-litter",
+      "form_slug": "report-street-litter",
+      "service_id": "213971",
+      "display_name": "Report litter on streets or sidewalks",
+      "url": "https://www.halifax.ca/transportation/streets-sidewalks/report-street-litter",
+      "official_summary": "Report litter or overflowing waste bins on municipal streets, sidewalks, paths, walkways, between streets or in ditches.",
+      "categories": [
+        "File a Report"
+      ],
+      "keywords": [
+        "garbage",
+        "trash",
+        "rubbish on sidewalk",
+        "trash bags",
+        "dumped",
+        "strewn",
+        "garbage bags",
+        "litter sidewalk",
+        "litter on street",
+        "trash on sidewalk",
+        "garbage on the street",
+        "rubbish",
+        "dumped garbage",
+        "litter",
+        "illegal dumping",
+        "mess on sidewalk"
+      ],
+      "example_utterances": [
+        "There's garbage strewn all over the sidewalk",
+        "Someone dumped trash bags on the street corner",
+        "Lots of litter along the roadside"
+      ],
+      "disambiguation": {
+        "report-park-litter": "Street or sidewalk; litter in a PARK or field goes to report-park-litter.",
+        "obstructions": "Litter not blocking traffic.",
+        "new-litter-bin-row-request": "A cleanup request, not a request for a new bin."
+      }
+    },
+    {
+      "intent_id": "request-repairs",
+      "form_slug": "request-repairs",
+      "service_id": "213921",
+      "display_name": "Request repairs (parks & playgrounds)",
+      "url": "https://www.halifax.ca/parks-recreation/parks-trails-gardens/request-repairs",
+      "official_summary": "Report damage to something in a municipal park, playground, or field.",
+      "categories": [
+        "Contact & Request",
+        "Parks & Recreation",
+        "File a Report"
+      ],
+      "keywords": [
+        "slide",
+        "swing",
+        "play structure",
+        "playground equipment",
+        "climbing frame",
+        "monkey bars",
+        "seesaw",
+        "park bench broken",
+        "cracked slide",
+        "unsafe equipment",
+        "playground broken",
+        "park equipment broken",
+        "swing broken",
+        "slide damaged",
+        "bench broken in park",
+        "fix playground",
+        "damaged play structure",
+        "park repair"
+      ],
+      "example_utterances": [
+        "The swing set at the playground is broken",
+        "A slide in the park is cracked and unsafe",
+        "The bench in the park is falling apart",
+        "Play structure needs repair"
+      ],
+      "disambiguation": {
+        "parks-infrastructure-requests": "REPAIR of existing equipment, not a new installation.",
+        "lights-parks-playground-fields": "Equipment repair; lighting issues go to lights-parks-playground-fields."
+      }
+    },
+    {
+      "intent_id": "request-residential-refrigerant",
+      "form_slug": "request-residential-refrigerant",
+      "service_id": "721231",
+      "display_name": "Request residential refrigerant removal",
+      "url": "https://www.halifax.ca/home-property/garbage-recycling-green-cart/garbage-collection/request-residential-refrigerant",
+      "official_summary": "Request the free removal of refrigerants from your domestic refrigerator, air conditioner, or other cooling appliance before garbage collection.",
+      "categories": [
+        "Contact & Request"
+      ],
+      "keywords": [
+        "fridge",
+        "refrigerator",
+        "freezer",
+        "appliance pickup",
+        "old fridge",
+        "white goods",
+        "freon",
+        "air conditioner",
+        "AC unit",
+        "fridge pickup",
+        "refrigerator removal",
+        "freezer pickup",
+        "air conditioner disposal",
+        "refrigerant removal",
+        "heat pump disposal",
+        "dehumidifier pickup",
+        "appliance with freon"
+      ],
+      "example_utterances": [
+        "I need my old fridge picked up",
+        "How do I get rid of a freezer with refrigerant",
+        "Need an air conditioner removed from my house"
+      ],
+      "disambiguation": {},
+      "slot_extraction": {
+        "number_of_items": "Extract the count of appliances.",
+        "location_of_items_on_the_property": "inside / outside checkbox."
+      }
+    },
+    {
+      "intent_id": "road-shoulder",
+      "form_slug": "road-shoulder",
+      "service_id": "1292781",
+      "display_name": "Road Shoulder",
+      "url": "https://www.halifax.ca/home/online-services/road-shoulder",
+      "official_summary": "Requests for maintenance of road shoulders (pothole, washouts, cracking)",
+      "categories": [
+        "File a Report",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "keywords": [
+        "edge of pavement",
+        "drop off",
+        "shoulder drop",
+        "road edge",
+        "pavement edge",
+        "road shoulder",
+        "shoulder of the road",
+        "soft shoulder",
+        "eroded shoulder",
+        "gravel shoulder",
+        "drop off at edge of road",
+        "shoulder washed out"
+      ],
+      "example_utterances": [
+        "The shoulder of the road has washed away",
+        "There's a big drop-off at the edge of the pavement",
+        "Gravel shoulder needs grading"
+      ],
+      "disambiguation": {
+        "report-a-pothole": "Damage on the shoulder/edge, not the travel lane."
+      }
+    },
+    {
+      "intent_id": "roadside-memorials",
+      "form_slug": "roadside-memorials",
+      "service_id": "1292825",
+      "display_name": "Roadside Memorials",
+      "url": "https://www.halifax.ca/home/online-services/roadside-memorials",
+      "official_summary": "The Roadside Memorials Administrative Order requires the person who places a roadside memorial to submit their contact information to the Municipality.",
+      "categories": [
+        "Apply & Register",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "keywords": [
+        "roadside memorial",
+        "memorial",
+        "cross by the road",
+        "tribute at crash site",
+        "flowers at roadside",
+        "memorial marker"
+      ],
+      "example_utterances": [
+        "I'd like to report a roadside memorial that was placed",
+        "There's a memorial cross on the highway shoulder"
+      ],
+      "disambiguation": {
+        "cemeteries": "Roadside memorial, not a cemetery grave."
+      }
+    },
+    {
+      "intent_id": "row-bench",
+      "form_slug": "row-bench",
+      "service_id": "1292780",
+      "display_name": "ROW bench",
+      "url": "https://www.halifax.ca/home/online-services/row-bench",
+      "official_summary": "Requests for new ROW Benches or Bench Repairs.",
+      "categories": [
+        "File a Report",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "keywords": [
+        "bench on street",
+        "sidewalk bench",
+        "bus stop bench",
+        "bench right of way",
+        "new bench street",
+        "broken bench street"
+      ],
+      "example_utterances": [
+        "Can we get a bench at this bus stop",
+        "The bench on the sidewalk is damaged"
+      ],
+      "disambiguation": {
+        "parks-infrastructure-requests": "Bench in the street right-of-way, not in a park."
+      }
+    },
+    {
+      "intent_id": "row-services-general-inquiries",
+      "form_slug": "row-services-general-inquiries",
+      "service_id": "1292792",
+      "display_name": "ROW Services General Inquiries",
+      "url": "https://www.halifax.ca/home/online-services/row-services-general-inquiries",
+      "official_summary": "Report issues about activity in the ROW or roadside memorials. Report general ROW inquiries regarding obstructions or placement of containers/excavation equipment.",
+      "categories": [
+        "Contact & Request",
+        "File a Report"
+      ],
+      "keywords": [
+        "who maintains",
+        "responsible for road",
+        "general question road",
+        "who looks after",
+        "right of way question",
+        "general street inquiry",
+        "road question",
+        "who maintains this street",
+        "street general question"
+      ],
+      "example_utterances": [
+        "I have a general question about street maintenance",
+        "Who is responsible for maintaining this road"
+      ],
+      "disambiguation": {},
+      "note": "Catch-all fallback for right-of-way questions that match no specific intent."
+    },
+    {
+      "intent_id": "row-signage",
+      "form_slug": "row-signage",
+      "service_id": "1292791",
+      "display_name": "ROW Signage",
+      "url": "https://www.halifax.ca/home/online-services/row-signage",
+      "official_summary": "Request for new ROW/Traffic signs, damage to signs, missing signs, sign maintenance, change or removal of traffic signs.",
+      "categories": [
+        "Contact & Request",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "keywords": [
+        "children at play sign",
+        "new sign street",
+        "sign request street",
+        "install street sign",
+        "new street sign",
+        "install a sign",
+        "request a sign",
+        "need a sign on the street",
+        "no parking sign request",
+        "warning sign request"
+      ],
+      "example_utterances": [
+        "Can you install a no-parking sign on this block",
+        "We'd like a children-at-play sign on our street"
+      ],
+      "disambiguation": {
+        "street-sign-missing-or-damaged": "NEW sign request in the right-of-way.",
+        "non-row-signage": "Signs in a park go to non-row-signage."
+      }
+    },
+    {
+      "intent_id": "snow-damage",
+      "form_slug": "snow-damage",
+      "service_id": "1292790",
+      "display_name": "Snow Damage",
+      "url": "https://www.halifax.ca/home/online-services/snow-damage",
+      "official_summary": "Report damage to HRM Property such as vehicles, buildings, sidewalks, curbs, grass, trees, shrubs, gardens, etc.",
+      "categories": [
+        "Contact & Request",
+        "File a Report"
+      ],
+      "keywords": [
+        "snow plow damage",
+        "plow damaged",
+        "snow damage",
+        "plow hit my lawn",
+        "sod damage from plow",
+        "mailbox knocked by plow",
+        "driveway damaged by plow",
+        "winter damage"
+      ],
+      "example_utterances": [
+        "The snow plow tore up my lawn this winter",
+        "A plow knocked over my mailbox",
+        "Plow damaged the edge of my driveway"
+      ],
+      "disambiguation": {
+        "walking-surface-maintenance": "Damage specifically caused by winter/plow operations."
+      }
+    },
+    {
+      "intent_id": "street-sign-missing-or-damaged",
+      "form_slug": "street-sign-missing-or-damaged",
+      "service_id": "1292789",
+      "display_name": "Street Sign Missing or Damaged",
+      "url": "https://www.halifax.ca/home/online-services/street-sign-missing-or-damaged",
+      "official_summary": "Report missing or damaged street signs.",
+      "categories": [
+        "File a Report",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "keywords": [
+        "street sign",
+        "stop sign",
+        "sign missing",
+        "sign knocked down",
+        "bent sign",
+        "damaged sign",
+        "street name sign",
+        "yield sign",
+        "sign fell"
+      ],
+      "example_utterances": [
+        "The stop sign at the corner has been knocked down",
+        "Our street name sign is missing",
+        "A road sign is bent and unreadable"
+      ],
+      "disambiguation": {
+        "row-signage": "Missing/damaged sign report. A request for a NEW sign in the right-of-way goes to row-signage.",
+        "non-row-signage": "Signs in a PARK go to non-row-signage.",
+        "election-signs": "Election campaign signs go to election-signs."
+      }
+    },
+    {
+      "intent_id": "street-sweeping",
+      "form_slug": "street-sweeping",
+      "service_id": "1292788",
+      "display_name": "Street Sweeping",
+      "url": "https://www.halifax.ca/home/online-services/street-sweeping",
+      "official_summary": "Requests for street sweeping outside of regularly scheduled weekly sweeping (during warmer months).",
+      "categories": [
+        "Contact & Request",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "keywords": [
+        "bike lane sand",
+        "sand",
+        "gravel",
+        "dirt",
+        "sweep",
+        "swept",
+        "road grit",
+        "winter sand",
+        "street sweeping",
+        "sweeper",
+        "sand on the road",
+        "dirt on street",
+        "sweep the street",
+        "gravel on road",
+        "street cleaning",
+        "spring sweeping"
+      ],
+      "example_utterances": [
+        "Our street still has winter sand all over it",
+        "Can you send a street sweeper, there's gravel everywhere",
+        "The bike lane is full of dirt and sand"
+      ],
+      "disambiguation": {
+        "report-street-litter": "Sweeping of sand/dirt/gravel, not litter pickup."
+      }
+    },
+    {
+      "intent_id": "traffic-calming",
+      "form_slug": "traffic-calming",
+      "service_id": "1292778",
+      "display_name": "Traffic Calming",
+      "url": "https://www.halifax.ca/home/online-services/traffic-calming",
+      "official_summary": "Requests for traffic calming measures.",
+      "categories": [
+        "File a Report",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "keywords": [
+        "speed bump",
+        "speed bumps",
+        "speed hump",
+        "racing",
+        "race",
+        "neighbourhood speeding",
+        "residential speeding",
+        "drivers too fast",
+        "kids safety street",
+        "calming measures",
+        "speeding",
+        "cars going too fast",
+        "speed bump",
+        "speed hump",
+        "traffic calming",
+        "slow down traffic",
+        "racing on our street",
+        "speed limit",
+        "dangerous driving"
+      ],
+      "example_utterances": [
+        "Cars speed down our residential street all day",
+        "Can we get speed bumps installed, it's not safe for kids",
+        "Drivers are racing through the neighbourhood"
+      ],
+      "disambiguation": {
+        "new-traffic-signal-request": "Speed/traffic calming concern, not a signal request."
+      }
+    },
+    {
+      "intent_id": "traffic-signals",
+      "form_slug": "traffic-signals",
+      "service_id": "1292787",
+      "display_name": "Traffic Signals",
+      "url": "https://www.halifax.ca/home/online-services/traffic-signals",
+      "official_summary": "Maintenance or repair of traffic signals. This includes flashing lights, stuck lights, lights out, audible crosswalk signal chirping, snow covered traffic heads, etc.",
+      "categories": [
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "keywords": [
+        "light timing",
+        "signal timing",
+        "light too short",
+        "walk signal",
+        "advance green",
+        "left turn signal",
+        "traffic light",
+        "traffic signal",
+        "stop light",
+        "light not working",
+        "signal out",
+        "red light stuck",
+        "green light too short",
+        "signal timing",
+        "flashing red",
+        "pedestrian signal button"
+      ],
+      "example_utterances": [
+        "The traffic light at the intersection is stuck on red",
+        "Traffic signal is completely dark, it's dangerous",
+        "The light timing is too short to cross",
+        "Pedestrian button isn't working at the signal"
+      ],
+      "disambiguation": {
+        "new-traffic-signal-request": "Problem with an EXISTING signal; asking for a new one goes to new-traffic-signal-request.",
+        "street-lighting-concerns": "Traffic control signal, not a streetlight."
+      }
+    },
+    {
+      "intent_id": "trees",
+      "form_slug": "trees",
+      "service_id": "1292786",
+      "display_name": "Trees",
+      "url": "https://www.halifax.ca/home/online-services/trees",
+      "official_summary": "Request work pertaining to tree pruning, tree removal, tree planting, and stump removal, and/or report tree vandalism (illegal cuts or pruning).",
+      "categories": [
+        "File a Report",
+        "Parks & Recreation",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "keywords": [
+        "branches",
+        "overhanging",
+        "hanging over road",
+        "tree limb",
+        "hitting buses",
+        "scraping",
+        "low branches",
+        "tree",
+        "branch",
+        "limb",
+        "fallen tree",
+        "tree down",
+        "overhanging branch",
+        "dead tree",
+        "tree pruning",
+        "trim tree",
+        "stump",
+        "roots",
+        "tree blocking",
+        "leaning tree",
+        "broken branch"
+      ],
+      "example_utterances": [
+        "A tree fell down across the sidewalk",
+        "There's a dead tree that looks like it might fall on my house",
+        "Branches are hanging over the road and hitting buses",
+        "Can someone trim the tree in front of my property",
+        "Big limb broke off in the storm and is blocking the path"
+      ],
+      "disambiguation": {
+        "vegetation-maintenance": "Trees specifically. General brush/overgrowth along the right-of-way goes to vegetation-maintenance.",
+        "landscaping": "Shrubs, flower beds and ornamental planting go to landscaping.",
+        "problem-plants-insects-invasive-species": "If it is an invasive/noxious plant or an insect problem, use problem-plants-insects-invasive-species."
+      }
+    },
+    {
+      "intent_id": "address-change-form",
+      "form_slug": "address-change-form",
+      "service_id": "2881",
+      "display_name": "Update your address",
+      "url": "https://www.halifax.ca/home-property/property-taxes/address-change-form",
+      "official_summary": "Change your address on your tax bill.",
+      "categories": [
+        "Apply & Register"
+      ],
+      "keywords": [
+        "change my address",
+        "update address",
+        "new mailing address",
+        "moved",
+        "address change",
+        "update my mailing address for taxes"
+      ],
+      "example_utterances": [
+        "I moved and need to update my mailing address for property tax",
+        "Change of address for my tax bill"
+      ],
+      "disambiguation": {},
+      "slot_extraction": {
+        "aan": "Assessment account number.",
+        "effective_date": "Date the change takes effect."
+      }
+    },
+    {
+      "intent_id": "utility-related-street-cuts-trenches",
+      "form_slug": "utility-related-street-cuts-trenches",
+      "service_id": "1292784",
+      "display_name": "Utility Related Street Cuts and Trenches",
+      "url": "https://www.halifax.ca/home/online-services/utility-related-street-cuts-trenches",
+      "official_summary": "Requests for inspections of a completed utility cut.",
+      "categories": [
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "keywords": [
+        "street cut",
+        "trench",
+        "utility dig",
+        "excavation",
+        "road cut",
+        "contractor dug up road",
+        "trench not repaired",
+        "uneven patch",
+        "utility work road"
+      ],
+      "example_utterances": [
+        "A utility company dug up the road and never repaired it properly",
+        "There's a sunken trench across the street from the gas work",
+        "The patch from the street cut is uneven and rough"
+      ],
+      "disambiguation": {
+        "report-a-pothole": "Damage from a utility cut/trench, not a natural pothole."
+      }
+    },
+    {
+      "intent_id": "vegetation-maintenance",
+      "form_slug": "vegetation-maintenance",
+      "service_id": "1292785",
+      "display_name": "Vegetation Maintenance",
+      "url": "https://www.halifax.ca/home/online-services/vegetation-maintenance",
+      "official_summary": "Report on vegetation causing line of site issues, or vegetation in the right-of-way impeding the flow of traffic or pedestrians.",
+      "categories": [
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "keywords": [
+        "overgrown",
+        "brush",
+        "bushes",
+        "weeds",
+        "vegetation",
+        "overgrowth",
+        "blocking sight line",
+        "obstructing view",
+        "hedge",
+        "undergrowth",
+        "clearing brush",
+        "overgrown along road"
+      ],
+      "example_utterances": [
+        "The bushes at the corner are so overgrown I can't see traffic",
+        "Vegetation is growing over the sidewalk",
+        "Brush along the roadside needs clearing",
+        "Weeds and overgrowth blocking the stop sign"
+      ],
+      "disambiguation": {
+        "trees": "Brush / general vegetation, not an individual tree.",
+        "grass": "If it is simply grass that needs mowing, use grass.",
+        "landscaping": "Ornamental beds, shrubs and hanging baskets go to landscaping."
+      }
+    },
+    {
+      "intent_id": "walking-surface-maintenance",
+      "form_slug": "walking-surface-maintenance",
+      "service_id": "1292783",
+      "display_name": "Walking Surface Maintenance",
+      "url": "https://www.halifax.ca/home/online-services/walking-surface-maintenance",
+      "official_summary": "Requests for maintenance of sidewalks, pedestrian ramps at intersections/crosswalks, tactile plates, street to street walkways, marked crosswalks or stairs.",
+      "categories": [
+        "File a Report",
+        "Street Maintenance, Parking, and Traffic"
+      ],
+      "keywords": [
+        "sidewalk",
+        "footpath",
+        "walkway",
+        "pavement",
+        "uneven sidewalk",
+        "cracked sidewalk",
+        "trip hazard",
+        "tripping",
+        "raised slab",
+        "curb ramp",
+        "walking surface",
+        "broken sidewalk",
+        "asphalt walkway"
+      ],
+      "example_utterances": [
+        "The sidewalk is cracked and I tripped on it",
+        "Uneven slabs on the footpath outside the school",
+        "The walkway in front of my building is a trip hazard",
+        "Sidewalk pavement is broken and lifting"
+      ],
+      "disambiguation": {
+        "report-a-pothole": "Sidewalk/walkway surface, not the road.",
+        "new-sidewalk-request": "This is REPAIR of an existing sidewalk; a request for a NEW sidewalk goes to new-sidewalk-request.",
+        "snow-damage": "If a plow damaged it in winter, use snow-damage."
+      }
+    }
+  ]
+}

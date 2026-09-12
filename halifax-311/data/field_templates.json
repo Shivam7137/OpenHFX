@@ -1,0 +1,148 @@
+{
+  "standard_311_request": {
+    "description": "Shared template used by 41 of 55 Halifax 311 webforms. Contact block + civic address + free-text details (+ optional photo). Fill this once from the user profile; only the free-text details and the location change per request.",
+    "used_by": [
+      "barrier-maintenance",
+      "cemeteries",
+      "community-clean-adopt-a-highway",
+      "crosswalks",
+      "curb-andor-gutter-maintenance",
+      "drainage-infrastructure-maintenance-or-repair",
+      "drainage-infrastructure-request",
+      "election-signs",
+      "flooding-requests",
+      "graffiti-removal",
+      "grass",
+      "landscaping",
+      "lights-parks-playground-fields",
+      "new-litter-bin-park-request",
+      "new-litter-bin-row-request",
+      "new-sidewalk-request",
+      "new-traffic-signal-request",
+      "non-row-signage",
+      "obstructions",
+      "parking-permits",
+      "parks-infrastructure-requests",
+      "parks-inquiries",
+      "pavement-markings",
+      "report-a-pothole",
+      "report-park-litter",
+      "report-street-litter",
+      "request-repairs",
+      "road-shoulder",
+      "row-bench",
+      "row-services-general-inquiries",
+      "row-signage",
+      "snow-damage",
+      "street-lighting-concerns",
+      "street-sign-missing-or-damaged",
+      "street-sweeping",
+      "traffic-calming",
+      "traffic-signals",
+      "trees",
+      "utility-related-street-cuts-trenches",
+      "vegetation-maintenance",
+      "walking-surface-maintenance"
+    ],
+    "fields": [
+      {
+        "name": "first_name",
+        "label": "First Name",
+        "type": "text",
+        "required": true,
+        "maxlength": "25"
+      },
+      {
+        "name": "last_name",
+        "label": "Last Name",
+        "type": "text",
+        "required": true,
+        "maxlength": "50"
+      },
+      {
+        "name": "email",
+        "label": "Email",
+        "type": "email",
+        "required": true,
+        "maxlength": "75"
+      },
+      {
+        "name": "phone",
+        "label": "Phone",
+        "type": "tel",
+        "required": true,
+        "placeholder": "XXX-XXX-XXX ext XXX",
+        "description": "Format: ###-###-####. Add ext ### if you are calling from an extension.",
+        "maxlength": "128"
+      },
+      {
+        "name": "civic_address[address_line1]",
+        "label": "Street address",
+        "type": "text",
+        "required": true,
+        "placeholder": "Please start typing your address...",
+        "maxlength": "128",
+        "autocomplete": "address-line1"
+      },
+      {
+        "name": "unit_apartment",
+        "label": "Unit/Apartment",
+        "type": "text",
+        "required": false,
+        "description": "If applicable.",
+        "maxlength": "10"
+      },
+      {
+        "name": "files[attachments]",
+        "label": "Attachments",
+        "type": "file",
+        "required": false
+      },
+      {
+        "name": "approximate_location",
+        "label": "Approximate location",
+        "type": "textarea",
+        "required": false,
+        "placeholder": "Example: At the corner of North and Robie",
+        "maxlength": "500"
+      },
+      {
+        "name": "details_of_request",
+        "label": "Details of request",
+        "type": "textarea",
+        "required": false,
+        "maxlength": "500"
+      },
+      {
+        "name": "civic_address[country_code]",
+        "label": "Country",
+        "type": "select",
+        "required": false,
+        "options": [
+          "Canada"
+        ]
+      }
+    ],
+    "blocks": {
+      "contact": [
+        "email",
+        "first_name",
+        "last_name",
+        "phone"
+      ],
+      "location": [
+        "approximate_location",
+        "civic_address[address_line1]",
+        "civic_address[country_code]",
+        "unit_apartment"
+      ],
+      "details": [
+        "details_of_request"
+      ],
+      "attachments": [
+        "files[attachments]",
+        "files[attachments][]"
+      ]
+    }
+  }
+}
