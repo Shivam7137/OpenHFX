@@ -1,0 +1,365 @@
+{
+  "purpose": "Maps the 55 Halifax 311 intents onto the six OpenHFX Category enum values from docs/SYSTEM_CONTRACTS.md, so a single classification can fill ReportSuggestion.category. Entries carrying needs_review are judgment calls the team should confirm - the six categories do not cleanly cover them.",
+  "category_enum": [
+    "access",
+    "trees",
+    "roads",
+    "lighting",
+    "waste",
+    "other"
+  ],
+  "counts": {
+    "other": 20,
+    "roads": 18,
+    "waste": 6,
+    "trees": 5,
+    "access": 4,
+    "lighting": 2
+  },
+  "needs_review_count": 13,
+  "mappings": [
+    {
+      "intent_id": "address-change-form",
+      "display_name": "Update your address",
+      "category": "other",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "alarm-registration",
+      "display_name": "Register your alarm",
+      "category": "other",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "barrier-maintenance",
+      "display_name": "Barrier Maintenance",
+      "category": "roads",
+      "urgency_default": "standard",
+      "needs_review": "Guardrails are roads; a loose handrail on a walkway is access. Filed as roads."
+    },
+    {
+      "intent_id": "birthday-message-mayor",
+      "display_name": "Birthday message from the mayor",
+      "category": "other",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "cemeteries",
+      "display_name": "Cemeteries",
+      "category": "other",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "community-clean-adopt-a-highway",
+      "display_name": "Community Clean Up / Adopt A Highway",
+      "category": "waste",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "crosswalks",
+      "display_name": "Crosswalks",
+      "category": "access",
+      "urgency_default": "standard",
+      "needs_review": "Pedestrian crossing. Filed as access; roads is defensible."
+    },
+    {
+      "intent_id": "curb-andor-gutter-maintenance",
+      "display_name": "Curb and/or Gutter Maintenance",
+      "category": "roads",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "deceased-animals",
+      "display_name": "Deceased Animals",
+      "category": "other",
+      "urgency_default": "standard",
+      "needs_review": "Carcass removal is sanitation work. Filed as other; waste is defensible."
+    },
+    {
+      "intent_id": "drainage-infrastructure-maintenance-or-repair",
+      "display_name": "Drainage Infrastructure Maintenance or Repair",
+      "category": "roads",
+      "urgency_default": "standard",
+      "needs_review": "Same as flooding-requests."
+    },
+    {
+      "intent_id": "drainage-infrastructure-request",
+      "display_name": "Drainage Infrastructure Request",
+      "category": "roads",
+      "urgency_default": "standard",
+      "needs_review": "Same as flooding-requests."
+    },
+    {
+      "intent_id": "election-signs",
+      "display_name": "Election Signs",
+      "category": "other",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "flooding-requests",
+      "display_name": "Flooding Requests",
+      "category": "roads",
+      "urgency_default": "urgent",
+      "needs_review": "Storm drainage in the roadway. Filed as roads; a dedicated water category would be better."
+    },
+    {
+      "intent_id": "graffiti-removal",
+      "display_name": "Graffiti Removal",
+      "category": "other",
+      "urgency_default": "standard",
+      "needs_review": "Cleanup work, but not garbage. Filed as other; waste is defensible."
+    },
+    {
+      "intent_id": "grass",
+      "display_name": "Grass",
+      "category": "trees",
+      "urgency_default": "standard",
+      "needs_review": "Mowing. Filed as trees (the vegetation category); other is defensible."
+    },
+    {
+      "intent_id": "hrfe-incident-feed",
+      "display_name": "HRFE incident feed",
+      "category": "other",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "illegally-parked-vehicle",
+      "display_name": "Illegally Parked Vehicle",
+      "category": "roads",
+      "urgency_default": "urgent"
+    },
+    {
+      "intent_id": "invitations-mayor-attend-public-events",
+      "display_name": "Invite the mayor (Public Event)",
+      "category": "other",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "landscaping",
+      "display_name": "Landscaping",
+      "category": "trees",
+      "urgency_default": "standard",
+      "needs_review": "Beds and shrubs. Filed as trees; other is defensible."
+    },
+    {
+      "intent_id": "lights-parks-playground-fields",
+      "display_name": "Lights - Parks, Playground, Fields",
+      "category": "lighting",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "military-retirement-congratulatory-form",
+      "display_name": "Military Retirement Congratulations",
+      "category": "other",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "new-litter-bin-park-request",
+      "display_name": "New Litter Bin in Park Request",
+      "category": "waste",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "new-litter-bin-row-request",
+      "display_name": "New Litter Bin in ROW Request",
+      "category": "waste",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "new-sidewalk-request",
+      "display_name": "New Sidewalk Request",
+      "category": "access",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "new-traffic-signal-request",
+      "display_name": "New Traffic Signal Request",
+      "category": "roads",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "non-row-signage",
+      "display_name": "Non-ROW Signage",
+      "category": "other",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "obstructions",
+      "display_name": "Obstructions",
+      "category": "roads",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "outdoor-weddings",
+      "display_name": "Book a park or facility (wedding)",
+      "category": "other",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "parking-permits",
+      "display_name": "Parking Permits",
+      "category": "other",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "parking-ticket-photo-request",
+      "display_name": "Parking Ticket Photo Request",
+      "category": "other",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "parks-infrastructure-requests",
+      "display_name": "Parks Infrastructure Requests",
+      "category": "other",
+      "urgency_default": "standard",
+      "needs_review": "No category fits; filed as other."
+    },
+    {
+      "intent_id": "parks-inquiries",
+      "display_name": "Parks Inquiries",
+      "category": "other",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "pavement-markings",
+      "display_name": "Pavement Markings",
+      "category": "roads",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "problem-plants-insects-invasive-species",
+      "display_name": "Problem Plants, Insects, or Invasive Species",
+      "category": "trees",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "report-a-pothole",
+      "display_name": "Report a pothole or sinkhole",
+      "category": "roads",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "report-park-litter",
+      "display_name": "Report litter in parks and fields",
+      "category": "waste",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "report-street-litter",
+      "display_name": "Report litter on streets or sidewalks",
+      "category": "waste",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "request-repairs",
+      "display_name": "Request repairs (parks & playgrounds)",
+      "category": "other",
+      "urgency_default": "standard",
+      "needs_review": "Playground equipment. No category fits; filed as other."
+    },
+    {
+      "intent_id": "request-residential-refrigerant",
+      "display_name": "Request residential refrigerant removal",
+      "category": "waste",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "road-shoulder",
+      "display_name": "Road Shoulder",
+      "category": "roads",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "roadside-memorials",
+      "display_name": "Roadside Memorials",
+      "category": "other",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "row-bench",
+      "display_name": "ROW bench",
+      "category": "access",
+      "urgency_default": "standard",
+      "needs_review": "Street furniture. Filed as access; other is defensible."
+    },
+    {
+      "intent_id": "row-services-general-inquiries",
+      "display_name": "ROW Services General Inquiries",
+      "category": "other",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "row-signage",
+      "display_name": "ROW Signage",
+      "category": "roads",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "snow-damage",
+      "display_name": "Snow Damage",
+      "category": "roads",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "street-lighting-concerns",
+      "display_name": "Report a problem with a streetlight",
+      "category": "lighting",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "street-sign-missing-or-damaged",
+      "display_name": "Street Sign Missing or Damaged",
+      "category": "roads",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "street-sweeping",
+      "display_name": "Street Sweeping",
+      "category": "roads",
+      "urgency_default": "standard",
+      "needs_review": "Sand and grit removal. Filed as roads; waste is defensible."
+    },
+    {
+      "intent_id": "traffic-calming",
+      "display_name": "Traffic Calming",
+      "category": "roads",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "traffic-signals",
+      "display_name": "Traffic Signals",
+      "category": "roads",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "trees",
+      "display_name": "Trees",
+      "category": "trees",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "utility-related-street-cuts-trenches",
+      "display_name": "Utility Related Street Cuts and Trenches",
+      "category": "roads",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "vegetation-maintenance",
+      "display_name": "Vegetation Maintenance",
+      "category": "trees",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "walking-surface-maintenance",
+      "display_name": "Walking Surface Maintenance",
+      "category": "access",
+      "urgency_default": "standard"
+    },
+    {
+      "intent_id": "wedding-anniversary-message",
+      "display_name": "Anniversary message from the mayor",
+      "category": "other",
+      "urgency_default": "standard"
+    }
+  ]
+}
