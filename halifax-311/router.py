@@ -84,6 +84,8 @@ plausible. The app shows these to the user, so an honest second guess is more us
 than false certainty.
 - `location_text` is only the part naming where the problem is (street, intersection, \
 landmark). Leave it empty if they never said. Do not invent an address.
+- `title` is a short headline a coordinator can scan in a list: 8-100 characters, \
+naming the thing and the problem. No leading article, no trailing period.
 - `details` is a clean one or two sentence description of the problem for a municipal \
 worker to read. Strip filler and self-corrections, keep every concrete fact.
 - `is_emergency` is true only for immediate danger to life or property - active flooding, \
@@ -98,6 +100,7 @@ class Route(BaseModel):
     intent_id: str = Field(description='Chosen intent id from the catalogue')
     confidence: float = Field(ge=0, le=1)
     alternatives: list[str] = Field(default_factory=list, description='Runner-up intent ids, best first')
+    title: str = Field(description='Short headline for the report, 8-100 characters')
     location_text: str = Field(default='', description='Where the problem is, as stated')
     details: str = Field(description='Cleaned description for the municipal worker')
     is_emergency: bool = False
@@ -254,6 +257,7 @@ if __name__ == '__main__':
     text = ' '.join(sys.argv[1:]) or sys.stdin.read()
     r = route(text)
     print(f'-> {r.intent_id}  (confidence {r.confidence:.2f})')
+    print('   title:', r.title)
     if r.alternatives:
         print('   or:', ', '.join(r.alternatives))
     if r.is_emergency:

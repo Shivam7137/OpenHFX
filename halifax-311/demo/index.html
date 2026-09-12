@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenHFX — live report preparation</title>
+<style>
+  :root{
+    --paper:#F4F7F8; --surface:#FFFFFF; --ink:#142E3A; --muted:#506772;
+    --harbour:#145E78; --harbourSoft:#E5F1F5; --seaGlass:#C9E2E7; --park:#DCE8D8;
+    --ochre:#A15C08; --ochreSoft:#FFF1D6; --success:#216446; --successSoft:#E6F2EB;
+    --danger:#AD303D; --dangerSoft:#FBEAEC; --controlBorder:#7D929C; --divider:#DCE5E8;
+    --font:'Public Sans','Segoe UI',Arial,sans-serif;
+    --rControl:12px; --rPanel:16px; --rPill:999px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/24px var(--font);}
+  .wrap{max-width:560px;margin:0 auto;padding:20px 16px 48px}
+  header{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+  h1{font:700 28px/34px var(--font);margin:0}
+  .tag{font:500 12px/16px var(--font);padding:2px 10px;border-radius:var(--rPill);
+       background:var(--ochreSoft);color:var(--ochre);white-space:nowrap}
+  .tag.live{background:var(--successSoft);color:var(--success)}
+  .lede{color:var(--muted);margin:4px 0 24px}
+  .panel{background:var(--surface);border-radius:var(--rPanel);padding:20px;
+         box-shadow:0 4px 12px rgba(20,46,58,.12);margin-bottom:16px}
+  h2{font:600 18px/24px var(--font);margin:0 0 4px}
+  .hint{color:var(--muted);font:400 14px/20px var(--font);margin:0 0 12px}
+  label{display:block;font:600 16px/20px var(--font);margin-bottom:6px}
+  textarea{width:100%;min-height:120px;padding:12px;border:1px solid var(--controlBorder);
+           border-radius:var(--rControl);font:400 16px/24px var(--font);color:var(--ink);
+           background:var(--surface);resize:vertical}
+  textarea:focus-visible,button:focus-visible{outline:3px solid var(--harbour);outline-offset:3px}
+  .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:12px}
+  button{min-height:48px;padding:0 20px;border-radius:var(--rControl);border:1px solid transparent;
+         font:600 16px/20px var(--font);cursor:pointer}
+  .primary{background:var(--harbour);color:#fff}
+  .primary[disabled]{opacity:.55;cursor:progress}
+  .ghost{background:var(--surface);color:var(--harbour);border-color:var(--controlBorder)}
+  .mic{background:var(--harbourSoft);color:var(--harbour);border-color:var(--seaGlass)}
+  .mic.on{background:var(--danger);color:#fff;border-color:var(--danger)}
+  .count{margin-left:auto;color:var(--muted);font:400 14px/20px var(--font)}
+  dl{margin:0;display:grid;grid-template-columns:minmax(120px,auto) 1fr;gap:8px 16px}
+  dt{color:var(--muted);font:400 14px/20px var(--font)}
+  dd{margin:0;font:400 16px/24px var(--font);word-break:break-word}
+  .pill{display:inline-block;padding:2px 12px;border-radius:var(--rPill);
+        background:var(--harbourSoft);color:var(--harbour);font:600 14px/20px var(--font)}
+  .pill.urgent{background:var(--dangerSoft);color:var(--danger)}
+  .pill.priority{background:var(--ochreSoft);color:var(--ochre)}
+  .pill.ok{background:var(--successSoft);color:var(--success)}
+  .bar{height:8px;border-radius:var(--rPill);background:var(--divider);overflow:hidden;margin-top:6px}
+  .bar i{display:block;height:100%;background:var(--harbour)}
+  .kv{border-top:1px solid var(--divider);margin-top:16px;padding-top:16px}
+  table{width:100%;border-collapse:collapse;font:400 14px/20px var(--font)}
+  td{padding:6px 8px;border-bottom:1px solid var(--divider);vertical-align:top}
+  td:first-child{color:var(--muted);white-space:nowrap;width:1%}
+  code{font:400 13px/20px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--harbour)}
+  .note{background:var(--ochreSoft);color:var(--ochre);border-radius:var(--rControl);
+        padding:12px;font:400 14px/20px var(--font);margin-top:12px}
+  .note.err{background:var(--dangerSoft);color:var(--danger)}
+  .ask{background:var(--harbourSoft);border-radius:var(--rControl);padding:12px;margin-top:12px}
+  .ask p{margin:0 0 4px;font:600 14px/20px var(--font);color:var(--harbour)}
+  .ask li{font:400 14px/20px var(--font);color:var(--ink)}
+  .samples{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+  .samples button{min-height:36px;padding:0 12px;font:400 14px/20px var(--font);
+                  background:var(--surface);border-color:var(--divider);color:var(--muted)}
+  [hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Start with what you see.</h1>
+    <span id="mode" class="tag">checking…</span>
+  </header>
+  <p class="lede">Your own words become a structured, editable report. You review it before anything is sent.</p>
+
+  <section class="panel">
+    <h2>What's happening?</h2>
+    <p class="hint">A few details help the right team understand the problem.</p>
+    <label for="t">Describe the problem</label>
+    <textarea id="t" maxlength="2000" placeholder="A large branch is blocking the walkway. People using wheelchairs cannot get past."></textarea>
+    <div class="row">
+      <button id="mic" class="mic" type="button">🎤 Speak</button>
+      <button id="go" class="primary" type="button">Prepare report</button>
+      <span id="count" class="count">0 / 2,000</span>
+    </div>
+    <div class="samples" id="samples"></div>
+    <div id="err" class="note err" hidden></div>
+  </section>
+
+  <section id="out" class="panel" hidden>
+    <h2>Suggested report <span class="hint" style="display:inline">· editable</span></h2>
+    <dl>
+      <dt>Title</dt><dd id="r-title"></dd>
+      <dt>Summary</dt><dd id="r-summary"></dd>
+      <dt>Category</dt><dd><span id="r-cat" class="pill"></span></dd>
+      <dt>Priority</dt><dd><span id="r-pri" class="pill"></span></dd>
+    </dl>
+
+    <div class="kv">
+      <dl>
+        <dt>Halifax form</dt><dd id="r-form"></dd>
+        <dt>Confidence</dt>
+        <dd><span id="r-conf"></span><span class="bar"><i id="r-bar"></i></span>
+            <div id="r-alt" class="hint" style="margin:6px 0 0"></div></dd>
+      </dl>
+      <div id="r-ask" class="ask" hidden><p>Before sending, we need to ask:</p><ul id="r-qs"></ul></div>
+      <div id="r-note" class="note" hidden></div>
+    </div>
+
+    <div class="kv">
+      <h2>Prefilled fields</h2>
+      <p class="hint">Exact submission keys from the municipal form.</p>
+      <table><tbody id="r-fields"></tbody></table>
+    </div>
+  </section>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const SAMPLES = [
+  "there's a dead raccoon on the side of robie street, been there a few days",
+  "um so like there's this really big hole right where you turn in and I nearly lost my wheel",
+  "someone left their car right across the entrance to my drive and I can't get out",
+  "water is pouring across the road right now, it's up to the curb",
+  "there's a broken bench"
+];
+
+SAMPLES.forEach(s => {
+  const b = document.createElement('button');
+  b.type = 'button';
+  b.textContent = s.length > 42 ? s.slice(0, 40) + '…' : s;
+  b.title = s;
+  b.onclick = () => { $('t').value = s; count(); };
+  $('samples').appendChild(b);
+});
+
+function count(){ $('count').textContent = `${$('t').value.length} / 2,000`; }
+$('t').addEventListener('input', count);
+
+// --- voice input: browser Web Speech API, Chrome/Safari only ----------------
+const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+let rec = null, listening = false;
+if (!SR) {
+  $('mic').disabled = true;
+  $('mic').title = 'Voice input needs Chrome or Safari. Typing works everywhere.';
+  $('mic').style.opacity = .5;
+} else {
+  rec = new SR();
+  rec.lang = 'en-CA'; rec.continuous = true; rec.interimResults = true;
+  let committed = '';
+  rec.onresult = e => {
+    let interim = '';
+    for (let i = e.resultIndex; i < e.results.length; i++) {
+      const chunk = e.results[i][0].transcript;
+      if (e.results[i].isFinal) committed += chunk; else interim += chunk;
+    }
+    $('t').value = (committed + interim).trim();
+    count();
+  };
+  rec.onerror = e => { fail('Microphone: ' + e.error); stop(); };
+  rec.onend = () => { if (listening) rec.start(); };
+  $('mic').onclick = () => listening ? stop() : start();
+  function start(){ committed = $('t').value ? $('t').value + ' ' : '';
+                    listening = true; $('mic').classList.add('on');
+                    $('mic').textContent = '■ Stop'; rec.start(); }
+  function stop(){ listening = false; $('mic').classList.remove('on');
+                   $('mic').textContent = '🎤 Speak'; try{ rec.stop(); }catch(_){} }
+}
+
+function fail(msg){ $('err').textContent = msg; $('err').hidden = false; }
+
+$('go').onclick = async () => {
+  const transcript = $('t').value.trim();
+  $('err').hidden = true;
+  if (transcript.length < 20) return fail('Describe the problem in at least 20 characters.');
+  $('go').disabled = true; $('go').textContent = 'Preparing…';
+  try {
+    const res = await fetch('/api/route', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({transcript})
+    });
+    const d = await res.json();
+    if (!res.ok) throw new Error(d.error || 'request failed');
+    render(d);
+  } catch (e) {
+    fail(String(e.message || e));
+  } finally {
+    $('go').disabled = false; $('go').textContent = 'Prepare report';
+  }
+};
+
+function render(d){
+  $('mode').textContent = d.live ? 'Live model' : 'Fixture';
+  $('mode').className = 'tag' + (d.live ? ' live' : '');
+
+  $('r-title').textContent = d.title;
+  $('r-summary').textContent = d.summary;
+  $('r-cat').textContent = d.category;
+  const pri = $('r-pri');
+  pri.textContent = d.prioritySuggestion;
+  pri.className = 'pill' + (d.prioritySuggestion === 'urgent' ? ' urgent'
+                          : d.prioritySuggestion === 'priority' ? ' priority' : '');
+
+  const h = d.halifax;
+  $('r-form').innerHTML = `${h.formName} <code>${h.formSlug}</code>`;
+  const pct = Math.round(h.confidence * 100);
+  $('r-conf').textContent = h.confidence.toFixed(2) + (h.confidence < 0.5 ? ' — too low to choose for you'
+                            : h.confidence < 0.8 ? ' — worth confirming' : '');
+  $('r-bar').style.width = pct + '%';
+  $('r-bar').style.background = h.confidence < 0.5 ? 'var(--danger)'
+                              : h.confidence < 0.8 ? 'var(--ochre)' : 'var(--harbour)';
+  $('r-alt').textContent = h.alternatives && h.alternatives.length
+    ? 'Could also be: ' + h.alternatives.join(', ') : '';
+
+  const qs = d.clarificationQuestions || [];
+  $('r-ask').hidden = !qs.length;
+  $('r-qs').innerHTML = qs.map(q => `<li>${q}</li>`).join('');
+
+  const note = $('r-note');
+  if (d.note) { note.textContent = d.note; note.hidden = false; }
+  else if (h.readyToSubmit) {
+    note.textContent = 'Every required field is filled. Demo only — nothing is sent to Halifax.';
+    note.hidden = false;
+  } else { note.hidden = true; }
+
+  $('r-fields').innerHTML = Object.entries(h.prefill || {})
+    .map(([k, v]) => `<tr><td><code>${k}</code></td><td>${v}</td></tr>`).join('')
+    || '<tr><td colspan="2">nothing extracted</td></tr>';
+
+  $('out').hidden = false;
+  $('out').scrollIntoView({behavior:'smooth', block:'start'});
+}
+</script>
+</body>
+</html>
