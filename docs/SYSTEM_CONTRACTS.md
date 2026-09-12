@@ -2,7 +2,7 @@
 
 Baseline: 1.0 | 2026-09-12 | Owner: Builder B; consumer review: Builder A
 
-These names and rules are the contract for both experiences. They describe the intended implementation, not existing services. Product and screen behavior: [PRODUCT](PRODUCT.md), [DESIGN_SPEC](DESIGN_SPEC.md).
+These names and rules are the contract for both experiences. Product and screen behavior: [PRODUCT](PRODUCT.md), [DESIGN_SPEC](DESIGN_SPEC.md). The user-approved local prototype refines deployment and HTTP details in [IMPLEMENTATION](IMPLEMENTATION.md): Node 24 SQLite, loopback-only demo sessions, sanitized local image storage, and three-second authorized snapshot polling replace the unconnected Supabase services described below. Real map/provider connection remain excluded. `src/contracts/index.ts` defines current wire types; the implementation endpoint table is authoritative for this branch. Hosted RLS/subscriptions below remain integration requirements, not implemented claims.
 
 ## Architecture and dependencies
 
@@ -94,7 +94,7 @@ All times are UTC ISO-8601, all IDs are opaque strings (UUIDs in persistence), a
 | Publish public progress | No | No | After acceptance | Yes, own organization | Draft for coordinator |
 | Resolve/reopen/transfer lead/release required work | No | Request only | No | Lead coordinator only | No |
 
-Organization matching checks category plus service-area membership on the server. A filtered inbox is not authorization. When matching fails, the issue remains public and unassigned for a provisioned demo triage coordinator; LLM output cannot grant membership or access.
+Organization matching checks category plus service-area membership on the server. A filtered inbox is not authorization. In the local prototype, new reports outside directory coverage are rejected with a location validation message; all supported categories have a directory match in the Halifax demo area. A global manual-triage coordinator is not provisioned. Extending coverage requires an explicit directory/triage decision; LLM output cannot grant membership or access.
 
 ## Transactions and lifecycle
 

@@ -32,7 +32,7 @@ Backend work is larger. A takes notification UI and map presentation; B owns sub
 | `src/contracts/`, `src/data/demo/`, root manifests/lockfile | One owner per change | Both builders review before dependent work |
 | `docs/`, `docs/design/` | Product/quality with A | Update canonical files |
 
-These are planned paths; the app is not scaffolded yet.
+The current prototype is scaffolded. For the user-approved split, the map teammate owns `src/features/map/`; the engine/app branch owns the remaining implementation. Follow [IMPLEMENTATION](IMPLEMENTATION.md) and [MAP_INTEGRATION](MAP_INTEGRATION.md). Coordinate shared types and root dependency changes before editing them.
 
 ## Work card example
 
@@ -57,7 +57,7 @@ Out of scope: editing another resident's evidence; video
 6. At each checkpoint, run one issue across both sessions and record the result in DELIVERY.
 7. Freeze features before the final rehearsal window; fix the canonical journey and missing states.
 
-The local repository currently has an unborn `master` branch. The first authorized commit establishes a baseline; use the actual agreed remote default as the integration target. Do not independently rename it or rewrite teammates' commits.
+`main` holds the initial shared documentation baseline. Current implementation is on `feat/llm-engine`; keep map work on its own branch and integrate through reviewed shared contracts. Do not rewrite teammates' commits or push without authorization.
 
 ## Ready and done
 
@@ -81,6 +81,9 @@ Record decision, reason, affected docs/contracts, owner, and migration impact. B
 | D08 | Fictional demo organizations/cases | Visible labeling; no official claims |
 | D09 | Map-first public; work-first authority | Common tokens, different hierarchy |
 | D10 | Current delivery is docs and visual reference | Production implementation follows separately |
+| D11 | User approved full local prototype, excluding real map/provider connection | D10 is superseded for `feat/llm-engine`; map handoff stays isolated |
+| D12 | SQLite and loopback-only demo sessions for local build | Hosted Supabase/auth remain unconnected; do not expose demo identity publicly |
+| D13 | Three-second snapshot polling in local build | No claim of connected subscriptions; display sync/error states |
 
 ## Teammate handoff
 

@@ -27,4 +27,14 @@ Load only additional instructions relevant to the current command.
 
 ## Current stage
 
-The repository contains documentation and a visual reference, not the application. Application paths in the contracts are planned. Do not assume packages, scripts, migrations, or hosted services already exist.
+The `feat/llm-engine` branch implements a local Next.js prototype. Read `docs/IMPLEMENTATION.md` for its exact API and deliberate overrides of the hosted architecture. Shared types are in `src/contracts/index.ts`; the single fixture is in `src/server/app/seed.ts`. Run typecheck, tests, build, and the running-server smoke workflow before claiming integrated completion. Preserve the map replacement boundary and unset provider. SQLite/demo identity are not production authentication or hosted infrastructure.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->
